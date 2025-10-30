@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         GitHub - Deletion Confirmation Auto-filler
+// @name         GitHub - Deletion Confirmation Auto-filler (Full-Auto)
 // @namespace    https://github.com/NikoboiNFTB/GitHub-Tweaks/
 // @version      1.6
 // @description  Automatically advances GitHub's repo deletion dialogs and fills the confirmation text (you still click the final confirm). Basically automates every step between the first and the last "Delete this repository."
