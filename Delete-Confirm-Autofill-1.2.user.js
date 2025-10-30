@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         GitHub - Deletion Confirmation Auto-filler
+// @name         GitHub - Deletion Confirmation Auto-filler (Semi-Auto)
 // @namespace    https://github.com/NikoboiNFTB/GitHub-Tweaks/
 // @version      1.2
 // @description  Automatically types the confirmation phrase when deleting a repository on GitHub.
