@@ -7,7 +7,7 @@
 // @match        https://github.com/*/*
 // @run-at       document-idle
 // @grant        none
-// @icon         https://github.com/fluidicon.png
+// @icon         https://github.githubassets.com/favicons/favicon-dark.svg
 // ==/UserScript==
 
 (function() {
