@@ -51,4 +51,4 @@ You are free to use, modify, and redistribute this software, provided that all c
 
 ---
 
-Author: https://github.com/NikoboiNFTB
+Author: [Nikoboi](https://github.com/NikoboiNFTB)
