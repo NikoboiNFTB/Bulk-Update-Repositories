@@ -9,14 +9,12 @@ repos=(
   Metal-Archives-Tweaks
   Minecraft
   MySpicetifyTheme
+  nikoboinftb.github.io
   Search-on-GTACars
   SearchWith
   Songsterr-Tweaks
   TikTok-Auto-Poster
   YouTube-Tweaks
-  links
-  open-links
-  video-player
 )
 
 for repo in "${repos[@]}"; do
