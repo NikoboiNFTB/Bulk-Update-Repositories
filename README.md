@@ -32,7 +32,7 @@ to:
 
 ---
 
-## 🧠 Userscript
+## 🧠 Userscripts
 
 ### GitHub – Deletion Confirmation Auto-filler (Full-Auto)
 
@@ -41,6 +41,12 @@ This userscript is made to automate GitHub’s “Delete this repository” conf
 Install the Semi-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/Delete-Confirm-Autofill-1.2.user.js) (only types in the text)  
 
 Install the Full-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/Delete-Confirm-Autofill-1.6.user.js) (Does everything between the first and last clicks)
+
+---
+
+## GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/Auto-Reload-if-Pending-1.0.user.js))
+
+This script will automatically reload the main repository page if it's pending deployment.  
 
 ---
 
