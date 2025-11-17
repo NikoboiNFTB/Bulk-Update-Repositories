@@ -44,7 +44,7 @@ Install the Full-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweak
 
 ---
 
-### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tweaks/blob/main/Auto-Reload-if-Pending-1.1.user.js))
+### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/Auto-Reload-if-Pending-1.1.user.js))
 
 This script will automatically reload the main repository page if it's pending deployment.  
 
