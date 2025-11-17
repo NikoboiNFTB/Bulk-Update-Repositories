@@ -4,9 +4,7 @@
 // @version      1.0
 // @description  Automatically reload GitHub pages when a pending deployment icon exists.
 // @author       Nikoboi
-// @match        https://github.com/*/*
 // @match        https://github.com/*/*/
-// @match        https://github.com/*/*/tree/main
 // @match        https://github.com/*/*/tree/main/
 // @grant        none
 // @icon         https://github.githubassets.com/favicons/favicon-dark.svg
