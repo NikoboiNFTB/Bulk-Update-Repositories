@@ -14,6 +14,7 @@ repos=(
   SearchWith
   Songsterr-Tweaks
   TikTok-Auto-Poster
+  website-to-apk
   YouTube-Tweaks
 )
 
