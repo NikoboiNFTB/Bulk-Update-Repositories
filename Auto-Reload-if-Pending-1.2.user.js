@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         GitHub - Auto-Reload if Pending Deployment
 // @namespace    https://github.com/NikoboiNFTB/GitHub-Tweaks
-// @version      1.0
-// @description  Automatically reload GitHub pages when a pending deployment icon exists.
+// @version      1.2
+// @description  Automatically reload GitHub pages when a pending deployment icon exists (supports both old and new icons).
 // @author       Nikoboi
 // @match        https://github.com/*/*
 // @match        https://github.com/*/*/
@@ -16,10 +16,10 @@
   'use strict';
 
   function checkForPendingDeployment() {
-    const button = document.querySelector(
-      'button[data-testid="checks-status-badge-icon"] .octicon-dot-fill'
-    );
-    return !!button;
+    const svg = document.querySelector('#github-pages-inprogress_deployment');
+    const button = document.querySelector('button[data-testid="checks-status-badge-icon"] .octicon-dot-fill');
+
+    return !!(svg || button);
   }
 
   let reloadTimeout = null;
