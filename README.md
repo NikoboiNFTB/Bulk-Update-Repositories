@@ -12,7 +12,7 @@ Commits and pushes all local repositories with staged changes under the current 
 Useful when you maintain multiple small projects and want to sync them all at once.
 
 Example usage:  
-    ```<user>@<computer>:~/GitHub/NikoboiNFTB$ ./All-Repos-Commit.sh```
+    ```<user>@<computer>:~/GitHub/NikoboiNFTB$ ./all-repos-commit.sh```
 
 ---
 
@@ -20,7 +20,7 @@ Example usage:
 Pulls the latest commits from all repositories inside the current directory.
 
 Example usage:  
-    ```<user>@<computer>:~/GitHub/NikoboiNFTB$ ./All-Repos-Pull.sh```
+    ```<user>@<computer>:~/GitHub/NikoboiNFTB$ ./all-repos-pull.sh```
 
 ---
 
@@ -38,13 +38,13 @@ to:
 
 This userscript is made to automate GitHub’s “Delete this repository” confirmation steps (There are WAY too many steps). It sequentially clicks through intermediate modals and auto-types the repository name in the final confirmation box. You still have to click the first and the last “Delete this repository” buttons yourself (no accidental nukes here).  
 
-Install the Semi-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/Delete-Confirm-Autofill-1.2.user.js) (only types in the text)  
+Install the Semi-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/delete-confirm-autofill-1.2.user.js) (only types in the text)  
 
-Install the Full-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/Delete-Confirm-Autofill-1.6.user.js) (Does everything between the first and last clicks)
+Install the Full-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/delete-confirm-autofill-1.6.user.js) (Does everything between the first and last clicks)
 
 ---
 
-### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/Auto-Reload-if-Pending-1.2.user.js))
+### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/auto-reload-if-pending-1.2.user.js))
 
 This script will automatically reload the main repository page if it's pending deployment.  
 
