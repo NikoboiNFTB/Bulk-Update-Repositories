@@ -5,6 +5,7 @@ repos=(
   ChatGPT-Tweaks
   FreeCAD-Python
   GitHub-Tweaks
+  ilyaxuwu.github.io
   IMDb-RePo
   Metal-Archives-Tweaks
   Minecraft
@@ -14,6 +15,7 @@ repos=(
   SearchWith
   Songsterr-Tweaks
   TikTok-Auto-Poster
+  TikTok-Auto-Scroller
   website-to-apk
   YouTube-Tweaks
 )
