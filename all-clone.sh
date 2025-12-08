@@ -20,7 +20,7 @@ author="NikoboiNFTB"
 repos=(
   ChatGPT-Tweaks
   FreeCAD-Python
-  GitHub-Tweaks
+  GitHub-Tools
   ilyaxuwu.github.io
   IMDb-RePo
   Metal-Archives-Tweaks

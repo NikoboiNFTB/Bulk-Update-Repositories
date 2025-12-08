@@ -20,7 +20,7 @@ author="NikoboiNFTB"
 repos=(
   ChatGPT-Tweaks
   FreeCAD-Python
-  GitHub-Tweaks
+  GitHub-Tools
   ilyaxuwu.github.io
   IMDb-RePo
   Metal-Archives-Tweaks
@@ -49,8 +49,8 @@ wait
 echo "All clones finished."
 
 echo "Copying files..."
-cp GitHub-Tweaks/all-pull.sh all-pull.sh 2>/dev/null || true
-cp GitHub-Tweaks/all-push.sh all-push.sh 2>/dev/null || true
+cp GitHub-Tools/all-pull.sh all-pull.sh 2>/dev/null || true
+cp GitHub-Tools/all-push.sh all-push.sh 2>/dev/null || true
 echo "All files copied"
 
 wait
