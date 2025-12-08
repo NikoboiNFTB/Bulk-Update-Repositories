@@ -49,14 +49,10 @@ wait
 echo "All clones finished."
 
 echo "Copying files..."
+
 cp GitHub-Tweaks/all-pull.sh all-pull.sh 2>/dev/null || true
 cp GitHub-Tweaks/all-push.sh all-push.sh 2>/dev/null || true
+
 echo "All files copied"
 
-wait
-
-echo "Listing items..."
-ls -1
-echo "Items listed"
-
-echo "All done!"
+echo "All done"
