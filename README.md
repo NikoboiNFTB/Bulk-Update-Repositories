@@ -34,7 +34,9 @@ Two scripts used to automatically pull or add, commit and push changes in the cu
 - and of course making them both executable:  
   - `chmod +x pull.sh push.sh`
 
-
+They can be used individually, by calling them directly, using:  
+- `./pull.sh`  
+- `./push.sh`  
 
 ---
 
