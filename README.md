@@ -11,11 +11,13 @@ Each tool is written to make repetitive Git tasks slightly less soul-crushing.
 
 This userscript is made to automate GitHub’s “Delete this repository” confirmation steps (There are WAY too many steps). It sequentially clicks through intermediate modals and auto-types the repository name in the final confirmation box. You still have to click the first and the last “Delete this repository” buttons yourself (no accidental nukes here).  
 
-Install the Semi-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/delete-confirm-autofill-1.2.user.js) (only types in the text)  
+Install the Semi-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/delete-confirm-autofill-1.2.user.js)  
+>> Only types in the text  
 
-Install the Full-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/delete-confirm-autofill-1.6.user.js) (Does everything between the first and last clicks)
+Install the Full-Auto Version [here]https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/delete-confirm-autofill-1.6.user.js()  
+>> Does everything between the first and last clicks  
 
-### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/auto-reload-if-pending-1.2.user.js))
+### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/auto-reload-if-pending-1.2.user.js))
 
 This script will automatically reload the main repository page if it's pending deployment.  
 
