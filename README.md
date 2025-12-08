@@ -25,6 +25,16 @@ This script will automatically reload the main repository page if it's pending d
 
 ## Shell Scripts (for git)
 
+For each script we will assume that your path looks like this:  
+`~/GitHub/<user>/<repo>/`  
+For example, my path would be:  
+`~/GitHub/NikoboiNFTB/GitHub-Tools`  
+These paths will be referenced throughout the README.
+
+### Clone all repos
+
+Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add.
+
 ### pull.sh and push.sh
 
 Two scripts used to automatically pull or add, commit and push changes in the current repository. This doesn't speed up pull much, but it significantly speeds up commits, especially multiple commits in quick succession.
@@ -34,9 +44,13 @@ Two scripts used to automatically pull or add, commit and push changes in the cu
 - and of course making them both executable:  
   - `chmod +x pull.sh push.sh`
 
-They can be used individually, by calling them directly, using:  
+They can be used individually per repo, by calling them directly, using:  
 - `./pull.sh`  
-- `./push.sh`  
+- `./push.sh`
+
+They can also be ran from the parent folder using:
+- ``  
+- ``  
 
 ---
 
