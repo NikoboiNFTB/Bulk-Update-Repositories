@@ -29,20 +29,23 @@ For each script we will assume that your path looks like this:
 `~/GitHub/<user>/<repo>/`  
 For example, my path would be:  
 `~/GitHub/NikoboiNFTB/GitHub-Tools`  
-These paths will be referenced throughout the README.
+These are the paths that may be referenced throughout the README.
+
+For each script you will need to make the script executable:  
+`chmod +x *.sh`  
+>> Note: Using `*.sh` in the command itself is generally not recommended, as it will make every shell script executable. Be precise or be lazy, I don't mind either way.
 
 ### Clone all repos
 
-Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add.
+Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can install it using:  
+`wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all/all-clone.sh`
 
 ### pull.sh and push.sh
 
 Two scripts used to automatically pull or add, commit and push changes in the current repository. This doesn't speed up pull much, but it significantly speeds up commits, especially multiple commits in quick succession.
 
 - You can easily install them into any repository simply by running:  
-  - `wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/pull.sh https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/push.sh`  
-- and of course making them both executable:  
-  - `chmod +x pull.sh push.sh`
+  - `wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/pull.sh https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/push.sh`
 
 They can be used individually per repo, by calling them directly, using:  
 - `./pull.sh`  
