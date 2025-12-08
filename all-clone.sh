@@ -14,8 +14,8 @@ repos=(
   Search-on-GTACars
   SearchWith
   Songsterr-Tweaks
-  TikTok-Auto-Poster
-  TikTok-Auto-Scroller
+  TikTok-Tools
+  TMDB-RePo
   website-to-apk
   YouTube-Tweaks
 )
