@@ -29,10 +29,10 @@ This script will automatically reload the main repository page if it's pending d
 
 Two scripts used to automatically pull or add, commit and push changes in the current repository. This doesn't speed up pull much, but it significantly speeds up commits, especially multiple commits in quick succession.
 
-You can install them into any repository simply by running:
-`wget https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/repo/pull.sh`
-and
-`https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/repo/push.sh`
+You can install them into any repository simply by running:  
+`wget https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/repo/pull.sh`  
+and  
+`https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/repo/push.sh`  
 
 
 ---
