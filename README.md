@@ -15,8 +15,6 @@ Install the Semi-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweak
 
 Install the Full-Auto Version [here](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/delete-confirm-autofill-1.6.user.js) (Does everything between the first and last clicks)
 
----
-
 ### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tweaks/raw/refs/heads/main/auto-reload-if-pending-1.2.user.js))
 
 This script will automatically reload the main repository page if it's pending deployment.  
