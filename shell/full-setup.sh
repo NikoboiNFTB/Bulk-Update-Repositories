@@ -41,7 +41,9 @@ cp GitHub-Tools/shell/all-pull.sh all-pull.sh 2>/dev/null || true
 cp GitHub-Tools/shell/all-push.sh all-push.sh 2>/dev/null || true
 echo "All files copied"
 
-wait
+echo "Deleting setup file..."
+rm -f full-setup.sh
+echo "Setup file deleted"
 
 echo "Listing items..."
 ls -1
@@ -52,18 +54,21 @@ echo "All done!"
 #
 #  <======== GUIDE START ========>
 #
-#    Here's how to personalize this script efficiently for your own use (step-by-step):
+#  How to personalize this script for your own use (step-by-step):
 #
-#    Step 1. Run: curl -s "https://api.github.com/users/$author/repos?per_page=200" | jq -r '.[].name'
-#            (Don't forget to change the $author to your username)
-#            Copy the resulting lines by triple-clicking the first one, and dragging over to the last one. Then Right Click -> Copy
+#  1. a) Run:
+#        curl -s "https://api.github.com/users/$author/repos?per_page=200" | jq -r '.[].name'
+#        Don't forget to change the $author to your GitHub username!!
+#     b) Copy the resulting lines by:
+#           Triple-click the first one,
+#           Drag down to the last one,
+#           Right click -> Copy
 #
-#    Step 2: Run: nano clone.sh
-#            Edit author="" and repos=() according to instructions next to each
-#            To save using nano, hit "Ctrl + O", "Enter", "Ctrl + X"
+#  2. Run: nano clone.sh
+#     Edit author="" and repos=() at the top according to instructions next to each
+#     To save using nano, hit "Ctrl + O", "Enter", "Ctrl + X"
 #
-#    Step 3. Run: ./clone.sh && cd $author
-#            (You don't need to change $author here, it actually works like this!)
+#  3. Run: ./clone.sh
 #
 #  <======== GUIDE END ========>
 #

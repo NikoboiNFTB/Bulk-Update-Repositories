@@ -64,6 +64,8 @@ For these scripts you're expected to have properly set up SSH, be familiar with 
 To run any script, enter `./script.sh` in the terminal, or double click the file and choose "Run in Terminal." If it doesn't work, you need to allow it to be executable, using `chmod -f +x *.sh`  
 >> Note: It is not recommended to use *.sh, because it will make every script executable, not just the one you want. (It's usually fine, though.)
 
+Each install command is self cleaning, i.e. will delete itself and other files after execution.
+
 ---
 
 ### Git - Pull and Push Automations
@@ -73,33 +75,36 @@ These scripts can be used to automatically pull or add, commit and push changes 
 #### [`pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/pull.sh) and [`push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/push.sh)  
 - Run inside `~/GitHub/$author/$repo`.  
 - When run, they will automatically pull or push any changes.  
-- Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`, respectively.
+- Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`, respectively.  
+  - Git commit message can be modified freely.
 
 #### [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
 - Run inside `~/GitHub/$author`.  
-- When run, they will automatically run `./pull.sh` or `./push.sh` inside each `$repo`.
+- When run, they will automatically run `./pull.sh` or `./push.sh` inside each repository.
 
 #### [`setup.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh)  
 - Run inside `~/GitHub/$author`  
-- This script is used to automatically setup `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh` in your projects folder.  
-- Setting everything up can be done automatically by simply running:  
-  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod -f +x setup.sh && ./setup.sh && cd $author`  
-- Every single step this simple command does:  
+- This script is used to automatically setup `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh` in your projects folder. It will place `all-pull.sh` and `all-push.sh` in the projects folder (~/GitHub/$author) and `pull.sh` and `push.sh` in each repository folder (~GitHub/$author/$repo)  
+- You can set up everything automatically by simply running:  
+  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod -f +x setup.sh && ./setup.sh`  
+- Everything this command does:  
   - Download, allow execution and execute `setup.sh` (separated by &&)  
   - `setup.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
-  - Copy `pull.sh` and `push.sh` into every folder in the current directory, then delete those two files from the projects folder (they aren't needed there anymore).  
+  - Copy `pull.sh` and `push.sh` into every folder in the current directory.
+  - Delete those two files, as well as `setup.sh` from the projects folder (they aren't needed there anymore).  
   - Give every file permission to be executed.
 
 ---
 
 ### Git - Cloning Repositories
 
-Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can download it using:  
+Simple script that creates a folder named after your GitHub username, and clones all the repositories you add. You can easily download it using:  
 `wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone.sh && chmod -f +x clone.sh && cat clone.sh`  
-This command will show a guide right in the terminal.
+This command will also show a guide right in the terminal. Read each step carefully before you run anything.
 
 ---
 
+### Git - Clone my Workflow
 `wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/full-setup.sh && chmod -f +x full-setup.sh && ./full-setup.sh && cd $author`
 
 ---
