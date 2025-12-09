@@ -61,6 +61,9 @@ These are the paths that will be referenced throughout the README and guides.
 
 For these scripts you're expected to have properly set up SSH, be familiar with `git`, as well as simple Linux commands such as `wget`, `chmod` and `cat`, and in general know what you're doing.
 
+To run any script, enter `./script.sh` in the terminal, or double click the file and choose "Run in Terminal." If it doesn't work, you need to allow it to be executable, using `chmod -f +x *.sh`  
+>> Note: It is not recommended to use *.sh, because it will make every script executable, not just the one you want. (It's usually fine, though.)
+
 ---
 
 ### Git - Pull and Push Automations
@@ -70,7 +73,7 @@ These scripts can be used to automatically pull or add, commit and push changes 
 #### [`pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/pull.sh) and [`push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/push.sh)  
 - Run inside `~/GitHub/$author/$repo`.  
 - When run, they will automatically pull or push any changes.  
-- Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`.
+- Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`, respectively.
 
 #### [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
 - Run inside `~/GitHub/$author`.  
