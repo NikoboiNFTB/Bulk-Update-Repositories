@@ -61,11 +61,21 @@ For these scripts you're expected to have set up SSH, be familiar with `git`, `w
 Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can download it using:  
 `wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all/all-clone.sh`  
 Then just make changes and run it. You can read its guide by running:  
-`cat all-clone.sh`
+`cat all-clone.sh`  
+>> The guide will be at the end.
 
-### pull.sh and push.sh
+### Pull and Push Automations
 
-Two scripts used to automatically pull or add, commit and push changes in the current repository. This doesn't speed up pull much, but it significantly speeds up commits, especially multiple commits in quick succession.
+These scripts can be used to automatically pull or add, commit and push changes for repositories.
+
+The scripts included are:  
+- `all-pull.sh`  
+  - Can be ran in ~/GitHub/<user> to run `pull.sh` in every <repo>.
+- `all-push.sh`  
+  - Can be ran in ~/GitHub/<user> to run `push.sh` in every <repo>.
+- `pull.sh`  
+- `push.sh`  
+- `setup.sh`  
 
 - You can easily install them into any repository simply by running:  
   - `wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/pull.sh https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/push.sh`
