@@ -38,6 +38,8 @@ For each script you will need to make the script executable:
 `chmod +x *.sh`  
 >> Note: Using `*.sh` in the command itself is generally not recommended, as it will make every shell script in the current directory executable. Be precise, or be lazy, I won't judge.
 
+Furthermore, since these are tools to automate git, you're expected to be familiar with git and wget.
+
 ### Git - Clone all repos
 
 Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can install it using:  
