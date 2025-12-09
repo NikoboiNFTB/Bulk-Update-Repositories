@@ -26,6 +26,7 @@ echo "All done!"
 #  <======== GUIDE START ========>
 #
 #  How to personalize this script for your own use (step-by-step):
+#  Note: You can re-read this tutorial at any time by running "cat clone.sh"
 #
 #  1. a) Run:
 #        curl -s "https://api.github.com/users/$author/repos?per_page=200" | jq -r '.[].name'
