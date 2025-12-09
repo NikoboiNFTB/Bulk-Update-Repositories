@@ -19,7 +19,7 @@ To install the scripts, you will need a userscript manager, such as [Violentmonk
 >> - Go to `chrome://extensions/` (or equivalent)  
 >> - Click **Details** under Tampermonkey  
 >> - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
->> 
+>>
 >> Yes, this is a bit annoying, and yes, it's Google's fault, and no, I can't fix this.
 
 ### GitHub – Deletion Confirmation Auto-filler
