@@ -19,7 +19,7 @@ These scripts are used to automate tasks on the [GitHub](https://github.com/) we
 
 To install the scripts, you will need a userscript manager, such as [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) (Firefox) or [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) (Chromium).
 
->> **Chrome / Edge / Brave Users:**  
+>> **Chromium Users:**  
 >> Make sure Tampermonkey can actually *run* userscripts:  
 >> - Go to `chrome://extensions/` (or equivalent)  
 >> - Click **Details** under Tampermonkey  
