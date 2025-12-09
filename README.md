@@ -14,7 +14,7 @@ To install the scripts, you will need a userscript manager, such as [Violentmonk
 
 >> **Chrome / Edge / Brave Users:**  
 >> Make sure Tampermonkey can actually *run* userscripts:  
->> - Go to `chrome://extensions/` (or equivalent)  
+>> - Go to ``chrome://extensions/`` (or equivalent)  
 >> - Click **Details** under Tampermonkey  
 >> - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
 >>
@@ -39,45 +39,45 @@ This script will automatically reload the main repository page if it's pending d
 These scripts are used to automate tasks in your local git repository.
 
 For each script we will assume that your path looks like this:  
-- `~/GitHub/$author/$repo`
+- ``~/GitHub/$author/$repo``
 
 For example, my path for this repository would be:  
-- `~/GitHub/NikoboiNFTB/GitHub-Tools`
+- ``~/GitHub/NikoboiNFTB/GitHub-Tools``
 
 These are the paths that will be referenced throughout the README.
 
-For these scripts you're expected to have properly set up SSH, be familiar with `git`, as well as simple Linux commands such as `wget`, `chmod` and `cat`, and in general know what you're doing.
+For these scripts you're expected to have properly set up SSH, be familiar with ``git``, as well as simple Linux commands such as ``wget``, ``chmod`` and ``cat``, and in general know what you're doing.
 
 ### Git - Pull and Push Automations
 
 These scripts can be used to automatically pull or add, commit and push changes for repositories.
 
-#### [`pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/pull.sh) and [`push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/push.sh)  
-- Place and run inside `~/GitHub/$author/$repo`.  
+#### [``pull.sh``](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/pull.sh) and [``push.sh``](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/push.sh)  
+- Place and run inside ``~/GitHub/$author/$repo``.  
 - When run, they will automatically pull or push any changes.  
-- Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`.
+- Identical to running ``git pull`` or ``git add .``, ``git commit -m "Automated push"`` and ``git push``.
 
-#### [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
-- Place and run inside `~/GitHub/$author`.  
-- When run, they will automatically run `./pull.sh` or `./push.sh` inside each `$repo`.
+#### [``all-pull.sh``](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [``all-push.sh``](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
+- Place and run inside ``~/GitHub/$author``.  
+- When run, they will automatically run ``./pull.sh`` or ``./push.sh`` inside each ``$repo``.
 
-#### [`setup.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh)  
-- Run inside `~/GitHub/$author`  
-- This script is used to automatically setup `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh` in your projects folder.  
+#### [``setup.sh``](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh)  
+- Run inside ``~/GitHub/$author``  
+- This script is used to automatically setup ``pull.sh``, ``push.sh``, ``all-pull.sh`` and ``all-push.sh`` in your projects folder.  
 - Setting everything up can be done automatically by simply running:  
-  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod +x setup.sh && ./setup.sh`  
+  - ``wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod +x setup.sh && ./setup.sh``  
 - Every single step this simple command does:  
-  - Download, allow execution and execute `setup.sh` (separated by &&)  
-  - `setup.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
-  - Copy `pull.sh` and `push.sh` into every folder in the current directory, then delete those two files from the projects folder (they aren't needed there anymore).  
+  - Download, allow execution and execute ``setup.sh`` (separated by &&)  
+  - ``setup.sh`` will download ``pull.sh``, ``push.sh``, ``all-pull.sh`` and ``all-push.sh``  
+  - Copy ``pull.sh`` and ``push.sh`` into every folder in the current directory, then delete those two files from the projects folder (they aren't needed there anymore).  
   - Allow every file to be executed
 
 ### Git - Clone all repos
 
-Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can download it using:  
-`wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all/all-clone.sh`  
+Simple script that creates a folder named after your GitHub username, and runs ``git clone`` all the repository names you add. You can download it using:  
+``wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all/all-clone.sh``  
 Then just make changes and run it. You can read its guide by running:  
-`cat all-clone.sh`  
+``cat all-clone.sh``  
 >> The guide will be at the end.
 
 ## 🧾 License
@@ -107,4 +107,4 @@ Step 3. Paste all the links anywhere using your favorite text editor. I like VSC
 
 Step 4. Copy the repository names and paste the under repos=(). Don't forget to change author="" to your GitHub username.
 
-Step 5. Run it. You will need to make it executable using `chmod +x all-clone.sh`.
+Step 5. Run it. You will need to make it executable using ``chmod +x all-clone.sh``.
