@@ -55,15 +55,13 @@ echo "All done!"
 #    Here's how to personalize this script efficiently for your own use (step-by-step):
 #
 #    Step 1. Run: curl -s "https://api.github.com/users/$author/repos?per_page=200" | jq -r '.[].name'
-#            (Don't forget to change the $author)
+#            (Don't forget to change the $author to your username)
+#            Copy the resulting lines by triple-clicking the first one, and dragging over to the last one. Then Right Click -> Copy
 #
-#    Step 2: Paste the result above, inside repos=(
+#    Step 2: Run: nano full-setup.sh
+#            Edit author="" and repos=() according to instructions next to each
 #
-#                                                 )
-#
-#            And don't forget to change author="$author" to your username again, in this script.
-#
-#    Step 3. Run it. You will need to make it executable using `chmod +x clone.sh`.
+#    Step 3. Run: ./full-setup.sh
 #
 #  <======== GUIDE END ========>
 #
