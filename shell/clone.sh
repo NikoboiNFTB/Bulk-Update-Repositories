@@ -1,24 +1,9 @@
 #!/bin/bash
 
-author="NikoboiNFTB"
+author="$author"
 
 repos=(
-  ChatGPT-Tweaks
-  FreeCAD-Python
-  GitHub-Tools
-  ilyaxuwu.github.io
-  IMDb-RePo
-  Metal-Archives-Tweaks
-  Minecraft
-  MySpicetifyTheme
-  nikoboinftb.github.io
-  Search-on-GTACars
-  SearchWith
-  Songsterr-Tweaks
-  TikTok-Tools
-  TMDB-RePo
-  website-to-apk
-  YouTube-Tweaks
+[Paste repo names here! Replace this block.]
 )
 
 echo "Creating directory..."
