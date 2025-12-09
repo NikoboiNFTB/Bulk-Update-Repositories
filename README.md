@@ -99,9 +99,9 @@ This command will show a guide right in the terminal.
 
 These scripts are used to, you guessed it, enable and disable SSH on your local machine, while keeping the public key linked to your GitHub account.
 
-#### `disable-ssh.sh`
+#### `disable-s.sh`
 
-#### `enable-ssh.sh`
+#### `enable-s.sh`
 
 ---
 
