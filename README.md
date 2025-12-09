@@ -2,15 +2,11 @@
 
 >> ⚠️ Unfinished
 >>
->> ✅ Nearly there though.
->>
->> ✅ Will finish tomorrow.
+>> ✅ Nearly there though, will finish tomorrow.
 >>
 >> ✅ Userscripts are up and stable.
 >>
->> ⚠️ Commands/Scripts work, but may not be stable yet.
->>
->> ⚠️ Run everything at your own risk.
+>> ⚠️ Commands/Scripts work, but may not be stable yet, run everything at your own risk.
 
 A collection of scripts and userscripts to automate GitHub maintenance and repository management.  
 Each tool is written to make repetitive Git tasks slightly less soul-crushing.
