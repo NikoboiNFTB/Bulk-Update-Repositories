@@ -53,9 +53,9 @@ For these scripts you're expected to have properly set up SSH, be familiar with 
 These scripts can be used to automatically pull or add, commit and push changes for repositories.
 
 #### [`pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/pull.sh) and [`push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/push.sh)  
-- Place and run inside `~/GitHub/$author/$repo`.  
-- When run, they will automatically pull or push any changes.  
-- Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`.
+Place and run inside `~/GitHub/$author/$repo`.  
+When run, they will automatically pull or push any changes.  
+Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`.
 
 #### [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
 - Place and run inside `~/GitHub/$author`.  
