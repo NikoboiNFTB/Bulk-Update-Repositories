@@ -5,6 +5,10 @@
 >> Will finish tomorrow.
 >>
 >> Nearly there though.
+>>
+>> Run everything at your own risk.
+>>
+>> Commands/Scripts work, but may not be stable yet.
 
 A collection of scripts and userscripts to automate GitHub maintenance and repository management.  
 Each tool is written to make repetitive Git tasks slightly less soul-crushing.
