@@ -6,8 +6,6 @@
 A collection of scripts and userscripts to automate GitHub maintenance and repository management.  
 Each tool is written to make repetitive Git tasks slightly less soul-crushing.
 
----
-
 ## Userscripts (for web)
 
 These scripts are used to automate tasks on the [GitHub](https://github.com/) website. They can be used with zero experience.
@@ -30,13 +28,11 @@ Install the Semi-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tool
 >> Only types in the text  
 
 Install the Full-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/delete-confirm-autofill-1.6.user.js))  
->> Does everything between the first and last clicks  
+>> Does everything between the first and last clicks
 
 ### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/auto-reload-if-pending-1.2.user.js))
 
-This script will automatically reload the main repository page if it's pending deployment. That way it's easier to see when your website has updated.  
-
----
+This script will automatically reload the main repository page if it's pending deployment. That way it's easier to see when your website has updated.
 
 ## Shell Scripts (for git)
 
@@ -78,18 +74,6 @@ The scripts included are:
 - `setup.sh`  
   - placeholder
 
-- You can easily install them into any repository simply by running:  
-  - `wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/pull.sh https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/push.sh`  
-  In `~/GitHub/<user>`
-
-They can be used individually per repo, by calling them directly, using:  
-- `./pull.sh`  
-- `./push.sh`
-
-They can also be ran from the parent folder using:
-- ``  
-- ``  
-
 ### Git - Clone all repos
 
 Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can download it using:  
@@ -98,14 +82,10 @@ Then just make changes and run it. You can read its guide by running:
 `cat all-clone.sh`  
 >> The guide will be at the end.
 
----
-
 ## 🧾 License
 This project is licensed under the GNU General Public License v3.0 (GPLv3).
 
 You are free to use, modify, and redistribute this software, provided that all copies and derivative works are also licensed under the GPLv3. See [LICENSE](LICENSE) for details.
-
----
 
 Author: [Nikoboi](https://github.com/NikoboiNFTB)
 
