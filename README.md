@@ -54,7 +54,7 @@ For each script you will need to make the script executable:
 - `chmod +x *.sh`  
 >> Note: Using `*.sh` in the command itself is generally not recommended, as it will make every shell script in the current directory executable. Be precise, or be lazy, I won't judge.
 
-You're expected to have set up SSH, be familiar with git and wget, and in general know what you're doing.
+For these scripts you're expected to have set up SSH, be familiar with git and wget, and in general know what you're doing.
 
 ### Git - Clone all repos
 
