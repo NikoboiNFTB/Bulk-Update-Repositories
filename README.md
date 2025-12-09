@@ -107,26 +107,30 @@ This command will also show a guide right in the terminal. Read each step carefu
 
 ---
 
-### Git - Enable and Disable SSH
+### Git - Disable and Enable SSH
 
-These scripts are used to, you guessed it, enable and disable SSH on your local machine, while keeping the public key linked to your GitHub account.
+These scripts are used to, you guessed it, disable and enable SSH on your local machine, while keeping the same public key linked to your GitHub account.
 
 #### [`disable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-s.sh) and [`enable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-s.sh)  
 - Can be run from anywhere, doesn't matter. I recommend `$author`, though, so all the scripts are collected in one place.  
 
-What these scripts to;  
+What the scripts do;  
 - `./disable-s.sh`  
-  - 
+  - Makes a folder ~/.ssh.bak  
+  - Moves `id_ed25519` and `id_ed25519.pub` from `~/.ssh` to `~/.ssh.bak`  
+  - Removes all SSH keys using `ssh-add -D`
 - `./enable-s.sh`  
-  - 
+  - Moves `id_ed25519` and `id_ed25519.pub` back from `~/.ssh.bak` to `~/.ssh`  
+  - Some "just in case" permission stuff.  
+  - Adds the SSH key using `ssh-add ~/.ssh/id_ed25519`  
+  - Does **not** delete the `~/.ssh.bak` folder, though can easily be modified to do so.
 
-
+>> Note: These are **not** made for ultra security, just a simple toggle switch.
 
 ---
 
-## 🧾 License
-This project is licensed under the GNU General Public License v3.0 (GPLv3).
+## License
 
-You are free to use, modify, and redistribute this software, provided that all copies and derivative works are also licensed under the GPLv3. See [LICENSE](LICENSE) for details.
+This project is licensed under the GNU General Public License v3.0 (GPLv3). See [LICENSE](LICENSE) for details.
 
 Author: [Nikoboi](https://github.com/NikoboiNFTB)
