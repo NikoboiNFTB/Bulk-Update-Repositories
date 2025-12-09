@@ -37,6 +37,8 @@ echo "Cloning finished"
 echo "Copying files..."
 cp GitHub-Tools/shell/all-pull.sh all-pull.sh 2>/dev/null || true
 cp GitHub-Tools/shell/all-push.sh all-push.sh 2>/dev/null || true
+cp GitHub-Tools/shell/disable-s.sh disable-s.sh 2>/dev/null || true
+cp GitHub-Tools/shell/enable-s.sh enable-s.sh 2>/dev/null || true
 echo "All files copied"
 
 echo "Deleting setup file..."
