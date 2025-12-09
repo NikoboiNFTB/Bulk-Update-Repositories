@@ -79,7 +79,7 @@ The scripts included are:
 
 - To automatically set up everything, simply run:  
   - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod +x setup.sh && ./setup.sh`  
-  in your projects folder
+in your projects folder
 
 - Every single step this simple command does:  
   - Download, allow execution and execute `setup.sh` (separated by &&)  
