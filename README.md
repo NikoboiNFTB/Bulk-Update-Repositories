@@ -43,13 +43,13 @@ This script will automatically reload the main repository page if it's pending d
 These scripts are used to automate tasks in your local git repository.
 
 For each script we will assume that your path looks like this:  
-`~/GitHub/<user>/<repo>/`  
+- `~/GitHub/<user>/<repo>/`  
 For example, my path would be:  
-`~/GitHub/NikoboiNFTB/GitHub-Tools` (for this repository)  
+- `~/GitHub/NikoboiNFTB/GitHub-Tools` (for this repository)  
 These are the paths that will be referenced throughout the README.
 
 For each script you will need to make the script executable:  
-`chmod +x *.sh`  
+- `chmod +x *.sh`  
 >> Note: Using `*.sh` in the command itself is generally not recommended, as it will make every shell script in the current directory executable. Be precise, or be lazy, I won't judge.
 
 You're expected to have set up SSH, be familiar with git and wget, and in general know what you're doing.
