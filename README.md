@@ -95,6 +95,10 @@ This command will show a guide right in the terminal.
 
 ---
 
+`wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/full-setup.sh && chmod -f +x full-setup.sh && ./full-setup.sh && cd $author`
+
+---
+
 ### Git - Enable and Disable SSH
 
 These scripts are used to, you guessed it, enable and disable SSH on your local machine, while keeping the public key linked to your GitHub account.
