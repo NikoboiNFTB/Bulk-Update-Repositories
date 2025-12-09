@@ -10,6 +10,8 @@ Each tool is written to make repetitive Git tasks slightly less soul-crushing.
 
 ## Userscripts (for web)
 
+These scripts are used to automate tasks on the [GitHub](https://github.com/) website.
+
 ### GitHub – Deletion Confirmation Auto-filler
 
 This userscript is made to automate GitHub’s “Delete this repository” confirmation steps (There are WAY too many steps). It sequentially clicks through intermediate modals and auto-types the repository name in the final confirmation box. You still have to click the first and the last “Delete this repository” buttons yourself (no accidental nukes here).  
@@ -27,6 +29,8 @@ This script will automatically reload the main repository page if it's pending d
 ---
 
 ## Shell Scripts (for git)
+
+These scripts are used to automate tasks in your local git repository. You're expected to have set up SSH, and in general know what you're doing.
 
 For each script we will assume that your path looks like this:  
 `~/GitHub/<user>/<repo>/`  
