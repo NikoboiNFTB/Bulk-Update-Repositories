@@ -18,7 +18,7 @@ echo "Cleaning up..."
 rm -f pull.sh push.sh setup.sh
 echo "Cleanup done"
 
-echo "Adding executable permissions..."
+echo "Granting executable permissions..."
 chmod -f +x */pull.sh
 chmod -f +x */push.sh
 chmod -f +x all-pull.sh
