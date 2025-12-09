@@ -41,8 +41,8 @@ These scripts are used to automate tasks in your local git repository.
 For each script we will assume that your path looks like this:  
 - `~/GitHub/$author/$repo`
 
-For example, my path would be:  
-- `~/GitHub/NikoboiNFTB/GitHub-Tools` (for this repository)
+For example, my path for this repository would be:  
+- `~/GitHub/NikoboiNFTB/GitHub-Tools`
 
 These are the paths that will be referenced throughout the README.
 
@@ -67,10 +67,10 @@ The scripts included are:
   - Identical to running `git add .`, `git commit -m "Automated push"` and `git push`.  
 - [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh)  
   - Run inside `~/GitHub/<user>`.  
-  - When run, it will automatically run the `pull.sh` inside each `<repo>`.  
+  - When run, it will automatically run `./pull.sh` inside each `<repo>`.  
 - [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
   - Run inside `~/GitHub/<user>`.  
-  - When run, it will automatically run `pull.sh` inside each `<repo>`.  
+  - When run, it will automatically run `./pull.sh` inside each `<repo>`.  
 - `setup.sh`  
   - placeholder
 
