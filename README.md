@@ -61,7 +61,7 @@ For these scripts you're expected to have set up SSH, be familiar with `git`, `w
 These scripts can be used to automatically pull or add, commit and push changes for repositories.
 
 The scripts included are:  
-- `pull.sh`  
+- [`pull.sh`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/pull.sh)  
   - Run inside `~/GitHub/<user>/<repo>`.  
   - When run, it will automatically pull any changes locally. This alone does not speed up your workflow. However, using it in combination with `all-pull.sh` will.  
   - Identical to running `git pull`.  
