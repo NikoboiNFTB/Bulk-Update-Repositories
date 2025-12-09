@@ -29,7 +29,7 @@ echo "Directory created"
 echo "Cloning repositories..."
 for repo in "${repos[@]}"; do
   echo "Cloning $repo..."
-  git clone "git@github.com:$author/$repo.git" &
+  git clone "git@github.com:$author/$repo.git" > /dev/null 2>&1 &
 done
 
 wait
