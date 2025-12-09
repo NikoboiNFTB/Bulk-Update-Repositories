@@ -52,7 +52,7 @@ For each script you will need to make the script executable:
 
 For these scripts you're expected to have set up SSH, be familiar with `git`, `wget`, `chmod`, and other basic Linux commands, and in general know what you're doing.
 
-### Pull and Push Automations
+### Git - Pull and Push Automations
 
 These scripts can be used to automatically pull or add, commit and push changes for repositories.
 
@@ -75,17 +75,17 @@ The scripts included are:
   - Run inside `~/GitHub/<user>`.  
   - When run, it will automatically run `./pull.sh` inside each `<repo>`.
 
-- [`setup.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh)  
-  - Run inside `~/GitHub/<user>`  
-  - This script is used to automatically setup all of the above for all your projects.  
-  - To automatically set up everything, simply run:  
-    - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod +x setup.sh && ./setup.sh`  
-    (in your projects folder)
-  - Every single step this simple command does:  
-    - Download, allow execution and execute `setup.sh` (separated by &&)  
-    - `setup.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
-    - Copy `pull.sh` and `push.sh` into every folder in the current directory, then delete those two files from the projects folder (they aren't needed there anymore).  
-    - Allow every file to be executed
+[`setup.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh)  
+- Run inside `~/GitHub/<user>`  
+- This script is used to automatically setup all of the above for all your projects.  
+- To automatically set up everything, simply run:  
+  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod +x setup.sh && ./setup.sh`  
+  (in your projects folder)
+- Every single step this simple command does:  
+  - Download, allow execution and execute `setup.sh` (separated by &&)  
+  - `setup.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
+  - Copy `pull.sh` and `push.sh` into every folder in the current directory, then delete those two files from the projects folder (they aren't needed there anymore).  
+  - Allow every file to be executed
 
 ### Git - Clone all repos
 
