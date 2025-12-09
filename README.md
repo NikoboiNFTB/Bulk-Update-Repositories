@@ -56,31 +56,31 @@ For each script you will need to make the script executable:
 
 For these scripts you're expected to have set up SSH, be familiar with `git`, `wget`, `chmod`, and other basic Linux commands, and in general know what you're doing.
 
-### Git - Clone all repos
-
-Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can download it using:  
-`wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all/all-clone.sh`  
-Then just make changes and run it. You can read its guide by running:  
-`cat all-clone.sh`  
->> The guide will be at the end.
-
 ### Pull and Push Automations
 
 These scripts can be used to automatically pull or add, commit and push changes for repositories.
 
 The scripts included are:  
 - `pull.sh`  
-  - Place inside of a repository. Once run, it will automatically pull any changes locally. This does not speed up your workflow. However, using it in combination with `all-pull.sh`
+  - Run inside `~/GitHub/<user>/<repo>`.  
+  - When run, it will automatically pull any changes locally. This alone does not speed up your workflow. However, using it in combination with `all-pull.sh` will.  
+  - Identical to running `git pull`.  
 - `push.sh`  
+  - Run inside `~/GitHub/<user>/<repo>`.  
+  - Same as pull.sh, but for git push. This one, however, can save significant amounts of time even while working on a single repository, as you can just do "Up Arrow + Enter" to automatically push your changes.  
+  - Identical to running `git add .`, `git commit -m "Automated push"` and `git push`.  
 - `all-pull.sh`  
-  - Can be ran in ~/GitHub/<user> to run `pull.sh` in every <repo>.  
+  - Run inside `~/GitHub/<user>`.  
+  - When run, it will automatically run the `pull.sh` inside each `<repo>`.  
 - `all-push.sh`  
-  - Can be ran in ~/GitHub/<user> to run `push.sh` in every <repo>.  
+  - Run inside `~/GitHub/<user>`.  
+  - When run, it will automatically run `pull.sh` inside each `<repo>`.  
 - `setup.sh`  
->> - (`full-setup.sh`)  
+  - placeholder
 
 - You can easily install them into any repository simply by running:  
-  - `wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/pull.sh https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/push.sh`
+  - `wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/pull.sh https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/push.sh`  
+  In `~/GitHub/<user>`
 
 They can be used individually per repo, by calling them directly, using:  
 - `./pull.sh`  
@@ -89,6 +89,14 @@ They can be used individually per repo, by calling them directly, using:
 They can also be ran from the parent folder using:
 - ``  
 - ``  
+
+### Git - Clone all repos
+
+Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can download it using:  
+`wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all/all-clone.sh`  
+Then just make changes and run it. You can read its guide by running:  
+`cat all-clone.sh`  
+>> The guide will be at the end.
 
 ---
 
