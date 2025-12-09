@@ -60,17 +60,21 @@ The scripts included are:
 - [`pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/pull.sh)  
   - Run inside `~/GitHub/<user>/<repo>`.  
   - When run, it will automatically pull any changes locally. This alone does not speed up your workflow. However, using it in combination with `all-pull.sh` will.  
-  - Identical to running `git pull`.  
+  - Identical to running `git pull`.
+
 - [`push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/push.sh)  
   - Run inside `~/GitHub/<user>/<repo>`.  
   - Same as pull.sh, but for git push. This one, however, can save significant amounts of time even while working on a single repository, as you can just do "Up Arrow + Enter" to automatically push your changes.  
-  - Identical to running `git add .`, `git commit -m "Automated push"` and `git push`.  
+  - Identical to running `git add .`, `git commit -m "Automated push"` and `git push`.
+
 - [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh)  
   - Run inside `~/GitHub/<user>`.  
-  - When run, it will automatically run `./pull.sh` inside each `<repo>`.  
+  - When run, it will automatically run `./pull.sh` inside each `<repo>`.
+
 - [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
   - Run inside `~/GitHub/<user>`.  
-  - When run, it will automatically run `./pull.sh` inside each `<repo>`.  
+  - When run, it will automatically run `./pull.sh` inside each `<repo>`.
+
 - `setup.sh`  
   - placeholder
 
