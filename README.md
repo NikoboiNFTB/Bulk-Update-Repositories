@@ -54,10 +54,10 @@ These scripts are used to automate tasks in your local git repository.
 For each script we will assume that your path looks like this:  
 - `~/GitHub/$author/$repo`
 
-For example, my path for this repository would be:  
+For example, my path for this repository is:  
 - `~/GitHub/NikoboiNFTB/GitHub-Tools`
 
-These are the paths that will be referenced throughout the README.
+These are the paths that will be referenced throughout the README and guides.
 
 For these scripts you're expected to have properly set up SSH, be familiar with `git`, as well as simple Linux commands such as `wget`, `chmod` and `cat`, and in general know what you're doing.
 
@@ -68,12 +68,12 @@ For these scripts you're expected to have properly set up SSH, be familiar with 
 These scripts can be used to automatically pull or add, commit and push changes for repositories.
 
 #### [`pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/pull.sh) and [`push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/push.sh)  
-- Place and run inside `~/GitHub/$author/$repo`.  
+- Run inside `~/GitHub/$author/$repo`.  
 - When run, they will automatically pull or push any changes.  
 - Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`.
 
 #### [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
-- Place and run inside `~/GitHub/$author`.  
+- Run inside `~/GitHub/$author`.  
 - When run, they will automatically run `./pull.sh` or `./push.sh` inside each `$repo`.
 
 #### [`setup.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh)  
