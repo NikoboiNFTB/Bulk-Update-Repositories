@@ -76,11 +76,15 @@ The scripts included are:
   - When run, it will automatically run `./pull.sh` inside each `<repo>`.
 
 [`setup.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh)  
+
 - Run inside `~/GitHub/<user>`  
+
 - This script is used to automatically setup all of the above for all your projects.  
+
 - To automatically set up everything, simply run:  
   - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod +x setup.sh && ./setup.sh`  
-  (in your projects folder)
+  in your projects folder
+
 - Every single step this simple command does:  
   - Download, allow execution and execute `setup.sh` (separated by &&)  
   - `setup.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
