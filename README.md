@@ -99,9 +99,16 @@ This command will show a guide right in the terminal.
 
 These scripts are used to, you guessed it, enable and disable SSH on your local machine, while keeping the public key linked to your GitHub account.
 
-#### `disable-s.sh`
+#### [`disable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-s.sh) and [`enable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-s.sh)  
+- Can be run from anywhere, doesn't matter. I recommend `$author`, though, so all the scripts are collected in one place.  
 
-#### `enable-s.sh`
+What these scripts to;  
+- `./disable-s.sh`  
+  - 
+- `./enable-s.sh`  
+  - 
+
+
 
 ---
 
