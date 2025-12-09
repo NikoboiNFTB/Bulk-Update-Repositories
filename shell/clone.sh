@@ -1,49 +1,44 @@
 #!/bin/bash
 
-author="" # Your GitHub username goes inside the quotation marks.
+# Prompt for target GitHub username
+read -rp "Enter GitHub username of target: " author
+[ -z "$author" ] && { echo "No username entered. Exiting."; exit 1; }
 
-repos=(
-) # Paste the result of Step 1 before the ")"
+# Prompt for clone method
+read -rp "SSH or HTTPS (if unsure, type HTTPS): " method
+method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
 
-echo "Creating directory..."
+if [[ "$method" == "ssh" ]]; then
+    clone_prefix="git@github.com:$author"
+else
+    clone_prefix="https://github.com/$author"
+    method="https"
+fi
+
+echo "Fetching repo list for $author..."
+repos=$(curl -s "https://api.github.com/users/$author/repos?per_page=200" \
+        | jq -r '.[].name')
+
 mkdir -p "$author"
 cd "$author" || exit 1
-echo "Directory created"
 
-echo "Cloning repositories..."
-for repo in "${repos[@]}"; do
-  echo "Cloning $repo..."
-  git clone "git@github.com:$author/$repo.git" > /dev/null 2>&1 &
+echo "Cloning using $method..."
+for repo in $repos; do
+  git clone "$clone_prefix/$repo.git" > /dev/null 2>&1 &
 done
 
 wait
+echo "Done."
 
-echo "Cloning finished"
-
-echo "Deleting installation file..."
-rm -f ../clone.sh
-echo "Installation file deleted"
-
-echo "All done!"
-
-#  <======== GUIDE START ========>
+# If HTTPS was chosen but the user later wants to switch,
+# they can uncomment this block manually.
 #
-#  How to personalize this script for your own use (step-by-step):
-#  Note: You can re-read this tutorial at any time by running "cat clone.sh"
-#
-#  1. a) Run:
-#        curl -s "https://api.github.com/users/$author/repos?per_page=200" | jq -r '.[].name'
-#        Don't forget to change the $author to your GitHub username!!
-#     b) Copy the resulting lines by:
-#           Triple-click the first one,
-#           Drag down to the last one,
-#           Right click -> Copy
-#
-#  2. Run: nano clone.sh
-#     Edit author and repos at the top according to instructions next to each
-#     To save using nano, hit "Ctrl + O", "Enter", "Ctrl + X"
-#
-#  3. Run: ./clone.sh
-#     Note: Cloning many repositories might take a while.
-#
-#  <======== GUIDE END ========>
+# echo "Converting remotes to SSH..."
+# for repo in $repos; do
+#   if [ -d "$repo/.git" ]; then
+#     cd "$repo" || continue
+#     git remote set-url origin "git@github.com:$author/$repo.git"
+#     cd ..
+#   fi
+# done
+# echo "SSH remotes set."
