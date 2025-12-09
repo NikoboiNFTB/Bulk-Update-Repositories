@@ -40,7 +40,7 @@ This script will automatically reload the main repository page if it's pending d
 
 ## Shell Scripts (for git)
 
-These scripts are used to automate tasks in your local git repository. You're expected to have set up SSH, and in general know what you're doing.
+These scripts are used to automate tasks in your local git repository.
 
 For each script we will assume that your path looks like this:  
 `~/GitHub/<user>/<repo>/`  
@@ -52,7 +52,7 @@ For each script you will need to make the script executable:
 `chmod +x *.sh`  
 >> Note: Using `*.sh` in the command itself is generally not recommended, as it will make every shell script in the current directory executable. Be precise, or be lazy, I won't judge.
 
-Furthermore, since these are tools to automate git, you're expected to be familiar with git and wget.
+You're expected to have set up SSH, be familiar with git and wget, and in general know what you're doing.
 
 ### Git - Clone all repos
 
