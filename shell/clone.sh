@@ -20,6 +20,10 @@ wait
 
 echo "Cloning finished"
 
+echo "Deleting installation file..."
+rm -f clone.sh
+echo "Installation file deleted"
+
 echo "All done!"
 
 #

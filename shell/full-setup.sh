@@ -29,7 +29,7 @@ echo "Directory created"
 echo "Cloning repositories..."
 for repo in "${repos[@]}"; do
   echo "Cloning $repo..."
-  git clone "git@github.com:$author/$repo.git" > /dev/null 2>&1 &
+  git clone "https://github.com/$author/$repo" > /dev/null 2>&1 &
 done
 
 wait
@@ -42,11 +42,7 @@ cp GitHub-Tools/shell/all-push.sh all-push.sh 2>/dev/null || true
 echo "All files copied"
 
 echo "Deleting setup file..."
-rm -f full-setup.sh
+rm -f ../full-setup.sh
 echo "Setup file deleted"
-
-echo "Listing items..."
-ls -1
-echo "Items listed"
 
 echo "All done!"
