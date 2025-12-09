@@ -78,7 +78,7 @@ These scripts can be used to automatically pull or add, commit and push changes 
 - Run inside `~/GitHub/$author`  
 - This script is used to automatically setup `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh` in your projects folder.  
 - Setting everything up can be done automatically by simply running:  
-  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod +x setup.sh && ./setup.sh && cd $author`  
+  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod -f +x setup.sh && ./setup.sh && cd $author`  
 - Every single step this simple command does:  
   - Download, allow execution and execute `setup.sh` (separated by &&)  
   - `setup.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
