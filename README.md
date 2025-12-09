@@ -22,7 +22,6 @@ To install the scripts, you will need a userscript manager, such as [Violentmonk
 >>
 >> Yes, this is a bit annoying, and yes, it's Google's fault, and no, I can't fix this.
 
-
 ### GitHub – Deletion Confirmation Auto-filler
 
 This userscript is made to automate GitHub’s “Delete this repository” confirmation steps (There are WAY too many steps). It sequentially clicks through intermediate modals and auto-types the repository name in the final confirmation box. You still have to click the first and the last “Delete this repository” buttons yourself (no accidental nukes here).  
