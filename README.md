@@ -6,6 +6,8 @@
 A collection of scripts and userscripts to automate GitHub maintenance and repository management.  
 Each tool is written to make repetitive Git tasks slightly less soul-crushing.
 
+---
+
 ## Userscripts (for web)
 
 These scripts are used to automate tasks on the [GitHub](https://github.com/) website. They can be used with zero experience.
@@ -20,6 +22,8 @@ To install the scripts, you will need a userscript manager, such as [Violentmonk
 >>
 >> Yes, this is a bit annoying, and yes, it's Google's fault, and no, I can't fix this.
 
+---
+
 ### GitHub – Deletion Confirmation Auto-filler
 
 This userscript is made to automate GitHub’s “Delete this repository” confirmation steps (There are WAY too many steps). It sequentially clicks through intermediate modals and auto-types the repository name in the final confirmation box. You still have to click the first and the last “Delete this repository” buttons yourself (no accidental nukes here).  
@@ -30,9 +34,13 @@ Install the Semi-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tool
 Install the Full-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/delete-confirm-autofill-1.6.user.js))  
 >> Does everything between the first and last clicks
 
+---
+
 ### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/auto-reload-if-pending-1.2.user.js))
 
 This script will automatically reload the main repository page if it's pending deployment. That way it's easier to see when your website has updated.
+
+---
 
 ## Shell Scripts (for git)
 
@@ -47,6 +55,8 @@ For example, my path for this repository would be:
 These are the paths that will be referenced throughout the README.
 
 For these scripts you're expected to have properly set up SSH, be familiar with `git`, as well as simple Linux commands such as `wget`, `chmod` and `cat`, and in general know what you're doing.
+
+---
 
 ### Git - Pull and Push Automations
 
@@ -70,15 +80,27 @@ These scripts can be used to automatically pull or add, commit and push changes 
   - Download, allow execution and execute `setup.sh` (separated by &&)  
   - `setup.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
   - Copy `pull.sh` and `push.sh` into every folder in the current directory, then delete those two files from the projects folder (they aren't needed there anymore).  
-  - Allow every file to be executed
+  - Give every file permission to be executed.
 
-### Git - Clone all repos
+---
+
+### Git - Cloning Repositories
 
 Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can download it using:  
-`wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all/all-clone.sh`  
-Then just make changes and run it. You can read its guide by running:  
-`cat all-clone.sh`  
->> The guide will be at the end.
+`wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone.sh && cat clone.sh`  
+This command will show a guide right in the terminal.
+
+---
+
+### Git - Enable and Disable SSH
+
+These scripts are used to, you guessed it, enable and disable SSH on your local machine, while keeping the public key linked to your GitHub account.
+
+#### `disable-ssh.sh`
+
+#### `enable-ssh.sh`
+
+---
 
 ## 🧾 License
 This project is licensed under the GNU General Public License v3.0 (GPLv3).
@@ -86,25 +108,3 @@ This project is licensed under the GNU General Public License v3.0 (GPLv3).
 You are free to use, modify, and redistribute this software, provided that all copies and derivative works are also licensed under the GPLv3. See [LICENSE](LICENSE) for details.
 
 Author: [Nikoboi](https://github.com/NikoboiNFTB)
-
-
-
-
-
-
-
-Clone all repos into a directory named after the username
-
-Here's how to setup efficiently for your own use (step-by-step):
-
-Step 1. Go to your repositories at https://github.com/$author?tab=repositories
-
-Step 2. Extract all links using the filter "https://github.com/$author/" using Link Gopher
-
-Step 3. Paste all the links anywhere using your favorite text editor. I like VSCodium for its seek and destroy functionality.
-        Step 1. Use VSCodium's "Ctrl + F" tool to search for "https://github.com/$author/"
-        Step 2. Hit enter until it's removed all the links, leaving only the repository name.
-
-Step 4. Copy the repository names and paste the under repos=(). Don't forget to change author="" to your GitHub username.
-
-Step 5. Run it. You will need to make it executable using `chmod +x all-clone.sh`.

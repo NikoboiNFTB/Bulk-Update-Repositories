@@ -52,8 +52,6 @@ echo "All done!"
 #
 #  <======== GUIDE START ========>
 #
-#    Clone all repos into a directory named after the username
-#
 #    Here's how to personalize this script efficiently for your own use (step-by-step):
 #
 #    Step 1. Go to your repositories at https://github.com/$author?tab=repositories
@@ -66,7 +64,7 @@ echo "All done!"
 #
 #    Step 4. Copy the repository names and paste the under repos=(). Don't forget to change author="" to your GitHub username.
 #
-#    Step 5. Run it. You will need to make it executable using `chmod +x all-clone.sh`.
+#    Step 5. Run it. You will need to make it executable using `chmod +x clone.sh`.
 #
 #  <======== GUIDE END ========>
 #
