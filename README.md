@@ -2,7 +2,7 @@
 
 >> ⚠️ Unfinished
 >>
->> ✅ Everything except for the SSH scripts are stable
+>> ✅ All scripts are stable, only the SSH scripts description needs work. Will be finished in 24 hours.
 
 A collection of scripts and userscripts to automate GitHub maintenance and repository management.  
 Each tool is written to make repetitive Git tasks slightly less soul-crushing.
