@@ -69,13 +69,15 @@ Then just make changes and run it. You can read its guide by running:
 These scripts can be used to automatically pull or add, commit and push changes for repositories.
 
 The scripts included are:  
-- `all-pull.sh`  
-  - Can be ran in ~/GitHub/<user> to run `pull.sh` in every <repo>.
-- `all-push.sh`  
-  - Can be ran in ~/GitHub/<user> to run `push.sh` in every <repo>.
 - `pull.sh`  
+  - Place inside of a repository. Once run, it will automatically pull any changes locally. This does not speed up your workflow. However, using it in combination with `all-pull.sh`
 - `push.sh`  
+- `all-pull.sh`  
+  - Can be ran in ~/GitHub/<user> to run `pull.sh` in every <repo>.  
+- `all-push.sh`  
+  - Can be ran in ~/GitHub/<user> to run `push.sh` in every <repo>.  
 - `setup.sh`  
+>> - (`full-setup.sh`)  
 
 - You can easily install them into any repository simply by running:  
   - `wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/pull.sh https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/repo/push.sh`
@@ -98,3 +100,25 @@ You are free to use, modify, and redistribute this software, provided that all c
 ---
 
 Author: [Nikoboi](https://github.com/NikoboiNFTB)
+
+
+
+
+
+
+
+Clone all repos into a directory named after the username
+
+Here's how to setup efficiently for your own use (step-by-step):
+
+Step 1. Go to your repositories at https://github.com/$author?tab=repositories
+
+Step 2. Extract all links using the filter "https://github.com/$author/" using Link Gopher
+
+Step 3. Paste all the links anywhere using your favorite text editor. I like VSCodium for its seek and destroy functionality.
+        Step 1. Use VSCodium's "Ctrl + F" tool to search for "https://github.com/$author/"
+        Step 2. Hit enter until it's removed all the links, leaving only the repository name.
+
+Step 4. Copy the repository names and paste the under repos=(). Don't forget to change author="" to your GitHub username.
+
+Step 5. Run it. You will need to make it executable using `chmod +x all-clone.sh`.
