@@ -14,7 +14,14 @@ These scripts are used to automate tasks on the [GitHub](https://github.com/) we
 
 To install the scripts, you will need a userscript manager, such as [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) (Firefox) or [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) (Chromium).
 
->> On Chromium, make sure to give the manager relevant permissions. See Step 4 [here](https://github.com/NikoboiNFTB/IMDb-RePo?tab=readme-ov-file#-installation) for more details.
+>> **Chrome / Edge / Brave Users:**  
+>> Make sure Tampermonkey can actually *run* userscripts:  
+>> - Go to `chrome://extensions/` (or equivalent)  
+>> - Click **Details** under Tampermonkey  
+>> - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
+>> - Re-open the IMDb tab. Reloading wasn't enough in my testing.
+>>   - Yes, this is a bit annoying, and yes, it's Google's fault, and no, I can't fix this.
+
 
 ### GitHub – Deletion Confirmation Auto-filler
 
