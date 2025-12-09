@@ -58,10 +58,12 @@ echo "All done!"
 #            (Don't forget to change the $author to your username)
 #            Copy the resulting lines by triple-clicking the first one, and dragging over to the last one. Then Right Click -> Copy
 #
-#    Step 2: Run: nano full-setup.sh
+#    Step 2: Run: nano clone.sh
 #            Edit author="" and repos=() according to instructions next to each
+#            To save using nano, hit "Ctrl + O", "Enter", "Ctrl + X"
 #
-#    Step 3. Run: ./full-setup.sh
+#    Step 3. Run: ./clone.sh && cd $author
+#            (You don't need to change $author here, it actually works like this!)
 #
 #  <======== GUIDE END ========>
 #
