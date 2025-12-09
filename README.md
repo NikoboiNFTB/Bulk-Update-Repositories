@@ -90,7 +90,7 @@ These scripts can be used to automatically pull or add, commit and push changes 
 ### Git - Cloning Repositories
 
 Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can download it using:  
-`wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone.sh && cat clone.sh`  
+`wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone.sh && chmod -f +x clone.sh && cat clone.sh`  
 This command will show a guide right in the terminal.
 
 ---
