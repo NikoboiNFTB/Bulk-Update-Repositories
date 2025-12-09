@@ -46,10 +46,6 @@ For example, my path for this repository would be:
 
 These are the paths that will be referenced throughout the README.
 
-For each script you will need to make the script executable:  
-- `chmod +x *.sh`  
->> Note: Using `*.sh` in the command itself is generally not recommended, as it will make every shell script in the current directory executable. Be precise, or be lazy, I won't judge.
-
 For these scripts you're expected to have set up SSH, be familiar with `git`, `wget`, `chmod`, and other basic Linux commands, and in general know what you're doing.
 
 ### Git - Pull and Push Automations
