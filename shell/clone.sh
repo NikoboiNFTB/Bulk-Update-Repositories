@@ -40,7 +40,7 @@ echo "All done!"
 #           Right click -> Copy
 #
 #  2. Run: nano clone.sh
-#     Edit author="" and repos=() at the top according to instructions next to each
+#     Edit author and repos at the top according to instructions next to each
 #     To save using nano, hit "Ctrl + O", "Enter", "Ctrl + X"
 #
 #  3. Run: ./clone.sh && rm clone.sh
