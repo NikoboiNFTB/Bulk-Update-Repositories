@@ -1,7 +1,5 @@
 #!/bin/bash
 
-author="NikoboiNFTB"
-
 repos=(
   ChatGPT-Tweaks
   FreeCAD-Python
@@ -22,14 +20,14 @@ repos=(
 )
 
 echo "Creating directory..."
-mkdir -p "$author"
-cd "$author" || exit 1
+mkdir -p "NikoboiNFTB"
+cd "NikoboiNFTB" || exit 1
 echo "Directory created"
 
 echo "Cloning repositories..."
 for repo in "${repos[@]}"; do
   echo "Cloning $repo..."
-  git clone "https://github.com/$author/$repo" > /dev/null 2>&1 &
+  git clone "https://github.com/NikoboiNFTB/$repo" > /dev/null 2>&1 &
 done
 
 wait

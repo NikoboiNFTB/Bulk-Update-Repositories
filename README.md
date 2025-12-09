@@ -107,7 +107,7 @@ This command will also show a guide right in the terminal. Read each step carefu
 ---
 
 ### Git - Clone my Workflow
-`wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/full-setup.sh && chmod -f +x full-setup.sh && ./full-setup.sh && cd $author`
+`wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/workflow.sh && chmod -f +x workflow.sh && ./workflow.sh && cd NikoboiNFTB`
 
 ---
 
