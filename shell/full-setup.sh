@@ -50,25 +50,3 @@ ls -1
 echo "Items listed"
 
 echo "All done!"
-
-#
-#  <======== GUIDE START ========>
-#
-#  How to personalize this script for your own use (step-by-step):
-#
-#  1. a) Run:
-#        curl -s "https://api.github.com/users/$author/repos?per_page=200" | jq -r '.[].name'
-#        Don't forget to change the $author to your GitHub username!!
-#     b) Copy the resulting lines by:
-#           Triple-click the first one,
-#           Drag down to the last one,
-#           Right click -> Copy
-#
-#  2. Run: nano clone.sh
-#     Edit author="" and repos=() at the top according to instructions next to each
-#     To save using nano, hit "Ctrl + O", "Enter", "Ctrl + X"
-#
-#  3. Run: ./clone.sh
-#
-#  <======== GUIDE END ========>
-#

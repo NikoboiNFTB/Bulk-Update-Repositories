@@ -41,6 +41,7 @@ echo "All done!"
 #     To save using nano, hit "Ctrl + O", "Enter", "Ctrl + X"
 #
 #  3. Run: ./clone.sh
+#     Note: Cloning many repositories might take a while.
 #
 #  <======== GUIDE END ========>
 #
