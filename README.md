@@ -43,13 +43,10 @@ This script will automatically reload the main repository page if it's pending d
 These scripts are used to automate tasks in your local git repository.
 
 For each script we will assume that your path looks like this:  
-- `~/GitHub/<user>/<repo>/`  
-
-We will user the terminology:  
 - `~/GitHub/$author/$repo`
 
 For example, my path would be:  
-- `~/GitHub/NikoboiNFTB/GitHub-Tools` (for this repository)  
+- `~/GitHub/NikoboiNFTB/GitHub-Tools` (for this repository)
 
 These are the paths that will be referenced throughout the README.
 
