@@ -26,7 +26,6 @@ echo "Installation file deleted"
 
 echo "All done!"
 
-#
 #  <======== GUIDE START ========>
 #
 #  How to personalize this script for your own use (step-by-step):
@@ -48,4 +47,3 @@ echo "All done!"
 #     Note: Cloning many repositories might take a while.
 #
 #  <======== GUIDE END ========>
-#
