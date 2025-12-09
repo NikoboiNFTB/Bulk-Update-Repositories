@@ -94,6 +94,8 @@ These scripts can be used to automatically pull or add, commit and push changes 
   - Delete those two files, as well as `setup.sh` from the projects folder (they aren't needed there anymore).  
   - Grant every file permission to be executed.
 
+>> PS. I will be making two new scripts called `auto-pull.sh` and `auto-push.sh` scripts that **don't require** `pull.sh` or `push.sh` in each repository folder (for those who want a cleaner setup, i.e. no junk files in the repos).
+
 ---
 
 ### Git - Cloning Repositories
