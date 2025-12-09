@@ -40,7 +40,7 @@ cp GitHub-Tools/shell/all-push.sh all-push.sh 2>/dev/null || true
 echo "All files copied"
 
 echo "Deleting setup file..."
-rm -f ../full-setup.sh
+rm -f ../workflow.sh
 echo "Setup file deleted"
 
 echo "All done!"
