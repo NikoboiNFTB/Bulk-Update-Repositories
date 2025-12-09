@@ -92,7 +92,7 @@ These scripts can be used to automatically pull or add, commit and push changes 
   - `setup.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
   - Copy `pull.sh` and `push.sh` into every folder in the current directory.
   - Delete those two files, as well as `setup.sh` from the projects folder (they aren't needed there anymore).  
-  - Give every file permission to be executed.
+  - Grant every file permission to be executed.
 
 ---
 
