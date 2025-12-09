@@ -54,17 +54,16 @@ echo "All done!"
 #
 #    Here's how to personalize this script efficiently for your own use (step-by-step):
 #
-#    Step 1. Go to your repositories at https://github.com/$author?tab=repositories
+#    Step 1. Run: curl -s "https://api.github.com/users/$author/repos?per_page=200" | jq -r '.[].name'
+#            (Don't forget to change the $author)
 #
-#    Step 2. Extract all links using the filter "https://github.com/$author/" using Link Gopher
+#    Step 2: Paste the result above, inside repos=(
 #
-#    Step 3. Paste all the links anywhere using your favorite text editor. I like VSCodium for its seek and destroy functionality.
-#            Step 1. Use VSCodium's "Ctrl + F" tool to search for "https://github.com/$author/"
-#            Step 2. Hit "Ctrl + H", leave it blank and hit enter until it's removed all the links, leaving only the repository name.
+#                                                 )
 #
-#    Step 4. Copy the repository names and paste the under repos=(). Don't forget to change author="" to your GitHub username.
+#            And don't forget to change author="$author" to your username again, in this script.
 #
-#    Step 5. Run it. You will need to make it executable using `chmod +x clone.sh`.
+#    Step 3. Run it. You will need to make it executable using `chmod +x clone.sh`.
 #
 #  <======== GUIDE END ========>
 #

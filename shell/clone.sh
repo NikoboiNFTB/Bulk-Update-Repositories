@@ -50,7 +50,7 @@ echo "All done!"
 #
 #                                                 )
 #
-#            And don't forget to change the $author to your username again, in this script.
+#            And don't forget to change author="$author" to your username again, in this script.
 #
 #    Step 3. Run it. You will need to make it executable using `chmod +x clone.sh`.
 #
