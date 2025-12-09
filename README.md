@@ -10,7 +10,11 @@ Each tool is written to make repetitive Git tasks slightly less soul-crushing.
 
 ## Userscripts (for web)
 
-These scripts are used to automate tasks on the [GitHub](https://github.com/) website.
+These scripts are used to automate tasks on the [GitHub](https://github.com/) website. They can be used with zero experience.
+
+To install the scripts, you will need a userscript manager, such as [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) (Firefox) or [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) (Chromium).
+
+>> On Chromium, make sure to give the manager relevant permissions. See Step 4 [here](https://github.com/NikoboiNFTB/IMDb-RePo?tab=readme-ov-file#-installation) for more details.
 
 ### GitHub – Deletion Confirmation Auto-filler
 
