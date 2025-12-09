@@ -54,12 +54,14 @@ For each script you will need to make the script executable:
 - `chmod +x *.sh`  
 >> Note: Using `*.sh` in the command itself is generally not recommended, as it will make every shell script in the current directory executable. Be precise, or be lazy, I won't judge.
 
-For these scripts you're expected to have set up SSH, be familiar with git and wget, and in general know what you're doing.
+For these scripts you're expected to have set up SSH, be familiar with `git`, `wget`, `chmod`, and other basic Linux commands, and in general know what you're doing.
 
 ### Git - Clone all repos
 
-Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can install it using:  
-`wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all/all-clone.sh`
+Simple script that creates a folder named after your GitHub username, and runs `git clone` all the repository names you add. You can download it using:  
+`wget https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all/all-clone.sh`  
+Then just make changes and run it. You can read its guide by running:  
+`cat all-clone.sh`
 
 ### pull.sh and push.sh
 
