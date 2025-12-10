@@ -56,7 +56,7 @@ For these scripts you're expected to have properly set up SSH, be familiar with 
 To run any script, enter `./script.sh` in the terminal, or double click the file and choose "Run in Terminal." If it doesn't work, you need to allow it to be executable, using `chmod -f +x *.sh`  
 >> Note: It is not recommended to use *.sh, because it will make every script executable, not just the one you want. (It's usually fine, though.)
 
-Each install command is self cleaning, i.e. will delete itself and other files after execution.
+Each install command is self cleaning, i.e. will delete itself and other leftover files after execution.
 
 ---
 
