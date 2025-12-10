@@ -5,7 +5,7 @@ read -rp "Enter GitHub username of target: " author
 [ -z "$author" ] && { echo "No username entered. Exiting."; exit 1; }
 
 # Prompt for clone method
-read -rp "SSH or HTTPS (if unsure, type HTTPS): " method
+read -rp "SSH or HTTPS (if unsure, type HTTPS or hit Enter): " method
 method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
 
 if [[ "$method" == "ssh" ]]; then
@@ -36,4 +36,4 @@ for repo in $repos; do
 done
 
 wait
-echo "Done."
+echo "Done!"
