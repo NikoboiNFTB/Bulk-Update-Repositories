@@ -72,7 +72,7 @@ These scripts can be used to automatically pull or add, commit and push changes 
 - Git commit message can be modified freely in the scripts.
 
 Easily set them up by simply running:  
-- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-repo.sh && chmod -f +x setup-repo.sh && ./setup-repo.sh`
+- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-repo.sh && chmod -f +x setup-repo.sh && ./setup-repo.sh`  
 in `~/GitHub/$author`
 - What the command does:
   - Downloads, allows execution and executes `setup-repo.sh` (separated by &&)
