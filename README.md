@@ -129,12 +129,11 @@ What the scripts do;
 - `./disable-s.sh`  
   - Makes a folder ~/.ssh.bak  
   - Moves `id_ed25519` and `id_ed25519.pub` from `~/.ssh` to `~/.ssh.bak`  
-  - Removes all SSH keys using `ssh-add -D`
+  - Removes all SSH keys using `ssh-add -D`  
 - `./enable-s.sh`  
   - Moves `id_ed25519` and `id_ed25519.pub` back from `~/.ssh.bak` to `~/.ssh`  
-  - Some "just in case" permission stuff.  
   - Adds the SSH key using `ssh-add ~/.ssh/id_ed25519`  
-  - Does **not** delete the `~/.ssh.bak` folder, though can easily be modified to do so.
+  - Deletes `~/.ssh.bak`
 
 
 
