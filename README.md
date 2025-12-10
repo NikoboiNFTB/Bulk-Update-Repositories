@@ -118,23 +118,24 @@ Can be run however many times you want to clone every author's repositories you 
 
 These scripts are used to, you guessed it, disable and enable SSH on your local machine, while keeping the same public key linked to your GitHub account.
 
->> Note: These scripts are convenience tools, not high-security mechanisms.
+>> Note: These scripts are convenience tools, not high-security mechanisms.  
+>> They are, however, hidden for a little bit of extra feelgood.
 
 
 
-#### [`disable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-s.sh) and [`enable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-s.sh)
+#### [`.disable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.disable-s.sh) and [`.enable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.enable-s.sh)
 
 Can be run from anywhere, doesn't matter. I recommend `$author`, though, so all the scripts are collected in one place.
 
-`disable-s.sh` and `enable-s.sh` are set up using the same command as `auto-pull.sh` and `auto-push.sh`:  
+`.disable-s.sh` and `.enable-s.sh` are set up using the same command as `auto-pull.sh` and `auto-push.sh`:  
 - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author.sh && chmod -f +x setup-author.sh && ./setup-author.sh`
 
 What the scripts do;  
-- `./disable-s.sh`  
+- `./.disable-s.sh`  
   - Makes a folder ~/.ssh.bak  
   - Moves `id_ed25519` and `id_ed25519.pub` from `~/.ssh` to `~/.ssh.bak`  
   - Removes all SSH keys using `ssh-add -D`  
-- `./enable-s.sh`  
+- `./.enable-s.sh`  
   - Moves `id_ed25519` and `id_ed25519.pub` back from `~/.ssh.bak` to `~/.ssh`  
   - Adds the SSH key using `ssh-add ~/.ssh/id_ed25519`  
   - Deletes `~/.ssh.bak`
