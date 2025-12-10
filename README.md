@@ -102,8 +102,8 @@ Clone all public repos from any GitHub user. Download the script:
 - `wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone.sh && chmod -f +x clone.sh`  
 And run it:  
 - `./clone.sh`  
->> Note: Cloning many or large repositories can take a long time.  
->> Can be run however many times you want to clone every author's repositories you want. Sky is the limit. And your network.
+Can be run however many times you want to clone every author's repositories you want. Sky is the limit... and your network.  
+>> Note: Cloning many or large repositories can take a long time.
 
 
 
