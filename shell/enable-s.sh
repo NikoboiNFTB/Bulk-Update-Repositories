@@ -14,4 +14,8 @@ chmod 644 "$SSH_DIR/id_ed25519.pub" 2>/dev/null || true
 
 ssh-add "$SSH_DIR/id_ed25519" || echo "ssh-agent not running"
 
+if [ -d "$BACKUP_DIR" ]; then
+    rmdir "$BACKUP_DIR" 2>/dev/null || rm -rf "$BACKUP_DIR"
+fi
+
 echo "SSH enabled."

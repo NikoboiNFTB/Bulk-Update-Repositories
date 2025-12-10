@@ -58,66 +58,57 @@ All setup scripts remove themselves after execution.
 
 
 
-### Git - Pull and Push Automations
+### Git - Pull/Push Automation
 
 These scripts can be used to automatically pull or add, commit and push changes for repositories.
 
-#### [`pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/pull.sh) and [`push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/push.sh)  
-- Run inside `~/GitHub/$author/$repo`.  
-- When run, they will automatically pull or push any changes.  
-- Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`, respectively.  
-  - Git commit message can be modified freely.
 
 
+#### [`pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/pull.sh), [`push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/push.sh), [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
+- The first two go in `~/GitHub/$author/$repo` and the other two go in `~/GitHub/$author`  
+- Running them behaves exactly like running:  
+  - `git pull`  
+  - `git add .`, `git commit -m "Automated push"` and `git push`  
+- Git commit message can be modified freely in the scripts.
 
-#### [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
-- Run inside `~/GitHub/$author`.  
-- When run, they will automatically run `./pull.sh` or `./push.sh` inside each repository.
-
-
-
-#### [auto-pull.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-pull.sh) and [auto-push.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-push.sh)
-- Run inside `~/GitHub/$author`.  
-
-
-
-#### [`setup-author.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author.sh)  
-- Run inside `~/GitHub/$author`  
-- This script is used to automatically setup `auto-pull.sh` and `auto-push.sh` in your projects folder.  
-- You can set up everything automatically by simply running:  
-  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author.sh && chmod -f +x setup-author.sh && ./setup-author.sh`  
-- Everything this command does:  
-  - Download, allow execution and execute `setup-author.sh` (separated by &&)  
-  - `setup-author.sh` will download `auto-pull.sh` and `auto-push.sh`  
-  - Delete `setup-author.sh` from the projects folder (they aren't needed there anymore).  
-  - Grant every file permission to be executed.
-
-
-
-#### [`setup-repo.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-repo.sh)  
-- Run inside `~/GitHub/$author`  
-- This script is used to automatically setup `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh` in your projects folder. It will place `all-pull.sh` and `all-push.sh` in the projects folder (~/GitHub/$author) and `pull.sh` and `push.sh` in each repository folder (~GitHub/$author/$repo)  
-- You can set up everything automatically by simply running:  
-  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-repo.sh && chmod -f +x setup-repo.sh && ./setup-repo.sh`  
-- Everything this command does:  
-  - Download, allow execution and execute `setup-repo.sh` (separated by &&)  
-  - `setup-repo.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
-  - Copy `pull.sh` and `push.sh` into every folder in the current directory.
+Easily set them up by simply running:  
+- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-repo.sh && chmod -f +x setup-repo.sh && ./setup-repo.sh`
+in `~/GitHub/$author`
+- What the command does:
+  - Downloads, allows execution and executes `setup-repo.sh` (separated by &&)
+- What `setup-repo.sh` does:
+  - Download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
+  - Copy `pull.sh` and `push.sh` into every folder in the current directory.  
   - Delete those two files, as well as `setup-repo.sh` from the projects folder (they aren't needed there anymore).  
   - Grant every file permission to be executed.
 
 
 
-### Git - Cloning Repositories
+#### [auto-pull.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-pull.sh) and [auto-push.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-push.sh)
+- Run inside `~/GitHub/$author`.  
+- Will run `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`  
+- Setup easily by running:
+  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author.sh && chmod -f +x setup-author.sh && ./setup-author.sh`  
+  - Downloads, allows execution and executes `setup-author.sh` (separated by &&)
+- What `setup-author.sh` does:
+  - Download `auto-pull.sh` and `auto-push.sh`, and allow them to be executed.  
+  - Delete `setup-author.sh`
 
-Simple script that asks for a GitHub username and method of cloning and then creates a folder named after the GitHub username, and clones all the (public) repositories form that user. You can easily download it using:  
+
+
+### Git - Clone Repositories
+
+Clone all public repos from any GitHub user. Download the script:  
 - `wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone.sh && chmod -f +x clone.sh`  
-And run it using:  
-- `./clone.sh`
+And run it:  
+- `./clone.sh`  
+>> Note: Cloning many or large repositories can take a long time.  
+>> Can be run however many times you want to clone every author's repositories you want. Sky is the limit. And your network.
 
 
 
-### Git - Clone my Workflow
+### Git - Copy my Personal Workflow
+
 `wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/workflow.sh && chmod -f +x workflow.sh && ./workflow.sh && cd NikoboiNFTB`
 
 
@@ -126,10 +117,13 @@ And run it using:
 
 These scripts are used to, you guessed it, disable and enable SSH on your local machine, while keeping the same public key linked to your GitHub account.
 
+>> Note: These scripts are convenience tools, not high-security mechanisms.
 
 
-#### [`disable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-s.sh) and [`enable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-s.sh)  
-- Can be run from anywhere, doesn't matter. I recommend `$author`, though, so all the scripts are collected in one place.  
+
+#### [`disable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-s.sh) and [`enable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-s.sh)
+
+Can be run from anywhere, doesn't matter. I recommend `$author`, though, so all the scripts are collected in one place.
 
 What the scripts do;  
 - `./disable-s.sh`  
@@ -141,8 +135,6 @@ What the scripts do;
   - Some "just in case" permission stuff.  
   - Adds the SSH key using `ssh-add ~/.ssh/id_ed25519`  
   - Does **not** delete the `~/.ssh.bak` folder, though can easily be modified to do so.
-
->> Note: These are **not** made for ultra security, just a simple toggle switch.
 
 
 
