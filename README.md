@@ -1,3 +1,5 @@
+>> ⚠️ This repository is in the middle of an update, scripts work, but descriptions are not accurate. Please review each script carefully before running anything. ⚠️
+
 # GitHub-Tweaks
 
 A collection of scripts and userscripts for automating GitHub maintenance and repository management.
@@ -64,14 +66,14 @@ These scripts can be used to automatically pull or add, commit and push changes 
 
 
 
-#### [`auto-pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-pull) and [`auto-push`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-push)
+#### [`pull-all`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/pull-all) and [`push-all`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push-all)  
 - Run inside `~/GitHub/$author`.  
 - Will run `git pull` or `git add .`, `git commit -m "Automated push"` and `git push` in every folder in the current directory.  
 - Setup easily by running:  
   - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author && chmod -f +x setup-author && ./setup-author`  
   - Downloads, allows execution and executes `setup-author` (separated by &&)
 - What `setup-author` does:  
-  - Download `auto-pull` and `auto-push`, and allow them to be executed.  
+  - Download `pull-all` and `push-all`, and allow them to be executed.  
   - Delete `setup-author`
 
 
@@ -87,7 +89,7 @@ Can be run however many times you want to clone every author's repositories you 
 >> Note: Cloning many or large repositories can take a long time.
 
 To copy my personal workflow, you can just run:  
-- `wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/workflow && chmod -f +x workflow && ./workflow && cd NikoboiNFTB`  
+- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/workflow && chmod -f +x workflow && ./workflow && cd NikoboiNFTB`  
 
 
 
@@ -102,9 +104,8 @@ These scripts are used to, you guessed it, disable and enable SSH on your local 
 
 #### [`.disable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.disable-ssh) and [`.enable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.enable-ssh)
 
-Can be run from anywhere, doesn't matter. I recommend `$author`, though, so all the scripts are collected in one place.
-
-`.disable-ssh` and `.enable-ssh` are set up using the same command as `auto-pull` and `auto-push`:  
+Install script will place them in ~/, so they can be run from anywhere.  
+`.disable-ssh` and `.enable-ssh` are set up using the same command as `pull-all` and `push-all`:  
 - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author && chmod -f +x setup-author && ./setup-author`
 
 What the scripts do;  

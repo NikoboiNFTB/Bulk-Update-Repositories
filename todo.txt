@@ -1,0 +1,1 @@
+Make all paths place all files in ~/, so that they can be run from anywhere.
