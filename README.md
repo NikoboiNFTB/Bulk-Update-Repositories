@@ -105,7 +105,7 @@ These scripts can be used to automatically pull or add, commit and push changes 
 
 ### Git - Cloning Repositories
 
-Simple script that asks for a GitHub username and then creates a folder named after the GitHub username, and clones all the (public) repositories form that user. You can easily download it using:  
+Simple script that asks for a GitHub username and method of cloning and then creates a folder named after the GitHub username, and clones all the (public) repositories form that user. You can easily download it using:  
 - `wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone.sh && chmod -f +x clone.sh`  
 And run it using:  
 - `./clone.sh`
