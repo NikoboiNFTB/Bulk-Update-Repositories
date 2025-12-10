@@ -15,7 +15,7 @@ done
 echo "All files copied"
 
 echo "Cleaning up..."
-rm -f pull.sh push.sh setup.sh
+rm -f pull.sh push.sh setup-repo.sh
 echo "Cleanup done"
 
 echo "Granting executable permissions..."

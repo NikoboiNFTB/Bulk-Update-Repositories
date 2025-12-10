@@ -11,7 +11,7 @@ chmod -f +x auto-push.sh
 echo "Permissions granted"
 
 echo "Cleaning up..."
-rm -f setup.sh
+rm -f setup-author.sh
 echo "Cleanup done"
 
 echo "All done!"

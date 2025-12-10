@@ -78,19 +78,28 @@ These scripts can be used to automatically pull or add, commit and push changes 
 - Run inside `~/GitHub/$author`.  
 - 
 
-#### [`setup.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh)  
+#### [`setup-author.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author.sh)  
+- Run inside `~/GitHub/$author`  
+- This script is used to automatically setup `auto-pull.sh` and `auto-push.sh` in your projects folder.  
+- You can set up everything automatically by simply running:  
+  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author.sh && chmod -f +x setup-author.sh && ./setup-author.sh`  
+- Everything this command does:  
+  - Download, allow execution and execute `setup-author.sh` (separated by &&)  
+  - `setup-author.sh` will download `auto-pull.sh` and `auto-push.sh`  
+  - Delete `setup-author.sh` from the projects folder (they aren't needed there anymore).  
+  - Grant every file permission to be executed.
+
+#### [`setup-repo.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-repo.sh)  
 - Run inside `~/GitHub/$author`  
 - This script is used to automatically setup `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh` in your projects folder. It will place `all-pull.sh` and `all-push.sh` in the projects folder (~/GitHub/$author) and `pull.sh` and `push.sh` in each repository folder (~GitHub/$author/$repo)  
 - You can set up everything automatically by simply running:  
-  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh && chmod -f +x setup.sh && ./setup.sh`  
+  - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-repo.sh && chmod -f +x setup-repo.sh && ./setup-repo.sh`  
 - Everything this command does:  
-  - Download, allow execution and execute `setup.sh` (separated by &&)  
-  - `setup.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
+  - Download, allow execution and execute `setup-repo.sh` (separated by &&)  
+  - `setup-repo.sh` will download `pull.sh`, `push.sh`, `all-pull.sh` and `all-push.sh`  
   - Copy `pull.sh` and `push.sh` into every folder in the current directory.
-  - Delete those two files, as well as `setup.sh` from the projects folder (they aren't needed there anymore).  
+  - Delete those two files, as well as `setup-repo.sh` from the projects folder (they aren't needed there anymore).  
   - Grant every file permission to be executed.
-
->> PS. I will be making two new scripts called `auto-pull.sh` and `auto-push.sh` scripts that **don't require** `pull.sh` or `push.sh` in each repository folder (for those who want a cleaner setup, i.e. no junk files in the repos).
 
 ---
 
