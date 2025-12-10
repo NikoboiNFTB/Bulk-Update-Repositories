@@ -37,16 +37,3 @@ done
 
 wait
 echo "Done."
-
-# If HTTPS was chosen but the user later wants to switch,
-# they can uncomment this block manually.
-#
-# echo "Converting remotes to SSH..."
-# for repo in $repos; do
-#   if [ -d "$repo/.git" ]; then
-#     cd "$repo" || continue
-#     git remote set-url origin "git@github.com:$author/$repo.git"
-#     cd ..
-#   fi
-# done
-# echo "SSH remotes set."
