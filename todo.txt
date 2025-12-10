@@ -1,2 +1,0 @@
-Make push and pull scripts without dependencies
-Remove the note about it from README.md

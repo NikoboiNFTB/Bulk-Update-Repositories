@@ -1,9 +1,5 @@
 # GitHub-Tweaks
 
->> ⚠️ Unfinished
->>
->> ✅ All scripts are stable, only the SSH scripts description needs work. Will be finished in 24 hours.
-
 A collection of scripts and userscripts to automate GitHub maintenance and repository management.  
 Each tool is written to make repetitive Git tasks slightly less soul-crushing.
 
@@ -77,6 +73,10 @@ These scripts can be used to automatically pull or add, commit and push changes 
 #### [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
 - Run inside `~/GitHub/$author`.  
 - When run, they will automatically run `./pull.sh` or `./push.sh` inside each repository.
+
+#### [auto-pull.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-pull.sh) and [auto-push.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-push.sh)
+- Run inside `~/GitHub/$author`.  
+- 
 
 #### [`setup.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup.sh)  
 - Run inside `~/GitHub/$author`  

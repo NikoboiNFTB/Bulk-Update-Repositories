@@ -38,10 +38,12 @@ done
 wait
 
 echo "Copying files..."
-cp GitHub-Tools/shell/auto-pull.sh auto-pull.sh
-cp GitHub-Tools/shell/auto-push.sh auto-push.sh
-cp GitHub-Tools/shell/disable-s.sh disable-s.sh
-cp GitHub-Tools/shell/enable-s.sh enable-s.sh
+cp GitHub-Tools/shell/auto-pull.sh auto-pull.sh && chmod -f +x auto-pull.sh
+cp GitHub-Tools/shell/auto-push.sh auto-push.sh && chmod -f +x auto-push.sh
+cp GitHub-Tools/shell/disable-s.sh disable-s.sh && chmod -f +x disable-s.sh
+cp GitHub-Tools/shell/enable-s.sh enable-s.sh && chmod -f +x enable-s.sh
+chmod -f +x */pull.sh
+chmod -f +x */push.sh
 echo "Files copied"
 
 echo "Done."
