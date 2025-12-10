@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Prompt for clone method
 read -rp "SSH or HTTPS (if unsure, type HTTPS or hit Enter): " method
 method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
 
