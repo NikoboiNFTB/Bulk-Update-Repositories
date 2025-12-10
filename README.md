@@ -86,11 +86,11 @@ in `~/GitHub/$author`
 
 #### [`auto-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-pull.sh) and [`auto-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-push.sh)
 - Run inside `~/GitHub/$author`.  
-- Will run `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`  
-- Setup easily by running:
+- Will run `git pull` or `git add .`, `git commit -m "Automated push"` and `git push` in every folder in the current directory.  
+- Setup easily by running:  
   - `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author.sh && chmod -f +x setup-author.sh && ./setup-author.sh`  
   - Downloads, allows execution and executes `setup-author.sh` (separated by &&)
-- What `setup-author.sh` does:
+- What `setup-author.sh` does:  
   - Download `auto-pull.sh` and `auto-push.sh`, and allow them to be executed.  
   - Delete `setup-author.sh`
 
