@@ -1,12 +1,3 @@
 #!/usr/bin/env bash
 
-set -e
-
-for d in */; do
-    if [ -d "$d/.git" ]; then
-        echo "Pulling $d..."
-        git -C "$d" pull &
-    fi
-done
-
-wait
+git pull

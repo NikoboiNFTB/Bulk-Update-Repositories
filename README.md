@@ -54,6 +54,8 @@ Run scripts using `./script`. If it fails, make it executable using `chmod -f +x
 
 All setup scripts remove themselves after execution.
 
+Tip: You can place any script inside ~/, and then run it anywhere using `~/script`.
+
 
 
 ### Git - Pull/Push Automation
@@ -77,7 +79,7 @@ These scripts can be used to automatically pull or add, commit and push changes 
 ### Git - Clone Repositories
 
 Clone all public repos from any GitHub user. Download the script:  
-- `wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone && chmod -f +x clone`  
+- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/clone && chmod -f +x clone`  
 And run it:  
 - `./clone`
 
