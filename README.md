@@ -126,6 +126,9 @@ These scripts are used to, you guessed it, disable and enable SSH on your local 
 
 Can be run from anywhere, doesn't matter. I recommend `$author`, though, so all the scripts are collected in one place.
 
+`disable-s.sh` and `enable-s.sh` are set up using the same command as `auto-pull.sh` and `auto-push.sh`:  
+- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author.sh && chmod -f +x setup-author.sh && ./setup-author.sh`
+
 What the scripts do;  
 - `./disable-s.sh`  
   - Makes a folder ~/.ssh.bak  
