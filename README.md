@@ -84,7 +84,7 @@ in `~/GitHub/$author`
 
 
 
-#### [auto-pull.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-pull.sh) and [auto-push.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-push.sh)
+#### [`auto-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-pull.sh) and [`auto-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-push.sh)
 - Run inside `~/GitHub/$author`.  
 - Will run `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`  
 - Setup easily by running:
