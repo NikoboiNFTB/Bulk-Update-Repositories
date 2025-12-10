@@ -1,7 +1,5 @@
 # GitHub-Tweaks
 
->> Not 100% finished yet.
-
 A collection of scripts and userscripts for automating GitHub maintenance and repository management.
 
 Each tool exists to make repetitive Git tasks a little less tedious.
@@ -42,7 +40,7 @@ Reloads the repository page automatically when the project is in a “pending de
 
 ## Shell Scripts (for git)
 
-These scripts automate local Git tasks.
+These scripts automate local Git tasks. Each file is a bash script. The extension `.sh` has been stripped for cleanliness.
 
 - All examples assume this directory structure:
   - `~/GitHub/$author/$repo`
@@ -50,7 +48,7 @@ These scripts automate local Git tasks.
   - `~/GitHub/NikoboiNFTB/GitHub-Tools`
 - Use differing paths on your own accord.
 
-You should have a basic understanding of SSH, Git, and simple Linux commands (`wget`, `chmod`, `./` etc.). You *can* use these without knowing what you're doing, but no person worth listening to will ever recommend you do that.
+You should have a basic understanding of SSH, Git, and simple Linux commands (`wget`, `chmod`, `./` etc.). You *can* use these without knowing what you're doing, but no sane person will ever recommend you do that.
 
 Run scripts using `./script`. If it fails, make it executable using `chmod -f +x script`.
 
