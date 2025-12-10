@@ -24,15 +24,7 @@ cd "$author" || exit 1
 
 echo "Cloning using $method..."
 for repo in $repos; do
-  if [ -d "$repo/.git" ]; then
-    echo "$repo already exists, skipping."
-    continue
-  fi
-  if git clone "$clone_prefix/$repo.git" >/dev/null 2>&1; then
-    echo "Cloned $repo"
-  else
-    echo "Failed to clone $repo" >&2
-  fi
+  git clone "$clone_prefix/$repo.git" > /dev/null 2>&1 &
 done
 
 wait
