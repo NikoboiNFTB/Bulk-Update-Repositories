@@ -1,64 +1,62 @@
 # GitHub-Tweaks
 
-A collection of scripts and userscripts to automate GitHub maintenance and repository management.  
-Each tool is written to make repetitive Git tasks slightly less soul-crushing.
+>> Not 100% finished yet.
 
----
+A collection of scripts and userscripts for automating GitHub maintenance and repository management.
+
+Each tool exists to make repetitive Git tasks a little less tedious.
+
+
 
 ## Userscripts (for web)
 
 These scripts are used to automate tasks on the [GitHub](https://github.com/) website. They can be used with zero experience.
 
-To install the scripts, you will need a userscript manager, such as [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) (Firefox) or [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) (Chromium).
+To use them, you will need a userscript manager, such as [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) (Firefox) or [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) (Chromium).
 
 >> **Chromium Users:**  
 >> Make sure Tampermonkey can actually *run* userscripts:  
 >> - Go to `chrome://extensions/` (or equivalent)  
 >> - Click **Details** under Tampermonkey  
 >> - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
->>
->> Yes, this is a bit annoying, and yes, it's Google's fault, and no, I can't fix this.
 
----
+
 
 ### GitHub – Deletion Confirmation Auto-filler
 
-This userscript is made to automate GitHub’s “Delete this repository” confirmation steps (There are WAY too many steps). It sequentially clicks through intermediate modals and auto-types the repository name in the final confirmation box. You still have to click the first and the last “Delete this repository” buttons yourself (no accidental nukes here).  
+Automates GitHub’s multi-step “Delete this repository” process. The script clicks through intermediate modals and auto-types the repository name. You still manually click the first and last delete buttons, and you will need to stay in the window during the process, otherwise GitHub whines that you're a bot.
 
 Install the Semi-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-delete-1.2.user.js))  
->> Only types in the text  
+>> Only types in the text box.
 
 Install the Full-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-delete-1.6.user.js))  
->> Does everything between the first and last clicks
+>> Handles everything between the first and last click.
 
----
+
 
 ### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-reload-1.2.user.js))
 
-This script will automatically reload the main repository page if it's pending deployment. That way it's easier to see when your website has updated.
+Reloads the repository page automatically when the project is in a “pending deployment” state. For GitHub Pages.
 
----
+
 
 ## Shell Scripts (for git)
 
-These scripts are used to automate tasks in your local git repository.
+These scripts automate local Git tasks.
 
-For each script we will assume that your path looks like this:  
-- `~/GitHub/$author/$repo`
+- All examples assume this directory structure:
+  - `~/GitHub/$author/$repo`
+- Example:
+  - `~/GitHub/NikoboiNFTB/GitHub-Tools`
+- Use differing paths on your own accord.
 
-For example, my path for this repository is:  
-- `~/GitHub/NikoboiNFTB/GitHub-Tools`
+You should have a basic understanding of SSH, Git, and simple Linux commands (`wget`, `chmod`, `./` etc.). You *can* use these without knowing what you're doing, but no person worth listening to will ever recommend you do that.
 
-These are the paths that will be referenced throughout the README and guides.
+Run scripts using `./script.sh`. If it fails, make it executable using `chmod -f +x script.sh`.
 
-For these scripts you're expected to have properly set up SSH, be familiar with `git`, as well as simple Linux commands such as `wget`, `chmod` and `cat`, and in general know what you're doing.
+All setup scripts remove themselves after execution.
 
-To run any script, enter `./script.sh` in the terminal, or double click the file and choose "Run in Terminal." If it doesn't work, you need to allow it to be executable, using `chmod -f +x *.sh`  
->> Note: It is not recommended to use *.sh, because it will make every script executable, not just the one you want. (It's usually fine, though.)
 
-Each install command is self cleaning, i.e. will delete itself and other leftover files after execution.
-
----
 
 ### Git - Pull and Push Automations
 
@@ -70,13 +68,18 @@ These scripts can be used to automatically pull or add, commit and push changes 
 - Identical to running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push`, respectively.  
   - Git commit message can be modified freely.
 
+
+
 #### [`all-pull.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull.sh) and [`all-push.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push.sh)  
 - Run inside `~/GitHub/$author`.  
 - When run, they will automatically run `./pull.sh` or `./push.sh` inside each repository.
 
+
+
 #### [auto-pull.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-pull.sh) and [auto-push.sh](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/auto-push.sh)
 - Run inside `~/GitHub/$author`.  
-- 
+
+
 
 #### [`setup-author.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author.sh)  
 - Run inside `~/GitHub/$author`  
@@ -88,6 +91,8 @@ These scripts can be used to automatically pull or add, commit and push changes 
   - `setup-author.sh` will download `auto-pull.sh` and `auto-push.sh`  
   - Delete `setup-author.sh` from the projects folder (they aren't needed there anymore).  
   - Grant every file permission to be executed.
+
+
 
 #### [`setup-repo.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-repo.sh)  
 - Run inside `~/GitHub/$author`  
@@ -101,7 +106,7 @@ These scripts can be used to automatically pull or add, commit and push changes 
   - Delete those two files, as well as `setup-repo.sh` from the projects folder (they aren't needed there anymore).  
   - Grant every file permission to be executed.
 
----
+
 
 ### Git - Cloning Repositories
 
@@ -110,16 +115,18 @@ Simple script that asks for a GitHub username and method of cloning and then cre
 And run it using:  
 - `./clone.sh`
 
----
+
 
 ### Git - Clone my Workflow
 `wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/workflow.sh && chmod -f +x workflow.sh && ./workflow.sh && cd NikoboiNFTB`
 
----
+
 
 ### Git - Disable and Enable SSH
 
 These scripts are used to, you guessed it, disable and enable SSH on your local machine, while keeping the same public key linked to your GitHub account.
+
+
 
 #### [`disable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-s.sh) and [`enable-s.sh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-s.sh)  
 - Can be run from anywhere, doesn't matter. I recommend `$author`, though, so all the scripts are collected in one place.  
@@ -137,7 +144,7 @@ What the scripts do;
 
 >> Note: These are **not** made for ultra security, just a simple toggle switch.
 
----
+
 
 ## License
 
