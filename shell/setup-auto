@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# Remember where this script is run
-SELF=$(realpath "$0")
-
 read -rp "Install directory (leave blank to use current directory): " install_dir
 
 # Expand ~ if present
@@ -51,10 +48,5 @@ case "$choice" in
         echo "Skipping copy to home directory."
         ;;
 esac
-
-echo
-echo "Cleaning up..."
-rm -f "$SELF"
-echo "Cleanup done"
 
 echo "All done!"

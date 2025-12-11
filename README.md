@@ -66,7 +66,8 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
 - Run inside `~/git/$author`.  
 - Will run `git pull` or `git add .`, `git commit -m "Automated push"` and `git push` in every folder in the current directory.
 
-Install in the current directory by running:
+Install by running:  
+- `bash <(wget -qO- https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-auto)`
 
 
 
