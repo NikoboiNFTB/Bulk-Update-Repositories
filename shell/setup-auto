@@ -23,10 +23,16 @@ cd "$install_dir"
 echo "Downloading files..."
 
 wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull
-chmod -f +x all-pull
+chmod +x all-pull
 
 wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push
-chmod -f +x all-push
+chmod +x all-push
+
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/pull
+chmod +x pull
+
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push
+chmod +x push
 
 echo "Files downloaded"
 

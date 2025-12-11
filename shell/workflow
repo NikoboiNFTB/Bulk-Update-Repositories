@@ -34,14 +34,20 @@ wait
 
 echo "Copying files..."
 
-cp GitHub-Tools/shell/all-pull all-pull
-chmod -f +x all-pull
-cp GitHub-Tools/shell/all-push all-push
-chmod -f +x all-push
 cp GitHub-Tools/shell/.disable-ssh .disable-ssh
-chmod -f +x .disable-ssh
+chmod +x .disable-ssh
 cp GitHub-Tools/shell/.enable-ssh .enable-ssh
-chmod -f +x .enable-ssh
+chmod +x .enable-ssh
+
+cp GitHub-Tools/shell/pull pull
+chmod +x pull
+cp GitHub-Tools/shell/push push
+chmod +x push
+
+cp GitHub-Tools/shell/all-pull all-pull
+chmod +x all-pull
+cp GitHub-Tools/shell/all-push all-push
+chmod +x all-push
 
 echo "Files copied"
 
