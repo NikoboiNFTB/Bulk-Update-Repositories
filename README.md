@@ -58,13 +58,13 @@ These scripts automate local Git tasks. Each file is a bash script. The extensio
 
 You should have a basic understanding of SSH, Git, and simple Linux commands (`wget`, `chmod`, `./` etc.). You *can* use these without knowing what you're doing, but no sane person will ever recommend you do that.
 
-Run scripts with `./script` or double clicking them. If it fails, make it executable with `chmod -f +x script`.
+Run scripts with `./script` or double clicking them. If it fails, make it executable with `chmod +x script`.
 
 >> Note: In install scripts, my own domain *may* be used over the github domain. This is for link shortening and clarity. If that is the case, you can easily confirm the files are identical running:  
 >> - `diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)`  
 >>
 >> This example will highlight the differences between the `pull` and `push` files. A blank result means they're identical.  
->> The domain nikoboi.dev is active under my GitHub Pages repository, and its /sh/ folder can be audited [here](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh).  
+>> The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its /sh/ folder can be audited [here](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh).  
 >> The scripts themselves will always call the github.com domain, because there cleanliness isn't as important.
 
 
@@ -81,8 +81,6 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
   - Run in `~/git/$author/$repo`.  
   - Only pulls or pushes one repository, the one it's run in.  
   - Can be run in any repository with `../pull` if it's placed in the projects folder.
-  
-- The equivalent of running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push` in the folder where they're run.
 
 Install by running:  
 - `bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)`
@@ -92,15 +90,16 @@ Install by running:
 ### Git - Clone Repositories
 
 Clone all public repos from any GitHub user. Download the script:  
-- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/clone && chmod -f +x clone`  
+- `wget -q https://nikoboi.dev/sh/clone && chmod +x clone`  
 And run it:  
 - `./clone`
 
-Can be run however many times you want to clone every author's repositories you want. Sky is the limit... and your network.  
+Can be run however many times you want to clone every author's repositories you want. Sky is the limit... and your network.
+
 >> Note: Cloning many or large repositories can take a long time.
 
 To copy my personal workflow, you can just run:  
-- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/workflow && chmod -f +x workflow && ./workflow && cd NikoboiNFTB`  
+- `wget -q https://nikoboi.dev/sh/workflow && chmod +x workflow && ./workflow && cd NikoboiNFTB`
 
 
 
@@ -108,26 +107,25 @@ To copy my personal workflow, you can just run:
 
 These scripts are used to, you guessed it, disable and enable SSH on your local machine, while keeping the same public key linked to your GitHub account.
 
->> Note: These scripts are convenience tools, not high-security mechanisms.  
->> They are, however, hidden for a little bit of extra feelgood.
+>> Note: These scripts are for convenience, not high-security.  
+>> If security is what you want, delete the key from your GitHub account.  
+>>
+>> They can, however, be hidden for a little bit of extra feelgood.  
+>> Just prefix the file name with a .
 
-
-
-### [`.disable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.disable-ssh) and [`.enable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.enable-ssh)
-
-Install script will place them in ~/, so they can be run from anywhere.  
-`.disable-ssh` and `.enable-ssh` are set up using the same command as `all-pull` and `all-push`:  
-- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-author && chmod -f +x setup-author && ./setup-author`
-
-What the scripts do;  
-- `./.disable-ssh`  
+- [`disable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-ssh)  
   - Makes a folder ~/.ssh.bak  
   - Moves `id_ed25519` and `id_ed25519.pub` from `~/.ssh` to `~/.ssh.bak`  
   - Removes all SSH keys using `ssh-add -D`  
-- `./.enable-ssh`  
+- [`enable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-ssh)  
   - Moves `id_ed25519` and `id_ed25519.pub` back from `~/.ssh.bak` to `~/.ssh`  
   - Adds the SSH key using `ssh-add ~/.ssh/id_ed25519`  
   - Deletes `~/.ssh.bak`
+
+The scripts are noth path-bound like the others, so feel free to install them wherever you want.
+
+Install script:  
+- `wget -q https://nikoboi.dev/sh/setup-ssh && chmod +x setup-ssh && ./setup-ssh`
 
 
 
