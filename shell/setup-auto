@@ -18,17 +18,17 @@ cd "$install_dir"
 
 echo "Downloading files..."
 
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull
-chmod -f +x all-pull
-
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push
-chmod -f +x all-push
-
 wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.disable-ssh
 chmod -f +x .disable-ssh
 
 wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.enable-ssh
 chmod -f +x .enable-ssh
+
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull
+chmod -f +x all-pull
+
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push
+chmod -f +x all-push
 
 echo "Files downloaded"
 
