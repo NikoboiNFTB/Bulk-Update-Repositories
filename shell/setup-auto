@@ -39,6 +39,21 @@ chmod -f +x all-push
 
 echo "Files downloaded"
 
+# Prompt for copying to home directory
+echo
+read -rp "Copy the scripts to ~/ for quick access anywhere? [y/N]: " choice
+
+case "$choice" in
+    [yY])
+        echo "Copying to home directory..."
+        cp -f .disable-ssh .enable-ssh all-pull all-push "$HOME/"
+        ;;
+    *)
+        echo "Skipping copy to home directory."
+        ;;
+esac
+
+echo
 echo "Cleaning up..."
 rm -f "$SELF"
 echo "Cleanup done"
