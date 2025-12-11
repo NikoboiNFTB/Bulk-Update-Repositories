@@ -62,6 +62,7 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
 
 >> Note: In install scripts, my own domain *may* be used over the github domain. This is for link shortening and clarity. If that is the case, you can easily confirm the files are identical running (for example):  
 >> - `diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)`  
+>>
 >> This example will highlight the differences between the `pull` and `push` files. A blank result means they're identical.  
 >> The scripts themselves will always call the github.com domain.
 
