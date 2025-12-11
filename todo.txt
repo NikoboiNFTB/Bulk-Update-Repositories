@@ -1,0 +1,1 @@
+Script that fetches all of these scripts, and runs a diff on nikoboi.dev and github.com, to easily compare and make sure that each script is identical.
