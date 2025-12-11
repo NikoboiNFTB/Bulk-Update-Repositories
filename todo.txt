@@ -1,1 +1,1 @@
-Script that fetches all of these scripts, and runs a diff on nikoboi.dev and github.com, to easily compare and make sure that each script is identical.
+Make a script that fetches and lists all scripts in /shell/, and runs a diff on https://nikoboi.dev/sh/ and https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/, to easily compare and make sure that each script is identical. Each file should be run individually. DO NOT make it run diff for the entire folder. Don't be that lazy.
