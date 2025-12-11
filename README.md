@@ -133,6 +133,12 @@ Install script:
 
 
 
+### Git - Status
+
+Runs `git add .` and `git status` in every repository. Included in `setup-auto`
+
+
+
 ## License
 
 This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See [LICENSE](LICENSE) for details.
