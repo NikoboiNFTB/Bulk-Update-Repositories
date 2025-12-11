@@ -1,10 +1,8 @@
 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️  
-⚠️ This repository is in the middle of an update,                 ⚠️
-⚠️ scripts work, but descriptions may not be accurate.            ⚠️
-⚠️ Please review each script carefully before running anything.   ⚠️
+⚠️ This repository is in the middle of an update,                 ⚠️  
+⚠️ scripts work, but descriptions may not be accurate.            ⚠️  
+⚠️ Please review each script carefully before running anything.   ⚠️  
 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
-
-
 
 # GitHub-Tools
 
