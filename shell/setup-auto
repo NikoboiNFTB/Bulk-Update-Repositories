@@ -22,12 +22,6 @@ cd "$install_dir"
 
 echo "Downloading files..."
 
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.disable-ssh
-chmod -f +x .disable-ssh
-
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.enable-ssh
-chmod -f +x .enable-ssh
-
 wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull
 chmod -f +x all-pull
 
@@ -42,7 +36,7 @@ read -rp "Copy the scripts to ~/ for quick access anywhere? [y/N]: " choice
 case "$choice" in
     [yY])
         echo "Copying to home directory..."
-        cp -f .disable-ssh .enable-ssh all-pull all-push "$HOME/"
+        cp -f all-pull all-push "$HOME/"
         ;;
     *)
         echo "Skipping copy to home directory."
