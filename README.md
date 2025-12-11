@@ -32,9 +32,11 @@ Install the Full-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tool
 
 
 
-### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-reload-1.2.user.js))
+### GitHub - Auto-Reload if Pending Deployment
 
 Reloads the repository page automatically when the project is in a “pending deployment” state. Useful for GitHub Pages development.
+
+ Install it [here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-reload-1.2.user.js)
 
 
 
