@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
 set -e
 
-read -rp "Install directory: " install_dir
+# Remember where this script is run
+SELF=$(realpath "$0")
+
+read -rp "Install directory (leave blank to use current directory): " install_dir
+
+# Expand ~ if present
 install_dir="${install_dir/#\~/$HOME}"
 
+# Default to current directory if empty
 if [ -z "$install_dir" ]; then
-    echo "You didn’t type anything."
-    exit 1
+    install_dir="$PWD"
+    echo "Using current directory: $install_dir"
 fi
 
+# Create directory if missing
 if [ ! -d "$install_dir" ]; then
     echo "Directory doesn’t exist. Making it for you."
     mkdir -p "$install_dir"
@@ -33,7 +40,7 @@ chmod -f +x all-push
 echo "Files downloaded"
 
 echo "Cleaning up..."
-rm -f setup
+rm -f "$SELF"
 echo "Cleanup done"
 
 echo "All done!"

@@ -40,7 +40,7 @@ Install the Full-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tool
 
 ### GitHub - Auto-Reload if Pending Deployment ([install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-reload-1.2.user.js))
 
-Reloads the repository page automatically when the project is in a “pending deployment” state. For GitHub Pages.
+Reloads the repository page automatically when the project is in a “pending deployment” state. Useful for GitHub Pages development.
 
 
 
@@ -49,25 +49,22 @@ Reloads the repository page automatically when the project is in a “pending de
 These scripts automate local Git tasks. Each file is a bash script. The extension `.sh` has been stripped for cleanliness.
 
 - All examples assume this directory structure:
-  - `~/GitHub/$author/$repo`
+  - `~/git/$author/$repo`
 - Example:
-  - `~/GitHub/NikoboiNFTB/GitHub-Tools`
+  - `~/git/NikoboiNFTB/GitHub-Tools`
 - Use differing paths on your own accord.
 
 You should have a basic understanding of SSH, Git, and simple Linux commands (`wget`, `chmod`, `./` etc.). You *can* use these without knowing what you're doing, but no sane person will ever recommend you do that.
 
-Run scripts using `./script`. If it fails, make it executable using `chmod -f +x script`.
-
-Run the setup script to install all scripts in the current directory, as well as in a (new) folder `~/git/`
-- `wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup && chmod -f +x setup && ./setup`  
-
-The setup script will remove itself after execution.
+Run scripts with `./script` or double clicking them. If it fails, make it executable with `chmod -f +x script`.
 
 
 
 ### [`all-pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull) and [`all-push`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push)  
-- Run inside `~/GitHub/$author`.  
-- Will run `git pull` or `git add .`, `git commit -m "Automated push"` and `git push` in every folder in the current directory.  
+- Run inside `~/git/$author`.  
+- Will run `git pull` or `git add .`, `git commit -m "Automated push"` and `git push` in every folder in the current directory.
+
+Install in the current directory by running:
 
 
 
@@ -95,7 +92,7 @@ These scripts are used to, you guessed it, disable and enable SSH on your local 
 
 
 
-#### [`.disable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.disable-ssh) and [`.enable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.enable-ssh)
+### [`.disable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.disable-ssh) and [`.enable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/.enable-ssh)
 
 Install script will place them in ~/, so they can be run from anywhere.  
 `.disable-ssh` and `.enable-ssh` are set up using the same command as `all-pull` and `all-push`:  
