@@ -60,9 +60,10 @@ You should have a basic understanding of SSH, Git, and simple Linux commands (`w
 
 Run scripts with `./script` or double clicking them. If it fails, make it executable with `chmod -f +x script`.
 
->> Note, in install scripts, my own domain *may* be used over the github domain. This is for link shortening and clarity. If that is the case, you can easily confirm the files are identical running:  
->> - `diff <(wget -qO- https://nikoboi.dev/sh/all-pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all-push)`  
->> This will fetch both files into memory, and compare them.
+>> Note: In install scripts, my own domain *may* be used over the github domain. This is for link shortening and clarity. If that is the case, you can easily confirm the files are identical running (for example):  
+>> - `diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)`  
+>> This example will highlight the differences between the `pull` and `push` files. A blank result means they're identical.  
+>> The scripts themselves will always call the github.com domain.
 
 
 
