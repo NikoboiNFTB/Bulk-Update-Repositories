@@ -5,7 +5,7 @@ read -rp "Install directory: " install_dir
 install_dir="${install_dir/#\~/$HOME}"
 
 if [ -z "$install_dir" ]; then
-    echo "You didn’t type anything. Bold strategy."
+    echo "You didn’t type anything."
     exit 1
 fi
 
@@ -17,6 +17,7 @@ fi
 cd "$install_dir"
 
 echo "Downloading files..."
+
 wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all-pull
 chmod -f +x all-pull
 
