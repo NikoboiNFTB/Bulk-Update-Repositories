@@ -57,7 +57,7 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
 >> Note: In install scripts my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github.com](https://github.com/) domain. This is for link shortening and clarity. The github link is ridiculously long.  
 >>
 >> You're right to be sceptical about this, but you can easily confirm the files are identical by running:  
->> >> `diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)`  
+>> - `diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)`  
 >>
 >> This example will highlight the differences between the `pull` and `push` files. A blank result means they're identical.  
 >>
