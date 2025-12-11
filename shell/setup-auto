@@ -40,7 +40,6 @@ chmod -f +x all-push
 echo "Files downloaded"
 
 # Prompt for copying to home directory
-echo
 read -rp "Copy the scripts to ~/ for quick access anywhere? [y/N]: " choice
 
 case "$choice" in
