@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PUBLIC_API="https://api.github.com/repos/NikoboiNFTB/nikoboinftb.github.io/contents/sh"
+REPO_API="https://api.github.com/repos/NikoboiNFTB/GitHub-Tools/contents/shell"
+
+PUBLIC_BASE="https://nikoboi.dev/sh"
+REPO_BASE="https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell"
+
+TMP_PUBLIC=$(mktemp -d)
+TMP_REPO=$(mktemp -d)
+trap 'rm -rf "$TMP_PUBLIC" "$TMP_REPO"' EXIT
+
+echo
+echo "Listing files..."
+list_files() {
+    curl -s "$1" \
+        | grep '"name"' \
+        | cut -d'"' -f4
+}
+
+PUBLIC_FILES=$(list_files "$PUBLIC_API")
+REPO_FILES=$(list_files "$REPO_API")
+
+echo
+echo "Files from the website:"
+echo
+printf '  %s\n' $PUBLIC_FILES
+echo
+echo "Files from the repository:"
+echo
+printf '  %s\n' $REPO_FILES
+
+echo
+echo "Files listed"
+echo
+echo "Comparing files..."
+echo
+
+DIFF_COUNT=0
+MISS_PUBLIC_COUNT=0
+MISS_REPO_COUNT=0
+
+ALL_FILES=$(printf "%s\n%s\n" "$PUBLIC_FILES" "$REPO_FILES" | sort -u)
+
+for f in $ALL_FILES; do
+    in_public=$(printf "%s\n" "$PUBLIC_FILES" | grep -qx "$f" && echo yes || echo no)
+    in_repo=$(printf "%s\n" "$REPO_FILES" | grep -qx "$f" && echo yes || echo no)
+
+    if [ "$in_public" = yes ] && [ "$in_repo" = yes ]; then
+        curl -s -o "$TMP_PUBLIC/$f" "$PUBLIC_BASE/$f"
+        curl -s -o "$TMP_REPO/$f" "$REPO_BASE/$f"
+
+        if diff -q "$TMP_PUBLIC/$f" "$TMP_REPO/$f" >/dev/null; then
+            echo "  OK   $f"
+        else
+            echo "  DIFF $f"
+            DIFF_COUNT=$((DIFF_COUNT + 1))
+        fi
+
+    elif [ "$in_public" = no ]; then
+        echo "  MISSING from nikoboi.dev: $f"
+        MISS_PUBLIC_COUNT=$((MISS_PUBLIC_COUNT + 1))
+
+    else
+        echo "  MISSING from github.com: $f"
+        MISS_REPO_COUNT=$((MISS_REPO_COUNT + 1))
+    fi
+done
+
+echo
+echo "Summary:"
+if [ $DIFF_COUNT -eq 0 ] && [ $MISS_PUBLIC_COUNT -eq 0 ] && [ $MISS_REPO_COUNT -eq 0 ]; then
+    echo "  File comparison complete. All files OK."
+else
+    [ $DIFF_COUNT -gt 0 ] && echo "  DIFF found: $DIFF_COUNT"
+    [ $MISS_PUBLIC_COUNT -gt 0 ] && echo "  Missing from nikoboi.dev: $MISS_PUBLIC_COUNT"
+    [ $MISS_REPO_COUNT -gt 0 ] && echo "  Missing from github.com: $MISS_REPO_COUNT"
+fi
+
+echo
