@@ -61,7 +61,7 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
 >>
 >> This example will highlight the differences between the `pull` and `push` files. A blank result means they're identical.  
 >>
->> The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its /sh/ folder can be audited [here](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh).  
+>> The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [/sh/](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited.  
 >> The scripts themselves will always call the github.com domain, because there cleanliness isn't as important.
 
 
