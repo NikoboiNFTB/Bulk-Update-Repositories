@@ -60,6 +60,8 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
 >> - `diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)`  
 >>
 >> This example will highlight the differences between the `pull` and `push` files. A blank result means they're identical.  
+>> >> I of course also automated this, which you can do by running:  
+>> >> - `bash <(wget -qO- https://nikoboi.dev/sh/compare)`  
 >>
 >> The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [/sh/](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited.  
 >>
