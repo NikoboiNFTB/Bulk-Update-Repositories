@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 read -rp "SSH or HTTPS (if unsure, type HTTPS or hit Enter): " method
 method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
