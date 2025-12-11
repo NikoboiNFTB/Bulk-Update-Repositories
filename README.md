@@ -126,8 +126,8 @@ These scripts are used to, you guessed it, disable and enable SSH on your local 
 
 The scripts are noth path-bound like the others, so feel free to install them wherever you want.
 
-Install script:  
-- `wget -q https://nikoboi.dev/sh/setup-ssh && chmod +x setup-ssh && ./setup-ssh`
+Install command:  
+- `bash <(wget -qO- https://nikoboi.dev/sh/setup-ssh)`
 
 
 
