@@ -39,6 +39,8 @@ cp GitHub-Tools/shell/all-pull all-pull
 chmod +x all-pull
 cp GitHub-Tools/shell/all-push all-push
 chmod +x all-push
+cp GitHub-Tools/shell/all-status all-status
+chmod +x all-status
 
 cp GitHub-Tools/shell/disable-ssh disable-ssh
 chmod +x disable-ssh
@@ -49,8 +51,6 @@ cp GitHub-Tools/shell/pull pull
 chmod +x pull
 cp GitHub-Tools/shell/push push
 chmod +x push
-
-
 cp GitHub-Tools/shell/status status
 chmod +x status
 

@@ -26,12 +26,13 @@ wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/al
 chmod +x all-pull
 wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push
 chmod +x all-push
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-status
+chmod +x all-status
 
 wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/pull
 chmod +x pull
 wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push
 chmod +x push
-
 wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/status
 chmod +x status
 

@@ -131,7 +131,12 @@ Install command:
 
 ### Git - Status
 
-Runs `git add .` and `git status` in every repository. Included in `setup-auto`
+- `all-status`  
+  - Runs `git add .` and `git status` in every repository  
+- `status`  
+  - Runs `git add .` and `git status` in the current repository.
+
+Included in `setup-auto`
 
 
 
