@@ -55,10 +55,12 @@ You should have a basic understanding of SSH, Git, and simple Linux commands (`w
 Run scripts with `./script` or double clicking them. If it fails, make it executable with `chmod +x script`.
 
 >> Note: In install scripts my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github.com](https://github.com/) domain. This is for link shortening and clarity. The github link is ridiculously long.  
+>>
 >> You're right to be sceptical about this, but you can easily confirm the files are identical by running:  
 >> >> `diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)`  
 >>
 >> This example will highlight the differences between the `pull` and `push` files. A blank result means they're identical.  
+>>
 >> The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its /sh/ folder can be audited [here](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh).  
 >> The scripts themselves will always call the github.com domain, because there cleanliness isn't as important.
 
