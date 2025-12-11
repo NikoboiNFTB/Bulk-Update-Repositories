@@ -64,16 +64,28 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
 >> - `diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)`  
 >>
 >> This example will highlight the differences between the `pull` and `push` files. A blank result means they're identical.  
->> The scripts themselves will always call the github.com domain.
+>> The domain nikoboi.dev is active under my GitHub Pages repository, and its /sh/ folder can be audited [here](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh).  
+>> The scripts themselves will always call the github.com domain, because there cleanliness isn't as important.
 
 
 
-### [`all-pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull) and [`all-push`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push)  
-- Run inside `~/git/$author`.  
-- Will run `git pull` or `git add .`, `git commit -m "Automated push"` and `git push` in every folder in the current directory.
+### Git - Pull/Push Automation
+
+- [`all-pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull)  
+- [`all-push`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push)  
+  - Run in `~/git/$author`.  
+  - Pulls or pushes all repositories at once.  
+  - Must be run in the projects folder.  
+- [`pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/pull)  
+- [`push`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push)  
+  - Run in `~/git/$author/$repo`.  
+  - Only pulls or pushes one repository, the one it's run in.  
+  - Can be run in any repository with `../pull` if it's placed in the projects folder.
+  
+- The equivalent of running `git pull` or `git add .`, `git commit -m "Automated push"` and `git push` in the folder where they're run.
 
 Install by running:  
-- `bash <(wget -qO- https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/setup-auto)`
+- `bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)`
 
 
 
