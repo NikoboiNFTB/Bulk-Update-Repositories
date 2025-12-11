@@ -82,17 +82,21 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
   - Only pulls or pushes one repository, the one it's run in.  
   - Can be run in any repository with `../pull` if it's placed in the projects folder.
 
-Install by running:  
+Install command:  
 - `bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)`
 
 
 
 ### Git - Clone Repositories
 
-Clone all public repos from any GitHub user. Download the script:  
-- `wget -q https://nikoboi.dev/sh/clone && chmod +x clone`  
-And run it:  
-- `./clone`
+Clone all public repos from any GitHub user.
+
+- Download command:  
+  - `wget -q https://nikoboi.dev/sh/clone`  
+- Allow it to be executed:  
+  - `chmod +x clone`  
+- Run command:  
+  - `./clone`
 
 Can be run however many times you want to clone every author's repositories you want. Sky is the limit... and your network.
 
