@@ -89,10 +89,8 @@ Install command:
 
 Clone all public repos from any GitHub user.
 
-- Download command:  
-  - `wget -q https://nikoboi.dev/sh/clone`  
-- Allow it to be executed:  
-  - `chmod +x clone`  
+- Download and allow execution command:  
+  - `wget -q https://nikoboi.dev/sh/clone && chmod +x clone`  
 - Run command:  
   - `./clone`
 
@@ -101,7 +99,7 @@ Can be run however many times you want to clone every author's repositories you 
 >> Note: Cloning many or large repositories can take a long time.
 
 To copy my personal workflow, you can just run:  
-- `wget -q https://nikoboi.dev/sh/workflow && chmod +x workflow && ./workflow && cd NikoboiNFTB`
+- `bash <(wget -qO- https://nikoboi.dev/sh/workflow) && cd NikoboiNFTB`
 
 
 
