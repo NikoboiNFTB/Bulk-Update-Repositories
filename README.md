@@ -101,7 +101,7 @@ Can be run however many times you want to clone every author's repositories you 
 >> Note: Cloning many or large repositories can take a long time.
 
 To copy my personal workflow, you can just run:  
-- `bash <(wget -qO- https://nikoboi.dev/sh/workflow) && cd NikoboiNFTB`
+- `bash <(wget -qO- https://nikoboi.dev/sh/workflow)`
 
 #### `clone-repo`: Clone a single specified repository.
 
@@ -109,6 +109,13 @@ To copy my personal workflow, you can just run:
   - `wget -q https://nikoboi.dev/sh/clone-repo && chmod +x clone-repo`  
 - Run command:  
   - `./clone-repo`
+
+Can be run however many times you want. Sky is the limit.
+
+>> Note: Cloning many or large repositories can take a long time.
+
+To copy my personal workflow, you can just run:  
+- `bash <(wget -qO- https://nikoboi.dev/sh/workflow)`
 
 
 
