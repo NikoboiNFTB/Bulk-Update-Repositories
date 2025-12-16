@@ -60,4 +60,19 @@ chmod +x ../clone
 
 echo "Files copied"
 
+# Prompt to hide SSH scripts
+read -rp "Hide SSH scripts? [y/N]: " hide_ssh
+
+case "$hide_ssh" in
+    [yY])
+        echo "Hiding SSH scripts..."
+        for f in disable-ssh enable-ssh; do
+            [ -e "$f" ] && mv "$f" ".$f"
+        done
+        ;;
+    *)
+        echo "Leaving SSH scripts visible."
+        ;;
+esac
+
 echo "Done!"
