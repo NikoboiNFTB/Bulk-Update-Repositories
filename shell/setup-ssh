@@ -36,10 +36,25 @@ read -rp "Copy the scripts to ~/ for quick access anywhere? [y/N]: " choice
 case "$choice" in
     [yY])
         echo "Copying to home directory..."
-        cp -f all-pull all-push "$HOME/"
+        cp -f disable-ssh enable-ssh "$HOME/"
         ;;
     *)
         echo "Skipping copy to home directory."
+        ;;
+esac
+
+# Prompt to hide files
+read -rp "Hide files? [y/N]: " hide_choice
+
+case "$hide_choice" in
+    [yY])
+        echo "Hiding files..."
+        for f in disable-ssh enable-ssh; do
+            [ -e "$f" ] && mv "$f" ".$f"
+        done
+        ;;
+    *)
+        echo "Leaving files visible."
         ;;
 esac
 
