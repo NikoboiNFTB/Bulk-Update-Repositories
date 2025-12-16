@@ -89,7 +89,7 @@ Install command:
 
 ### Git - Clone Repositories
 
-Clone all public repos from any GitHub user.
+#### `clone`: Clone all public repos from any GitHub user.
 
 - Download and allow execution command:  
   - `wget -q https://nikoboi.dev/sh/clone && chmod +x clone`  
@@ -102,6 +102,13 @@ Can be run however many times you want to clone every author's repositories you 
 
 To copy my personal workflow, you can just run:  
 - `bash <(wget -qO- https://nikoboi.dev/sh/workflow) && cd NikoboiNFTB`
+
+#### `clone-repo`: Clone a single specified repository.
+
+- Download and allow execution command:  
+  - `wget -q https://nikoboi.dev/sh/clone-repo && chmod +x clone-repo`  
+- Run command:  
+  - `./clone-repo`
 
 
 
