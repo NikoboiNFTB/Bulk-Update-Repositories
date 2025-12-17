@@ -58,14 +58,14 @@ Run scripts with `./script` or double clicking them. If it fails, make sure it's
 
 ---
 
-Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github raw](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/) domain. This is for link shortening and clarity. The github link is ridiculously long, as you can see just below.
+Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github raw](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
 
-You're right to be sceptical about this, but you can easily confirm the files are identical by running:
+You're right to be vary about this, but you can easily confirm the files are identical by running:
 
 ```bash
 diff \
   <(wget -qO- https://nikoboi.dev/sh/pull) \
-  <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)
+  <(wget -qO- https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push)
 ```
 
 This example will highlight the differences between the `pull` and `push` files. A blank or no result means they're identical.
@@ -76,7 +76,7 @@ This example will highlight the differences between the `pull` and `push` files.
 bash <(wget -qO- https://nikoboi.dev/sh/compare)
 ```
 
-> This is definitely absolutely not a maintenance script made public. No way. I would never.
+> This is definitely absolutely not a maintenance script made public. No way. I would never...
 
 - And you can audit any script before running it by running:
 
