@@ -3,16 +3,13 @@ set -e
 
 read -rp "Install directory (leave blank to use current directory): " install_dir
 
-# Expand ~ if present
 install_dir="${install_dir/#\~/$HOME}"
 
-# Default to current directory if empty
 if [ -z "$install_dir" ]; then
     install_dir="$PWD"
     echo "Using current directory: $install_dir"
 fi
 
-# Create directory if missing
 if [ ! -d "$install_dir" ]; then
     echo "Directory doesn’t exist. Making it for you."
     mkdir -p "$install_dir"
@@ -38,7 +35,6 @@ chmod +x status
 
 echo "Files downloaded"
 
-# Prompt for copying to home directory
 read -rp "Copy the scripts to ~/ for quick access anywhere? [y/N]: " choice
 
 case "$choice" in

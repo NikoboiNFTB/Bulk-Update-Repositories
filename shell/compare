@@ -26,7 +26,6 @@ echo
 echo "Files:"
 echo
 
-# print side-by-side with fixed spacing
 paste \
   <(printf '%s\n' "$PUBLIC_FILES") \
   <(printf '%s\n' "$REPO_FILES") \

@@ -21,11 +21,9 @@ else
     method="https"
 fi
 
-# Create author directory if it doesn't exist, then enter it
 mkdir -p "$author"
 cd "$author"
 
-# Keep this check intact, as requested
 if [ -d "$repo/.git" ]; then
     echo
     echo "Repository '$author/$repo' already exists."

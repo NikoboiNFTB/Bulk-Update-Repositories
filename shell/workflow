@@ -68,7 +68,6 @@ chmod +x ../clone-repo
 echo
 echo "Files copied"
 
-# Prompt to hide SSH scripts
 echo
 read -rp "Hide SSH scripts? [y/N]: " hide_ssh
 
