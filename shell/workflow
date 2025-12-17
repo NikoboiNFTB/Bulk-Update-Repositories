@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+echo
 read -rp "SSH or HTTPS (if unsure, type HTTPS or hit Enter): " method
 method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
 
@@ -11,6 +12,7 @@ else
     method="https"
 fi
 
+echo
 echo "Fetching repo list for NikoboiNFTB..."
 repos=$(curl -s "https://api.github.com/users/NikoboiNFTB/repos?per_page=200" \
         | jq -r '.[].name')
@@ -18,7 +20,9 @@ repos=$(curl -s "https://api.github.com/users/NikoboiNFTB/repos?per_page=200" \
 mkdir -p "NikoboiNFTB"
 cd "NikoboiNFTB" || exit 1
 
+echo
 echo "Cloning using $method..."
+echo
 for repo in $repos; do
   if [ -d "$repo/.git" ]; then
     echo "$repo already exists, skipping."
@@ -34,6 +38,7 @@ done
 
 wait
 
+echo
 echo "Copying files..."
 
 cp GitHub-Tools/shell/all-pull all-pull
@@ -60,9 +65,11 @@ chmod +x ../clone-author
 cp GitHub-Tools/shell/clone ../clone-repo
 chmod +x ../clone-repo
 
+echo
 echo "Files copied"
 
 # Prompt to hide SSH scripts
+echo
 read -rp "Hide SSH scripts? [y/N]: " hide_ssh
 
 case "$hide_ssh" in
@@ -77,4 +84,6 @@ case "$hide_ssh" in
         ;;
 esac
 
+echo
 echo "Done!"
+echo
