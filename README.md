@@ -65,8 +65,7 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
 >>   - `bash <(wget -qO- https://nikoboi.dev/sh/compare)`  
 >> - And you can audit any script before running it by running:  
 >>   - `cat <(wget -qO- https://nikoboi.dev/sh/compare)`  
->>> - Useful not only for this repo, but all scripts on the internet.
->>>     Here's an example using the NextDNS install script:
+>>> Useful not only for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:  
 >>>    - `cat <(wget -qO- https://nextdns.io/install)`  
 >>
 >> The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [/sh/](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited.  
