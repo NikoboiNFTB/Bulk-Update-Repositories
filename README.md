@@ -13,7 +13,7 @@ These scripts are used to automate tasks on the [GitHub](https://github.com/) we
 To use them, you will need a userscript manager, such as [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) (Firefox) or [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) (Chromium).
 
 >> **Chromium Users:**
->> Make sure Tampermonkey can actually *run* userscripts:
+>> You will need to make sure Tampermonkey can actually *run* userscripts:
 >> - Go to `chrome://extensions/` (or equivalent)
 >> - Click **Details** under Tampermonkey
 >> - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
