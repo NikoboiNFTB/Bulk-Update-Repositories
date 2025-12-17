@@ -74,12 +74,12 @@ This example will highlight the differences between the `pull` and `push` files.
 bash <(wget -qO- https://nikoboi.dev/sh/compare)`
 ```
 
-- And you can audit any script before running it by running:  
+- And you can audit any script before running it by running:
 ```bash
 cat <(wget -qO- https://nikoboi.dev/sh/compare)`
 ```
 
-This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:  
+>> This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:
 ```bash
 cat <(wget -qO- https://nextdns.io/install)`
 ```
