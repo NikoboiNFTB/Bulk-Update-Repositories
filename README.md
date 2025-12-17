@@ -57,7 +57,9 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
 >> Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github raw](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/) domain. This is for link shortening and clarity. The github link is ridiculously long.  
 >>
 >> You're right to be sceptical about this, but you can easily confirm the files are identical by running:  
->> - `diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)`  
+>> - ```bash
+>> diff <(wget -qO- https://nikoboi.dev/sh/pull) <(wget -qO- https://raw.githubusercontent.>> com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)
+>> ```  
 >>
 >> This example will highlight the differences between the `pull` and `push` files. A blank or no result means they're identical.  
 >>
@@ -166,3 +168,10 @@ Included in `setup-auto`
 This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See [LICENSE](LICENSE) for details.
 
 Author: [Nikoboi](https://github.com/NikoboiNFTB)
+
+## Template
+
+```bash
+git clone https://github.com/Akash7016/triposr-web-interface.git
+cd triposr-web-interface
+```
