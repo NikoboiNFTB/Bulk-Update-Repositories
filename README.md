@@ -52,7 +52,7 @@ These scripts automate local Git tasks. Each file is a bash script. The extensio
 
 You should have a basic understanding of SSH, Git, and simple Linux commands (`wget`, `chmod`, `./` etc.). You *can* use these without knowing what you're doing, but no sane person will ever recommend you do that.
 
-Run scripts with `./script` or double clicking them. If it fails, make it executable with `chmod +x script`.
+Run scripts with `./script` or double clicking them. If it fails, make sure it's executable: `chmod +x script`.
 
 ---
 
@@ -64,6 +64,8 @@ diff \
   <(wget -qO- https://nikoboi.dev/sh/pull) \
   <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)
 ```
+
+> As you can see, the raw.githubusercontent.com link is ridiculously long.
 
 This example will highlight the differences between the `pull` and `push` files. A blank or no result means they're identical.  
 
