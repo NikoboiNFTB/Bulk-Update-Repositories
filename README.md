@@ -25,10 +25,12 @@ To use them, you will need a userscript manager, such as [Violentmonkey](https:/
 Automates GitHub’s multi-step “Delete this repository” process. The script clicks through intermediate buttons and auto-types the repository name. You still manually click the first and last delete buttons, and you will need to stay in the window during the process, otherwise GitHub whines that you're a bot.
 
 Install the Semi-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-delete-1.2.user.js))
-- Only types in the text box.
+
+> Only types in the text box.
 
 Install the Full-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-delete-1.6.user.js))
-- Handles everything between the first and last click.
+
+> Handles everything between the first and last click.
 
 
 
