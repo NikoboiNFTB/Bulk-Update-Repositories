@@ -68,7 +68,7 @@ diff \
   <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)
 ```
 
-This example will highlight the differences between the `pull` and `push` files. A blank or no result means they're identical.
+This example will highlight the **differences** between the `pull` and `push` files. A blank or no result means they're identical.
 
 - I, of course, automated this process. You can try it out by running:
 
