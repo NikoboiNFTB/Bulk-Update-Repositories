@@ -119,41 +119,51 @@ bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)
 
 ### Git - Clone Repositories
 
-#### [`clone`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/clone): Clone all public repos from any GitHub user.
+
+
+#### []`clone-repo`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/clone-repo): Clone a single specified repository.
 
 - Download and allow execution command:
 
 ```bash
-wget -q https://nikoboi.dev/sh/clone
-chmod +x clone
+wget -q https://nikoboi.dev/sh/clone-repo
+chmod +x clone-repo
 ```
 
 - Run command:
 
 ```bash
-./clone
+./clone-repo
+```
+
+
+
+#### [`clone-author`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/clone-author): Clone all public repos from any GitHub user.
+
+- Download and allow execution command:
+
+```bash
+wget -q https://nikoboi.dev/sh/clone-author
+chmod +x clone-author
+```
+
+- Run command:
+
+```bash
+./clone-author
 ```
 
 Can be run however many times you want to clone every author's repositories you want. Sky is the limit... and your network.
 
 >> Note: Cloning many or large repositories can take a long time.
 
-To copy my personal workflow, you can just run:  
-- `bash <(wget -qO- https://nikoboi.dev/sh/workflow)`
 
-#### `clone-repo`: Clone a single specified repository.
 
-- Download and allow execution command:  
-  - `wget -q https://nikoboi.dev/sh/clone-repo && chmod +x clone-repo`  
-- Run command:  
-  - `./clone-repo`
+- To copy my personal workflow, you can just run:
 
-Can be run however many times you want. Sky is the limit.
-
->> Note: Cloning many or large repositories can take a long time.
-
-To copy my personal workflow, you can just run:  
-- `bash <(wget -qO- https://nikoboi.dev/sh/workflow)`
+```bash
+bash <(wget -qO- https://nikoboi.dev/sh/workflow)
+```
 
 
 
@@ -178,8 +188,11 @@ These scripts are used to, you guessed it, disable and enable SSH on your local 
 
 The scripts are noth path-bound like the others, so feel free to install them wherever you want.
 
-Install command:  
-- `bash <(wget -qO- https://nikoboi.dev/sh/setup-ssh)`
+- Install command:
+
+```bash
+bash <(wget -qO- https://nikoboi.dev/sh/setup-ssh)
+```
 
 
 
@@ -199,10 +212,4 @@ Included in `setup-auto`
 This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See [LICENSE](LICENSE) for details.
 
 Author: [Nikoboi](https://github.com/NikoboiNFTB)
-
-## Template
-
-```bash
-git clone https://github.com/Akash7016/triposr-web-interface.git
-cd triposr-web-interface
-```
+Script logic fined tuned using ChatGPT
