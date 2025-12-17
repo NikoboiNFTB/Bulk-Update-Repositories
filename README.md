@@ -47,9 +47,9 @@ Reloads the repository page automatically when the project is in a “pending de
 These scripts automate local Git tasks. Each file is a bash script. The extension `.sh` has been stripped for cleanliness.
 
 - All examples assume this directory structure:
-  - `~/git/$author/$repo`
-- Example:
-  - `~/git/NikoboiNFTB/GitHub-Tools`
+  - `~/GitHub/$author/$repo`
+- For example this repository would be:
+  - `~/GitHub/NikoboiNFTB/GitHub-Tools`
 - Use differing paths on your own accord.
 
 You should have a basic understanding of SSH, Git, and simple Linux commands (`wget`, `chmod`, `./` etc.). You *can* use these without knowing what you're doing, but no sane person will ever recommend you do that.
