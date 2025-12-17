@@ -119,12 +119,19 @@ bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)
 
 ### Git - Clone Repositories
 
-#### `clone`: Clone all public repos from any GitHub user.
+#### []`clone`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push): Clone all public repos from any GitHub user.
 
-- Download and allow execution command:  
-  - `wget -q https://nikoboi.dev/sh/clone && chmod +x clone`  
-- Run command:  
-  - `./clone`
+- Download and allow execution command:
+
+```bash
+wget -q https://nikoboi.dev/sh/clone && chmod +x clone
+```
+
+- Run command:
+
+```bash
+./clone
+```
 
 Can be run however many times you want to clone every author's repositories you want. Sky is the limit... and your network.
 
