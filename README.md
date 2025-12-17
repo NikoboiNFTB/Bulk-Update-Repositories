@@ -109,8 +109,11 @@ The scripts themselves will always call the github.com domain, because the scrip
   - Only pulls or pushes one repository, the one it's run in.  
   - Can be run in any repository with `../pull` if it's placed in the projects folder.
 
-Install command:  
-- `bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)`
+Install command:
+
+```bash
+bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)
+```
 
 
 
