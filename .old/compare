@@ -23,17 +23,13 @@ PUBLIC_FILES=$(list_files "$PUBLIC_API")
 REPO_FILES=$(list_files "$REPO_API")
 
 echo
-echo "Files:"
+echo "Files from the website:"
 echo
-
-# print side-by-side with fixed spacing
-paste \
-  <(printf '%s\n' "$PUBLIC_FILES") \
-  <(printf '%s\n' "$REPO_FILES") \
-| expand -t 24 \
-| sed '1i\
-Website                 Repository\
--------                 ----------'
+printf '  %s\n' $PUBLIC_FILES
+echo
+echo "Files from the repository:"
+echo
+printf '  %s\n' $REPO_FILES
 
 echo
 echo "Files listed"
