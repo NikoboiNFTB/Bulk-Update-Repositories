@@ -78,6 +78,14 @@ bash <(wget -qO- https://nikoboi.dev/sh/compare)
 
 > This is definitely absolutely not a maintenance script made public. No way. I would never...
 
+- Can also be done the stupid but simple way:
+
+```bash
+git clone https://github.com/NikoboiNFTB/GitHub-Tools.git &&
+git clone https://github.com/NikoboiNFTB/nikoboinftb.github.io.git &&
+diff -ru GitHub-Tools/shell nikoboinftb.github.io/sh
+```
+
 - And you can audit any script before running it by running:
 
 ```bash
