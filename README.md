@@ -76,13 +76,13 @@ bash <(wget -qO- https://nikoboi.dev/sh/compare)`
 
 >> This is definitely absolutely not a maintenance script made public. No way. I would never.
 
-And you can audit any script before running it by running:
+- And you can audit any script before running it by running:
 
 ```bash
 cat <(wget -qO- https://nikoboi.dev/sh/compare)`
 ```
 
-This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:
+- This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:
 
 ```bash
 cat <(wget -qO- https://nextdns.io/install)`
@@ -92,9 +92,9 @@ The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages r
 
 The scripts themselves will always call the github.com domain, because the scripts looking good isn't as important.
 
-
-
 ---
+
+
 
 ### Git - Pull/Push Automation
 
