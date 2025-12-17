@@ -81,8 +81,8 @@ bash <(wget -qO- https://nikoboi.dev/sh/compare)
 - Can also be done the stupid but simple way:
 
 ```bash
-git clone https://github.com/NikoboiNFTB/GitHub-Tools.git &&
-git clone https://github.com/NikoboiNFTB/nikoboinftb.github.io.git &&
+git clone https://github.com/NikoboiNFTB/GitHub-Tools
+git clone https://github.com/NikoboiNFTB/nikoboinftb.github.io
 diff -ru GitHub-Tools/shell nikoboinftb.github.io/sh
 ```
 
