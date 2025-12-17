@@ -112,8 +112,7 @@ The scripts themselves will always call the github.com domain, because the scrip
 Install command:
 
 ```bash
-wget -q https://nikoboi.dev/sh/clone
-chmod +x clone
+bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)
 ```
 
 
@@ -125,7 +124,8 @@ chmod +x clone
 - Download and allow execution command:
 
 ```bash
-wget -q https://nikoboi.dev/sh/clone && chmod +x clone
+wget -q https://nikoboi.dev/sh/clone
+chmod +x clone
 ```
 
 - Run command:
