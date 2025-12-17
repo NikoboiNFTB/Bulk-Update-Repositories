@@ -60,9 +60,9 @@ chmod +x push
 cp GitHub-Tools/shell/status status
 chmod +x status
 
-cp GitHub-Tools/shell/clone ../clone-author
+cp GitHub-Tools/shell/clone-author ../clone-author
 chmod +x ../clone-author
-cp GitHub-Tools/shell/clone ../clone-repo
+cp GitHub-Tools/shell/clone-repo ../clone-repo
 chmod +x ../clone-repo
 
 echo
