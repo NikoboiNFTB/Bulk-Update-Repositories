@@ -65,7 +65,7 @@ diff \
   <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)
 ```
 
-> As you can see, the raw.githubusercontent.com link is ridiculously long.
+> As you can see, the raw.githubusercontent.com link is ridiculously long and unclear.
 
 This example will highlight the differences between the `pull` and `push` files. A blank or no result means they're identical.  
 
