@@ -68,9 +68,9 @@ Run scripts with `./script` or double clicking them. If it fails, make it execut
 >>> Useful not only for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:  
 >>>    - `cat <(wget -qO- https://nextdns.io/install)`  
 >>
->> The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [/sh/](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited.  
+>> The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [/sh/](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited at any time.  
 >>
->> The scripts themselves will always call the github.com domain, because there cleanliness isn't as important.
+>> The scripts themselves will always call the github.com domain, because the scripts looking good isn't as important.
 
 
 
