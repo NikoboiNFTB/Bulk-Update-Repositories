@@ -74,7 +74,7 @@ This example will highlight the differences between the `pull` and `push` files.
 bash <(wget -qO- https://nikoboi.dev/sh/compare)`
 ```
 
->> This is definitely absolutely for sure not a maintenance script made public. No way. I would never.
+>> This is definitely absolutely not a maintenance script made public. No way. I would never.
 
 And you can audit any script before running it by running:
 
