@@ -90,6 +90,8 @@ The scripts themselves will always call the github.com domain, because the scrip
 
 
 
+---
+
 ### Git - Pull/Push Automation
 
 - [`all-pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull)  
