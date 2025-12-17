@@ -54,7 +54,9 @@ You should have a basic understanding of SSH, Git, and simple Linux commands (`w
 
 Run scripts with `./script` or double clicking them. If it fails, make it executable with `chmod +x script`.
 
-> Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github raw](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/) domain. This is for link shortening and clarity. The github link is ridiculously long.  
+---
+
+Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github raw](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/) domain. This is for link shortening and clarity. The github link is ridiculously long.  
 >
 > You're right to be sceptical about this, but you can easily confirm the files are identical by running:  
 ```bash
