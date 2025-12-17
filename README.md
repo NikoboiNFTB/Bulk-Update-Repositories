@@ -56,35 +56,39 @@ Run scripts with `./script` or double clicking them. If it fails, make sure it's
 
 ---
 
-Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github raw](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/) domain. This is for link shortening and clarity. The github link is ridiculously long.  
+Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github raw](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/) domain. This is for link shortening and clarity. The github link is ridiculously long, as you can see just below.
 
-You're right to be sceptical about this, but you can easily confirm the files are identical by running:  
+You're right to be sceptical about this, but you can easily confirm the files are identical by running:
+
 ```bash
 diff \
   <(wget -qO- https://nikoboi.dev/sh/pull) \
   <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push)
 ```
 
-> As you can see, the raw.githubusercontent.com link is ridiculously long and unclear.
+This example will highlight the differences between the `pull` and `push` files. A blank or no result means they're identical.
 
-This example will highlight the differences between the `pull` and `push` files. A blank or no result means they're identical.  
+- I, of course, automated this process. You can try it out by running:
 
-- I, of course, also automated this, which you can do by running:
 ```bash
 bash <(wget -qO- https://nikoboi.dev/sh/compare)`
 ```
 
-- And you can audit any script before running it by running:
+>> This is definitely absolutely for sure not a maintenance script made public. No way. I would never.
+
+And you can audit any script before running it by running:
+
 ```bash
 cat <(wget -qO- https://nikoboi.dev/sh/compare)`
 ```
 
->> This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:
+This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:
+
 ```bash
 cat <(wget -qO- https://nextdns.io/install)`
 ```
 
-The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [/sh/](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited at any time.  
+The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [/sh/](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited at any time.
 
 The scripts themselves will always call the github.com domain, because the scripts looking good isn't as important.
 
