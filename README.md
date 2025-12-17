@@ -112,14 +112,15 @@ The scripts themselves will always call the github.com domain, because the scrip
 Install command:
 
 ```bash
-bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)
+wget -q https://nikoboi.dev/sh/clone
+chmod +x clone
 ```
 
 
 
 ### Git - Clone Repositories
 
-#### [`clone`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push): Clone all public repos from any GitHub user.
+#### [`clone`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/clone): Clone all public repos from any GitHub user.
 
 - Download and allow execution command:
 
