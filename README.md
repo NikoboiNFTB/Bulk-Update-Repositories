@@ -136,6 +136,8 @@ chmod +x clone-repo
 ./clone-repo
 ```
 
+>> Note: Cloning large repositories can take a *long* time.
+
 
 
 #### [`clone-author`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/clone-author): Clone all public repos from any GitHub user.
@@ -153,9 +155,7 @@ chmod +x clone-author
 ./clone-author
 ```
 
-Can be run however many times you want to clone every author's repositories you want. Sky is the limit... and your network.
-
->> Note: Cloning many or large repositories can take a long time.
+>> Note: Cloning many repositories can take a *long* time.
 
 
 
