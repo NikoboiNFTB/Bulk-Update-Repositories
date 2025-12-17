@@ -121,7 +121,7 @@ bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)
 
 
 
-#### []`clone-repo`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/clone-repo): Clone a single specified repository.
+#### [`clone-repo`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/clone-repo): Clone a single specified repository.
 
 - Download and allow execution command:
 
