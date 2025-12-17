@@ -22,18 +22,18 @@ cd "$install_dir"
 
 echo "Downloading files..."
 
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all-pull
 chmod +x all-pull
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all-push
 chmod +x all-push
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-status
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all-status
 chmod +x all-status
 
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/pull
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/pull
 chmod +x pull
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push
 chmod +x push
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/status
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/status
 chmod +x status
 
 echo "Files downloaded"

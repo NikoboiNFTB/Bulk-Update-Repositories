@@ -22,10 +22,10 @@ cd "$install_dir"
 
 echo "Downloading files..."
 
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-ssh
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/disable-ssh
 chmod +x disable-ssh
 
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-ssh
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/enable-ssh
 chmod +x enable-ssh
 
 echo "Files downloaded"
