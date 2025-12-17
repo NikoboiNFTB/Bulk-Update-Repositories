@@ -12,11 +12,11 @@ These scripts are used to automate tasks on the [GitHub](https://github.com/) we
 
 To use them, you will need a userscript manager, such as [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) (Firefox) or [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) (Chromium).
 
->> **Chromium Users:**
->> You will need to make sure Tampermonkey can actually *run* userscripts:
->> - Go to `chrome://extensions/` (or equivalent)
->> - Click **Details** under Tampermonkey
->> - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
+> **Chromium Users:**
+> You will need to make sure Tampermonkey can actually *run* userscripts:
+> - Go to `chrome://extensions/` (or equivalent)
+> - Click **Details** under Tampermonkey
+> - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
 
 
 
@@ -74,7 +74,7 @@ This example will highlight the differences between the `pull` and `push` files.
 bash <(wget -qO- https://nikoboi.dev/sh/compare)
 ```
 
->> This is definitely absolutely not a maintenance script made public. No way. I would never.
+> This is definitely absolutely not a maintenance script made public. No way. I would never.
 
 - And you can audit any script before running it by running:
 
@@ -136,7 +136,7 @@ chmod +x clone-repo
 ./clone-repo
 ```
 
->> Note: Cloning large repositories can take a *long* time.
+> Note: Cloning large repositories can take a *long* time.
 
 
 
@@ -155,7 +155,7 @@ chmod +x clone-author
 ./clone-author
 ```
 
->> Note: Cloning many repositories can take a *long* time.
+> Note: Cloning many repositories can take a *long* time.
 
 
 
@@ -171,11 +171,11 @@ bash <(wget -qO- https://nikoboi.dev/sh/workflow)
 
 These scripts are used to, you guessed it, disable and enable SSH on your local machine, while keeping the same public key linked to your GitHub account.
 
->> Note: These scripts are for convenience, not high-security.
->> If security is what you want, delete the key from your GitHub account.
->>
->> They can, however, be hidden for a little bit of extra feelgood.
->> Just prefix the file name with a .
+> Note: These scripts are for convenience, not high-security.
+> If security is what you want, delete the key from your GitHub account.
+>
+> They can, however, be hidden for a little bit of extra feelgood.
+> Just prefix the file name with a .
 
 - [`disable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-ssh)
   - Makes a folder ~/.ssh.bak
