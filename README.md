@@ -69,7 +69,7 @@ diff \
 
 This example will highlight the differences between the `pull` and `push` files. A blank or no result means they're identical.  
 
-- I, of course, also automated this, which you can do by running:  
+- I, of course, also automated this, which you can do by running:
 ```bash
 bash <(wget -qO- https://nikoboi.dev/sh/compare)`
 ```
