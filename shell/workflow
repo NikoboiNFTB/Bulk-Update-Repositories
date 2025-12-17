@@ -57,6 +57,8 @@ chmod +x status
 
 cp GitHub-Tools/shell/clone ../clone
 chmod +x ../clone
+cp GitHub-Tools/shell/clone ../clone-repo
+chmod +x ../clone-repo
 
 echo "Files copied"
 
