@@ -24,10 +24,10 @@ To use them, you will need a userscript manager, such as [Violentmonkey](https:/
 
 Automates GitHub’s multi-step “Delete this repository” process. The script clicks through intermediate modals and auto-types the repository name. You still manually click the first and last delete buttons, and you will need to stay in the window during the process, otherwise GitHub whines that you're a bot.
 
-Install the Semi-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-delete-1.2.user.js))  
+Install the Semi-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-delete-1.2.user.js))
 - Only types in the text box.
 
-Install the Full-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-delete-1.6.user.js))  
+Install the Full-Auto Version ([here](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/git-delete-1.6.user.js))
 - Handles everything between the first and last click.
 
 
@@ -98,15 +98,15 @@ The scripts themselves will always call the github.com domain, because the scrip
 
 ### Git - Pull/Push Automation
 
-- [`all-pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull)  
-- [`all-push`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push)  
-  - Run in `~/git/$author`.  
-  - Pulls or pushes all repositories at once.  
-  - Must be run in the projects folder.  
-- [`pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/pull)  
-- [`push`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push)  
-  - Run in `~/git/$author/$repo`.  
-  - Only pulls or pushes one repository, the one it's run in.  
+- [`all-pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-pull)
+- [`all-push`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/all-push)
+  - Run in `~/git/$author`.
+  - Pulls or pushes all repositories at once.
+  - Must be run in the projects folder.
+- [`pull`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/pull)
+- [`push`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/push)
+  - Run in `~/git/$author/$repo`.
+  - Only pulls or pushes one repository, the one it's run in.
   - Can be run in any repository with `../pull` if it's placed in the projects folder.
 
 Install command:
@@ -171,19 +171,19 @@ bash <(wget -qO- https://nikoboi.dev/sh/workflow)
 
 These scripts are used to, you guessed it, disable and enable SSH on your local machine, while keeping the same public key linked to your GitHub account.
 
->> Note: These scripts are for convenience, not high-security.  
->> If security is what you want, delete the key from your GitHub account.  
+>> Note: These scripts are for convenience, not high-security.
+>> If security is what you want, delete the key from your GitHub account.
 >>
->> They can, however, be hidden for a little bit of extra feelgood.  
+>> They can, however, be hidden for a little bit of extra feelgood.
 >> Just prefix the file name with a .
 
-- [`disable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-ssh)  
-  - Makes a folder ~/.ssh.bak  
-  - Moves `id_ed25519` and `id_ed25519.pub` from `~/.ssh` to `~/.ssh.bak`  
-  - Removes all SSH keys using `ssh-add -D`  
-- [`enable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-ssh)  
-  - Moves `id_ed25519` and `id_ed25519.pub` back from `~/.ssh.bak` to `~/.ssh`  
-  - Adds the SSH key using `ssh-add ~/.ssh/id_ed25519`  
+- [`disable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/disable-ssh)
+  - Makes a folder ~/.ssh.bak
+  - Moves `id_ed25519` and `id_ed25519.pub` from `~/.ssh` to `~/.ssh.bak`
+  - Removes all SSH keys using `ssh-add -D`
+- [`enable-ssh`](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/enable-ssh)
+  - Moves `id_ed25519` and `id_ed25519.pub` back from `~/.ssh.bak` to `~/.ssh`
+  - Adds the SSH key using `ssh-add ~/.ssh/id_ed25519`
   - Deletes `~/.ssh.bak`
 
 The scripts are noth path-bound like the others, so feel free to install them wherever you want.
@@ -198,9 +198,9 @@ bash <(wget -qO- https://nikoboi.dev/sh/setup-ssh)
 
 ### Git - Status
 
-- `all-status`  
-  - Runs `git add .` and `git status` in every repository  
-- `status`  
+- `all-status`
+  - Runs `git add .` and `git status` in every repository
+- `status`
   - Runs `git add .` and `git status` in the current repository.
 
 Included in `setup-auto`
