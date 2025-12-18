@@ -16,6 +16,8 @@ Each tool exists to make repetitive Git tasks a little less tedious.
 
 
 
+---
+
 ## Userscripts (for web)
 
 These scripts are used to automate tasks on the [GitHub](https://github.com/) website. They can be used with zero experience.
@@ -51,6 +53,8 @@ Reloads the repository page automatically when the project is in a “pending de
  You can install it ([here](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/userscript/git-reload-1.2.user.js))
 
 
+
+---
 
 ## Shell Scripts (for git)
 
