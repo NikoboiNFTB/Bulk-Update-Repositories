@@ -6,6 +6,16 @@ Each tool exists to make repetitive Git tasks a little less tedious.
 
 
 
+## TL;DR
+
+- Userscripts that automate GitHub web.
+- Bash scripts to manage Git repos.
+- Assumes basic Linux and SSH knowledge.
+- You should see what each script does before running.
+  - They aren't destructive, but that doesn't mean you should run any scripts from the internet haphazardly.
+
+
+
 ## Userscripts (for web)
 
 These scripts are used to automate tasks on the [GitHub](https://github.com/) website. They can be used with zero experience.
