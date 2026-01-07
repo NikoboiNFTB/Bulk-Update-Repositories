@@ -7,7 +7,7 @@ for d in */; do
         echo "Pushing $d..."
         (
             git -C "$d" add .
-            git -C "$d" commit -m "Automated update" || true
+            git -C "$d" commit -m "auto-commit" || true
             git -C "$d" push
         ) &
     fi
