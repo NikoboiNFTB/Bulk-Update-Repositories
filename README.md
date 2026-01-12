@@ -42,9 +42,9 @@ Reloads the repository page automatically when the project is in a “pending de
 
  You can install it ([here](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/userscript/git-reload-1.2.user.js))
 
-## Shell Scripts (for git)
+## Shell Scripts (for Git)
 
-These scripts automate local Git tasks. Each file is a bash script. The extension `.sh` has been stripped for cleanliness.
+These scripts automate Git tasks on your machine. Each file is a shell script. The extension (`.sh`) has been stripped for cleanliness.
 
 - All examples assume this directory structure:
   - `~/GitHub/$author/$repo`
