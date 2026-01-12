@@ -56,9 +56,9 @@ You should have a basic understanding of SSH, Git, and simple Linux commands (`w
 
 Run scripts with `./script` or double clicking them. If it fails, make sure it's executable: `chmod +x script`.
 
-Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github raw](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
+Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [raw.githubusercontent.com](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
 
-You're right to be vary about this, but you can easily confirm the files are identical by running:
+You're right to be vary about this, but you can easily confirm the files are identical by running (for example):
 
 ```bash
 diff \
@@ -68,7 +68,7 @@ diff \
 
 This example will highlight the **differences** between the `pull` and `push` files. A blank or no result means they're identical.
 
-- I, of course, automated this process. You can try it out by running:
+I, of course, automated this process. You can try it out by running:
 
 ```bash
 bash <(wget -qO- https://nikoboi.dev/sh/compare)
@@ -76,13 +76,13 @@ bash <(wget -qO- https://nikoboi.dev/sh/compare)
 
 >> This is definitely absolutely not a maintenance script made public. No way. I would never...
 
-- And you can audit any script before running it by running:
+And you can audit any script before running it by running:
 
 ```bash
 cat <(wget -qO- https://nikoboi.dev/sh/compare)
 ```
 
-- This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:
+This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:
 
 ```bash
 cat <(wget -qO- https://nextdns.io/install)
