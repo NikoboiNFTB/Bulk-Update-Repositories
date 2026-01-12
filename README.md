@@ -12,7 +12,7 @@ Each tool exists to make repetitive Git tasks a little less tedious.
 - Bash scripts to manage Git repos.
 - Assumes basic Linux and SSH knowledge.
 - You should see what each script does before running.
-  - They aren't destructive, but that doesn't mean you should run any scripts from the internet haphazardly.
+  - They aren't destructive, but they do *things*. You should know any and all changes made to your machine.
 
 
 
