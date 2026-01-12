@@ -18,11 +18,11 @@ These scripts are used to automate tasks on the [GitHub](https://github.com/) we
 
 To use them, you will need a userscript manager, such as [Violentmonkey](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/) (Firefox) or [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) (Chromium).
 
-> **Chromium Users:**
-> You will need to make sure Tampermonkey can actually *run* userscripts:
-> - Go to `chrome://extensions/` (or equivalent)
-> - Click **Details** under Tampermonkey
-> - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
+>> **Chromium Users:**
+>> You will need to make sure Tampermonkey can actually *run* userscripts:
+>> - Go to `chrome://extensions/` (or equivalent)
+>> - Click **Details** under Tampermonkey
+>> - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
 
 ### GitHub – Deletion Confirmation Auto-filler
 
@@ -30,11 +30,11 @@ Automates GitHub’s multi-step “Delete this repository” process. The script
 
 Install the Semi-Auto Version ([here](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/userscript/git-delete-1.2.user.js))
 
-> Only types in the text box.
+>> Only types in the text box.
 
 Install the Full-Auto Version ([here](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/userscript/git-delete-1.6.user.js))
 
-> Handles everything between the first and last click.
+>> Handles everything between the first and last click.
 
 ### GitHub - Auto-Reload if Pending Deployment
 
@@ -157,11 +157,11 @@ bash <(wget -qO- https://nikoboi.dev/sh/workflow)
 
 These scripts are used to, you guessed it, disable and enable SSH on your local machine, while keeping the same public key linked to your GitHub account.
 
-> Note: These scripts are for convenience, not high-security.
-> If security is what you want, delete the key from your GitHub account.
->
-> They can, however, be hidden for a little bit of extra feelgood.
-> Just prefix the file name with a .
+>> Note: These scripts are for convenience, not high-security.
+>> If security is what you want, delete the key from your GitHub account.
+>>
+>> They can, however, be hidden for a little bit of extra feelgood.
+>> Just prefix the file name with a .
 
 - [`disable-ssh`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/disable-ssh)
   - Makes a folder ~/.ssh.bak
