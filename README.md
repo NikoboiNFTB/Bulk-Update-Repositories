@@ -4,19 +4,13 @@ A collection of scripts and userscripts for automating GitHub maintenance and re
 
 Each tool exists to make repetitive Git tasks a little less tedious.
 
-
-
 ## TL;DR
 
 - Userscripts that automate GitHub web.
 - Bash scripts to manage Git repos.
 - Assumes basic Linux and SSH knowledge.
 - You should see what each script does before running.
-  - They aren't destructive, but they do *things*. You should know any and all changes made to your machine.
-
-
-
----
+  - They aren't destructive, but they do *something*, and you should know any and all changes made to your machine.
 
 ## Userscripts (for web)
 
@@ -30,8 +24,6 @@ To use them, you will need a userscript manager, such as [Violentmonkey](https:/
 > - Click **Details** under Tampermonkey
 > - Enable **“Allow access to file URLs”**, **“Allow User Scripts”** and **"Developer Mode"**, then hit **"Update"**
 
-
-
 ### GitHub – Deletion Confirmation Auto-filler
 
 Automates GitHub’s multi-step “Delete this repository” process. The script clicks through intermediate buttons and auto-types the repository name. You still manually click the first and last delete buttons, and you will need to stay in the window during the process, otherwise GitHub whines that you're a bot.
@@ -44,17 +36,11 @@ Install the Full-Auto Version ([here](https://raw.githubusercontent.com/NikoboiN
 
 > Handles everything between the first and last click.
 
-
-
 ### GitHub - Auto-Reload if Pending Deployment
 
 Reloads the repository page automatically when the project is in a “pending deployment” state. Useful for GitHub Pages development.
 
  You can install it ([here](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/userscript/git-reload-1.2.user.js))
-
-
-
----
 
 ## Shell Scripts (for git)
 
@@ -69,8 +55,6 @@ These scripts automate local Git tasks. Each file is a bash script. The extensio
 You should have a basic understanding of SSH, Git, and simple Linux commands (`wget`, `chmod`, `./` etc.). You *can* use these without knowing what you're doing, but no sane person will ever recommend you do that.
 
 Run scripts with `./script` or double clicking them. If it fails, make sure it's executable: `chmod +x script`.
-
----
 
 Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [github raw](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
 
@@ -90,7 +74,7 @@ This example will highlight the **differences** between the `pull` and `push` fi
 bash <(wget -qO- https://nikoboi.dev/sh/compare)
 ```
 
-> This is definitely absolutely not a maintenance script made public. No way. I would never...
+>> This is definitely absolutely not a maintenance script made public. No way. I would never...
 
 - And you can audit any script before running it by running:
 
@@ -107,10 +91,6 @@ cat <(wget -qO- https://nextdns.io/install)
 The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [/sh/](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited at any time.
 
 The scripts themselves will always call the github.com domain, because the scripts looking good isn't as important.
-
----
-
-
 
 ### Git - Pull/Push Automation
 
@@ -131,11 +111,7 @@ Install command:
 bash <(wget -qO- https://nikoboi.dev/sh/setup-auto)
 ```
 
-
-
 ### Git - Clone Repositories
-
-
 
 #### [`clone-repo`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone-repo): Clone a single specified repository.
 
@@ -152,9 +128,7 @@ chmod +x clone-repo
 ./clone-repo
 ```
 
-> Note: Cloning large repositories can take a *long* time.
-
-
+>> Note: Cloning large repositories can take a *long* time.
 
 #### [`clone-author`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/clone-author): Clone all public repos from any GitHub user.
 
@@ -171,17 +145,13 @@ chmod +x clone-author
 ./clone-author
 ```
 
-> Note: Cloning many repositories can take a *long* time.
-
-
+>> Note: Cloning many repositories can take a *long* time.
 
 #### [`workflow`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/workflow): Copy my personal workflow.
 
 ```bash
 bash <(wget -qO- https://nikoboi.dev/sh/workflow)
 ```
-
-
 
 ### Git - Disable and Enable SSH
 
@@ -210,8 +180,6 @@ The scripts are noth path-bound like the others, so feel free to install them wh
 bash <(wget -qO- https://nikoboi.dev/sh/setup-ssh)
 ```
 
-
-
 ### Git - Status
 
 - `all-status`
@@ -221,11 +189,19 @@ bash <(wget -qO- https://nikoboi.dev/sh/setup-ssh)
 
 Included in `setup-auto`
 
+## Contributing
 
+Feel free to fork this repository and submit issues or pull requests if you have any suggestions or improvements. If you encounter any bugs or have feature requests, please open an issue.
+
+## Credits
+
+Created by **[Nikoboi](https://github.com/NikoboiNFTB/)**  
+Script logic fined tuned using ChatGPT
 
 ## License
 
-This project is licensed under the **GNU General Public License v3.0 (GPLv3)**. See [LICENSE](LICENSE) for details.
+This project is licenced under the GNU General Public License V3. See [LICENSE](LICENSE) for details.
 
-Author: [Nikoboi](https://github.com/NikoboiNFTB)
-Script logic fined tuned using ChatGPT
+## Legal Disclaimer
+
+If needed, for traversing the gray areas.
