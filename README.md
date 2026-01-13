@@ -170,6 +170,7 @@ These scripts are used to, you guessed it, disable and enable SSH on your local 
 >>
 >> They can, however, be hidden for a little bit of extra feelgood.
 >> Just prefix the file name with a .
+>> >> The `setup-ssh` script asks if you want to hide the files.
 
 - [`disable-ssh`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/disable-ssh)
   - Makes a folder ~/.ssh.bak
