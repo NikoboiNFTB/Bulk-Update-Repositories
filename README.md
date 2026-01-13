@@ -165,12 +165,7 @@ bash <(wget -qO- https://nikoboi.dev/sh/workflow)
 
 These scripts are used to, you guessed it, disable and enable SSH on your local machine, while keeping the same public key linked to your GitHub account.
 
->> Note: These scripts are for convenience, not high-security.
->> If security is what you want, delete the key from your GitHub account.
->>
->> They can, however, be hidden for a little bit of extra feelgood.
->> Just prefix the file name with a .
->> The `setup-ssh` script will ask you if you want to hide the files.
+>> Note: These scripts are for convenience, not high-security. If security is what you want, delete the key from your GitHub account. They can, however, be hidden for a little bit of extra feelgood. Just prefix the file name with a "." The `setup-ssh` script will ask you if you want to hide the files.
 
 - [`disable-ssh`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/disable-ssh)
   - Makes a folder ~/.ssh.bak
