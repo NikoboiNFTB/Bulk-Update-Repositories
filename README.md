@@ -186,12 +186,12 @@ bash <(wget -qO- https://nikoboi.dev/sh/setup-ssh)
 
 ### Git - Status
 
-- `all-status`
+- [`all-status`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/all-status)
   - Runs `git add .` and `git status` in every repository
-- `status`
+- [`status`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/status)
   - Runs `git add .` and `git status` in the current repository.
 
-Included in `setup-auto`
+Included in [`setup-auto`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/setup-auto)
 
 ## Contributing
 
