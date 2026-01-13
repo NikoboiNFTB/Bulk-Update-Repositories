@@ -78,7 +78,7 @@ I, of course, automated this process. You can try it out by running:
 bash <(wget -qO- https://nikoboi.dev/sh/compare)
 ```
 
->> This is definitely absolutely not a maintenance script made public. No way. I would never...
+>> This is definitely absolutely not a maintenance script made public.
 
 And you can audit any script before running it by running:
 
