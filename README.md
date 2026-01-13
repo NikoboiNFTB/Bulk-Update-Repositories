@@ -58,7 +58,7 @@ Run scripts with `./script` or double clicking them. If it fails, make sure it's
 
 ### Disclaimer
 
-TL;DR: Don't worry about all this. [Skip](#git---pullpush-automation)?
+TL;DR: Don't worry about the install commands using my domain. [Skip](#git---pullpush-automation)?
 
 In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [raw.githubusercontent.com](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
 
