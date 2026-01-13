@@ -156,6 +156,8 @@ chmod +x clone-author
 #### [`workflow`](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/workflow): Copy my personal workflow.
 
 ```bash
+mkdir -p ~/GitHub
+cd ~/GitHub
 bash <(wget -qO- https://nikoboi.dev/sh/workflow)
 ```
 

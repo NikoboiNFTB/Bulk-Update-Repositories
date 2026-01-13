@@ -64,6 +64,8 @@ cp GitHub-Tools/shell/clone-author ../clone-author
 chmod +x ../clone-author
 cp GitHub-Tools/shell/clone-repo ../clone-repo
 chmod +x ../clone-repo
+cp GitHub-Tools/shell/workflow ../workflow
+chmod +x ../workflow
 
 echo
 echo "Files copied"
