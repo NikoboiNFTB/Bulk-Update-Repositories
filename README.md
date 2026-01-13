@@ -52,11 +52,15 @@ These scripts automate Git tasks on your machine. Each file is a shell script. T
   - `~/GitHub/NikoboiNFTB/GitHub-Tools`
 - Use differing paths on your own accord.
 
-You should have a basic understanding of SSH, Git, and simple Linux commands (`wget`, `chmod`, `./` etc.). You *can* use these without knowing what you're doing, but no sane person will ever recommend you do that.
+You should have a basic understanding of **SSH**, **Git**, and simple Linux commands, like `wget`, `chmod`, `./` etc.
 
-Run scripts with `./script` or double clicking them. If it fails, make sure it's executable: `chmod +x script`.
+Run scripts with `./script` or double clicking them. If it fails, make sure it's executable by using `chmod +x script` or Properties in your favorite file manager.
 
-Note: In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [raw.githubusercontent.com](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
+### Disclaimer
+
+TL;DR: Don't worry about all this. [Skip](#git---pullpush-automation)?
+
+In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [raw.githubusercontent.com](https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/push) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
 
 You're right to be vary about this, but you can easily confirm the files are identical by running (for example):
 
