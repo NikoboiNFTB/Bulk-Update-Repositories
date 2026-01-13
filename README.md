@@ -94,7 +94,7 @@ This is not only useful for this repo, but all scripts on the internet. Here's a
 cat <(wget -qO- https://nextdns.io/install)
 ```
 
-The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [/sh/](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited at any time.
+The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [`/sh/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited at any time.
 
 The scripts themselves will always call the github.com domain, because the scripts looking good isn't as important.
 
