@@ -178,7 +178,7 @@ These scripts are used to, you guessed it, disable and enable SSH on your machin
 
 The scripts are noth path-bound like the others, so feel free to install them wherever you want.
 
-- Install command:
+Install command:
 
 ```bash
 bash <(wget -qO- https://nikoboi.dev/sh/setup-ssh)
