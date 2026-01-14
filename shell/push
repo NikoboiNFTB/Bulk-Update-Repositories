@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+# Stage all changes
 git add .
-git commit -m "auto-commit"
+
+# Prompt the user for a commit message
+read -rp "Enter commit message: " commit_message
+
+# Check if the user entered a message
+if [ -z "$commit_message" ]; then
+    echo "Commit message cannot be empty. Aborting."
+    exit 1
+fi
+
+# Commit and push
+git commit -m "$commit_message"
 git push
