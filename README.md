@@ -54,7 +54,7 @@ These scripts automate Git tasks on your machine. Each file is a shell script. T
 
 You should have a basic understanding of **SSH**, **Git**, and simple Linux commands, like `wget`, `chmod`, `./` etc.
 
-Run scripts with `./script` or double clicking them. If it fails, make sure it's executable by using `chmod +x script` or Properties in your favorite file manager.
+Run scripts with `./script`, `bash script` or double clicking them. If it fails, make sure it's executable by using `chmod +x script` or Properties in your favorite file manager.
 
 ### Disclaimer
 
@@ -96,7 +96,7 @@ cat <(wget -qO- https://nextdns.io/install)
 
 The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [`/sh/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited at any time.
 
-The scripts themselves will always call the github.com domain, because the scripts looking good isn't as important.
+The scripts themselves will always call the [raw.githubusercontent.com domain](raw.githubusercontent.com), because the scripts looking good isn't as important.
 
 ### Git - Pull/Push Automation
 
