@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Clone all repos into a directory named after the username
 #
 # Here's how to setup efficiently for your own use (step-by-step):

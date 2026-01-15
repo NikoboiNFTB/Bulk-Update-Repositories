@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # -------------------------------------------------------------
 # Commit and push all repositories in the current directory.
 #

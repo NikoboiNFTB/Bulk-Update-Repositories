@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # -------------------------------------------------------------
 # Automatically switch all repositories in the current directory to SSH remotes.
 #

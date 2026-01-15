@@ -1,5 +1,6 @@
 #!/bin/bash
 # A simple script to clone all NikoboiNFTB repositories
+# Hard-coded = Garbage
 
 repos=(
   ChatGPT-Tweaks

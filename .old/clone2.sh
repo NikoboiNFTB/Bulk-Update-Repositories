@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 author="NikoboiNFTB"
 # You can freely change the author to anyone.

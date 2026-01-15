@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Only print lines equivalent to:
 # ./all-repos-pull.sh | grep "updated successfully"
 

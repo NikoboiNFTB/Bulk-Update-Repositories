@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 author="" # Your GitHub username goes inside the quotation marks.
 

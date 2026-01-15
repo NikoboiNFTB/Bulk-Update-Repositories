@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # -------------------------------------------------------------
 # Pull the latest changes for all git repositories in the current directory.
 #

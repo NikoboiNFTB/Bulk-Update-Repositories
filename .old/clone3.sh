@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Prompt for target GitHub username
 read -rp "Enter GitHub username of target: " author
