@@ -9,4 +9,6 @@ done
 wait
 
 # Just delete this line if you don't want it
+echo
+echo "Done"
 read -p "Press enter to exit..."
