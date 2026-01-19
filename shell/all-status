@@ -3,12 +3,34 @@
 set -e
 
 for d in */; do
-    ( cd "$d" && git add . && git status ) &
+    if [ -d "$d/.git" ]; then
+        echo "======== /$d ========"
+        echo
+        (
+            cd "$d"
+            git add .
+            git status
+        )
+        echo
+    fi
 done
 
 wait
 
-# Just delete this line if you don't want it
-echo
-echo "Done"
-read -p "Press enter to exit..."
+echo "======== All Repositories Displayed ========"
+
+# Hang
+
+KEEP_OPEN=true
+
+if [ "$KEEP_OPEN" = true ]; then
+    echo
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        sleep 4
+    fi
+fi

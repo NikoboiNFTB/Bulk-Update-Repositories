@@ -4,18 +4,37 @@ set -e
 
 for d in */; do
     if [ -d "$d/.git" ]; then
-        echo "Pushing $d..."
+        echo "Pushing $d"
         (
-            git -C "$d" add .
-            git -C "$d" commit -m "auto-commit" || true
-            git -C "$d" push
+            cd "$d"
+            git add . >/dev/null 2>&1
+            git commit -m "auto-commit" >/dev/null 2>&1 || true
+
+            if git push >/dev/null 2>&1; then
+                echo "Successfully pushed $d"
+            else
+                echo "Failed to push $d"
+            fi
         ) &
     fi
 done
 
+echo
+
 wait
 
-# Just delete this line if you don't want it
-echo
-echo "Done"
-read -p "Press enter to exit..."
+# Hang
+
+KEEP_OPEN=true
+
+if [ "$KEEP_OPEN" = true ]; then
+    echo
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        sleep 4
+    fi
+fi
