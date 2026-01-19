@@ -6,10 +6,9 @@ git add .
 # Prompt the user for a commit message
 read -rp "Enter commit message: " commit_message
 
-# Check if the user entered a message
+# If the message is empty, use "auto-commit"
 if [ -z "$commit_message" ]; then
-    echo "Commit message cannot be empty. Aborting."
-    exit 1
+    commit_message="auto-commit"
 fi
 
 # Commit and push
