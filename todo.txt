@@ -1,2 +1,3 @@
 Redo the whole fucking README. It's an inconsistent mess.
 Separate /shell/ into subdirectories. All in one place? Dumbass.
+Check out https://open-vsx.org/
