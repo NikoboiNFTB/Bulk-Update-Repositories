@@ -7,7 +7,6 @@ for d in */; do
         echo "Pulling $d"
         (
             cd "$d"
-
             if git pull >/dev/null 2>&1; then
                 echo "Successfully pulled $d"
             else

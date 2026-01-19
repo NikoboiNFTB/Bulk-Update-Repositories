@@ -9,7 +9,6 @@ for d in */; do
             cd "$d"
             git add . >/dev/null 2>&1
             git commit -m "auto-commit" >/dev/null 2>&1 || true
-
             if git push >/dev/null 2>&1; then
                 echo "Successfully pushed $d"
             else
