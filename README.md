@@ -4,12 +4,6 @@
 
 A collection of scripts and userscripts to automate GitHub maintenance and repository management
 
-## TL;DR
-
-- Userscripts automate GitHub web.
-- Shell scripts to automate and manage local Git repos.
-- Assumes basic Linux, SSH and Git knowledge.
-
 ## Table of Contents
 
 [Userscripts](#Userscripts)
@@ -22,9 +16,9 @@ A collection of scripts and userscripts to automate GitHub maintenance and repos
 Git
 
 - Single Repository Management
-  - Pull (`pull`)
-  - Push (`push`)
-  - Status (`status`)
+  - Pull ([`pull`](#pull))
+  - Push ([`push`](#push))
+  - Status ([`status`](#status))
 - Bulk Repository Management
   - All Pull (`all-pull`)
   - All Push (`all-push`)
@@ -56,8 +50,6 @@ These scripts are helpful when managing GitHub Repositories on the GitHub websit
 
 ### Deletion Confirmation Auto-filler (Full-Auto)
 
-
-
 ## Shell Scripts
 
 ### Pull
@@ -65,3 +57,97 @@ These scripts are helpful when managing GitHub Repositories on the GitHub websit
 ### Push
 
 ### Status
+
+## File Tree
+
+```text
+.
+├── shell
+│   ├── git
+│   │   ├── bulk
+│   │   │   ├── all-pull
+│   │   │   ├── all-push
+│   │   │   └── all-status
+│   │   ├── clone
+│   │   │   ├── clone-author
+│   │   │   └── clone-repo
+│   │   ├── repo
+│   │   │   ├── pull
+│   │   │   ├── push
+│   │   │   └── status
+│   │   ├── setup
+│   │   │   ├── automation
+│   │   │   └── workflow
+│   │   └── ssh
+│   │       ├── disable-ssh
+│   │       ├── enable-ssh
+│   │       └── setup-ssh
+│   └── utils
+│       ├── compare
+│       ├── sort-file
+│       └── test123.txt
+├── userscript
+│   ├── git-delete-1.2.user.js
+│   ├── git-delete-1.6.user.js
+│   └── git-reload-1.2.user.js
+├── LICENSE
+├── README.md
+├── README.md.old
+└── todo.txt
+
+10 directories, 23 files
+```
+
+## Disclaimer
+
+**TL;DR**: Don't worry about the install commands using my domain. [Skip](#git---pullpush-automation)?
+
+In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [raw.githubusercontent.com](https://raw.githubusercontent.com/) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
+
+You're right to be vary about this, but you can easily confirm the files are identical by running (for example):
+
+```bash
+diff \
+  <(wget -qO- https://nikoboi.dev/sh/git/repo/pull) \
+  <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/git/repo/push)
+```
+
+This example will highlight the **differences** between the `pull` and `push` files. A blank or no result means they're identical.
+
+I have, of course, automated this process for every file in both. You can try it out by running:
+
+```bash
+bash <(wget -qO- https://nikoboi.dev/sh/utils/compare)
+```
+
+You can audit any script before running it by running:
+
+```bash
+cat <(wget -qO- https://nikoboi.dev/sh/utils/compare)
+```
+
+>> `cat` is used to print file contents.
+
+This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:
+
+```bash
+cat <(wget -qO- https://nextdns.io/install)
+```
+
+The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [`/sh/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited at any time.
+
+The scripts themselves call the [raw.githubusercontent.com](raw.githubusercontent.com) domain, because the scripts looking good isn't as important.
+
+## Contributing
+
+Feel free to fork this repository and submit issues or pull requests if you have any suggestions or improvements. If you encounter any bugs or have feature requests, please open an issue.
+
+## Credits
+
+Created by **[Nikoboi](https://github.com/NikoboiNFTB/)**
+
+Script logic fined tuned using **ChatGPT**
+
+## License
+
+This project is licenced under the GNU General Public License V3. See [LICENSE](LICENSE) for details.
