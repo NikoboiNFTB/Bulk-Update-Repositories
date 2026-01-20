@@ -1,12 +1,16 @@
 # GitHub-Tools
 
-⚠️ Install scripts definitely broken right now. To find a script, just peep inside [`/shell/`](/shell/) and wing it. They're sorted intuitively. ⚠️
+⚠️ Install scripts definitely broken right now.
+
+⚠️ To find a script, just peep inside [`/shell/`](/shell/) and wing it.
+
+⚠️ They're sorted intuitively.
 
 A collection of scripts and userscripts for automating GitHub maintenance and repository management.
 
 ## Table of Contents
 
-Each entry can be clicked for a detailed description.
+Each entry can be clicked for a detailed description of each script.
 
 | Category | Script | Description |
 | - | - | - |
@@ -24,16 +28,6 @@ Each entry can be clicked for a detailed description.
 | Generic Utils | [`compare`](/docs/utils/COMPARE.md) | Compare files from my repos |
 | Generic Utils | [`sort-file`](/docs/utils/SORT-FILE.md) | Sort contents of any file |
 
-
-
-
-
-
-
-
-
-
-
 ## Installation
 
 How to clone, install, or add to PATH.
@@ -42,46 +36,16 @@ How to clone, install, or add to PATH.
 
 Common patterns shared by the scripts (flags, env vars, conventions).
 
-## Scripts
+## Contributing
 
-- [script-one.sh](#script-onesh)
-- [script-two.sh](#script-twosh)
-- [script-three.sh](#script-threesh)
+Feel free to fork this repository and submit issues or pull requests if you have any suggestions or improvements. If you encounter any bugs or have feature requests, please open an issue.
 
----
+## Credits
 
-## script-name.sh
+Created by **[Nikoboi](https://github.com/NikoboiNFTB/)**
 
-**Purpose:**
+Script logic fined tuned using **[ChatGPT](https://chatgpt.com/)**
 
-One-sentence description of what the script does.
+## License
 
-**Usage:**
-
-```bash
-./script-name.sh [options] <args>
-```
-
-## script-name.sh
-
-**Purpose:**
-
-One-sentence description of what the script does.
-
-**Usage:**
-
-```bash
-./script-name.sh [options] <args>
-```
-
-## script-name.sh
-
-**Purpose:**
-
-One-sentence description of what the script does.
-
-**Usage:**
-
-```bash
-./script-name.sh [options] <args>
-```
+This project is licenced under the GNU General Public License V3. See [LICENSE](LICENSE) for details.
