@@ -1,5 +1,6 @@
 Redo the whole fucking README. It's an inconsistent mess.
 Add a contents list!!!
+`tree`?
 
 Separate /shell/ into subdirectories. All in one place? Dumbass.
 
