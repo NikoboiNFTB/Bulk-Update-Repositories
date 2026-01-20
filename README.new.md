@@ -11,7 +11,6 @@ A collection of scripts and userscripts for automating GitHub maintenance and re
 | Single Repo Management | `pull`         | Pull remote changes         |
 | Single Repo Management | `push`         | Push local changes          |
 | Single Repo Management | `status`       | View status                 |
----
 | Bulk Repo Management   | `all-pull`     | Pull remote changes         |
 | Bulk Repo Management   | `all-push`     | Push local changes          |
 | Bulk Repo Management   | `all-status`   | Current                     |
