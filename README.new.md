@@ -8,6 +8,8 @@
 
 A collection of scripts and userscripts for automating GitHub maintenance and repository management.
 
+Each tool exists to make repetitive Git tasks a little less tedious.
+
 ## Table of Contents
 
 Each entry can be clicked for a detailed description of each script.
