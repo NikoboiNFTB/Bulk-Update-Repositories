@@ -1,157 +1,61 @@
 # GitHub Tools
 
-⚠️ Install scripts definitely broken right now ⚠️
+A collection of scripts and userscripts to automate GitHub maintenance and repository management.
 
-A collection of scripts and userscripts to automate GitHub maintenance and repository management
+## 3. Optional: script summary table (very useful)
 
-## Table of Contents
+For repos with many scripts, add a summary table near the top.
 
-[Userscripts](#Userscripts)
-- Auto-Reload if Pending Deployment
-- Deletion Confirmation Auto-filler (Semi-Auto)
-- Deletion Confirmation Auto-filler (Full-Auto)
+## Script Summary
 
-[Shell Scripts](#shell-scripts)
+| Script | Description |
+|------|------------|
+| `cleanup-logs.sh` | Deletes old log files |
+| `sync-backups.sh` | Syncs backups to remote storage |
+| `rotate-keys.sh` | Rotates API keys |
 
->> Click to scroll down to script description!
+## Installation
 
-Git
+How to clone, install, or add to PATH.
 
-- Single Repository Management
-  - Pull ([`pull`](#pull))
-  - Push ([`push`](#push))
-  - Status ([`status`](#status))
-- Bulk Repository Management
-  - All Pull ([`all-pull`](#all-pull))
-  - All Push ([`all-push`](#all-push))
-  - All Status ([`all-status`](all-status))
-- Setups
-  - Setup All of the Above ([`setup/automation`](#setup))
-  - Setup my Workflow ([`setup/workflow`]())
-- Cloning Repositories
-  - Clone a Repository ([`clone-repo`]())
-  - Clone All Repositories by an Author ([`clone-author`]())
-- SSH Management
-  - Disable SSH ([`disable-ssh`]())
-  - Enable SSH ([`enable-ssh`]())
-  - Setup SSH ([`setup-ssh`]())
+## Usage Overview
 
-Misc. Utilities
+Common patterns shared by the scripts (flags, env vars, conventions).
 
-- Compare Files* ([`compare`]())
-- Sort File ([`sort-file`]())
-- Test Sort File ([`test123.txt`]())
+## Scripts
 
-## Userscripts
+- [script-one.sh](#script-onesh)
+- [script-two.sh](#script-twosh)
+- [script-three.sh](#script-threesh)
 
-These scripts are helpful when managing GitHub Repositories on the GitHub website.
+---
 
-### Auto-Reload if Pending Deployment
+## script-name.sh
 
-### Deletion Confirmation Auto-filler (Semi-Auto)
+**Purpose:**  
+One-sentence description of what the script does.
 
-### Deletion Confirmation Auto-filler (Full-Auto)
-
-## Shell Scripts
-
-[Disclaimer](#disclaimer)
-
-### Pull
-
-### Push
-
-### Status
-
-## File Tree
-
-```text
-.
-├── shell
-│   ├── git
-│   │   ├── bulk
-│   │   │   ├── all-pull
-│   │   │   ├── all-push
-│   │   │   └── all-status
-│   │   ├── clone
-│   │   │   ├── clone-author
-│   │   │   └── clone-repo
-│   │   ├── repo
-│   │   │   ├── pull
-│   │   │   ├── push
-│   │   │   └── status
-│   │   ├── setup
-│   │   │   ├── automation
-│   │   │   └── workflow
-│   │   └── ssh
-│   │       ├── disable-ssh
-│   │       ├── enable-ssh
-│   │       └── setup-ssh
-│   └── utils
-│       ├── compare
-│       ├── sort-file
-│       └── test123.txt
-├── userscript
-│   ├── git-delete-1.2.user.js
-│   ├── git-delete-1.6.user.js
-│   └── git-reload-1.2.user.js
-├── LICENSE
-├── README.md
-├── README.md.old
-└── todo.txt
-
-10 directories, 23 files
-```
-
-## Disclaimer
-
-**TL;DR**: Don't worry about the install commands using another domain. [Back to Shell Scripts](#shell-scripts).
-
-In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [raw.githubusercontent.com](https://raw.githubusercontent.com/) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
-
-You're right to be vary about this, but you can easily confirm the files are identical by running (for example):
-
+**Usage:**
 ```bash
-diff \
-  <(wget -qO- https://nikoboi.dev/sh/git/repo/pull) \
-  <(wget -qO- https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/git/repo/push)
+./script-name.sh [options] <args>
 ```
 
-This example will highlight the **differences** between the `pull` and `push` files. A blank or no result means they're identical.
+## script-name.sh
 
-I have, of course, automated this process for every file in both. You can try it out by running:
+**Purpose:**  
+One-sentence description of what the script does.
 
+**Usage:**
 ```bash
-bash <(wget -qO- https://nikoboi.dev/sh/utils/compare)
+./script-name.sh [options] <args>
 ```
 
-You can audit any script before running it by running:
+## script-name.sh
 
+**Purpose:**  
+One-sentence description of what the script does.
+
+**Usage:**
 ```bash
-cat <(wget -qO- https://nikoboi.dev/sh/utils/compare)
+./script-name.sh [options] <args>
 ```
-
->> `cat` is used to print file contents.
-
-This is not only useful for this repo, but all scripts on the internet. Here's an example using the NextDNS install script:
-
-```bash
-cat <(wget -qO- https://nextdns.io/install)
-```
-
-The domain [nikoboi.dev](https://nikoboi.dev/) is active under my GitHub Pages repository, and its [`/sh/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh) folder can be audited at any time.
-
-The scripts themselves call the [raw.githubusercontent.com](raw.githubusercontent.com) domain, because the scripts looking good isn't as important.
-
-## Contributing
-
-Feel free to fork this repository and submit issues or pull requests if you have any suggestions or improvements. If you encounter any bugs or have feature requests, please open an issue.
-
-## Credits
-
-Created by **[Nikoboi](https://github.com/NikoboiNFTB/)**
-
-Script logic fined tuned using **ChatGPT**
-
-## License
-
-This project is licenced under the GNU General Public License V3. See [LICENSE](LICENSE) for details.
