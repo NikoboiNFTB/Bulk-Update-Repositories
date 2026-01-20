@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# Stage all changes
 git add .
 
 # Prompt the user for a commit message
@@ -12,6 +11,5 @@ if [ -z "$commit_message" ]; then
     commit_message="auto-commit"
 fi
 
-# Commit and push
 git commit -m "$commit_message"
 git push

@@ -9,7 +9,7 @@ for d in */; do
         (
             cd "$d"
             git add .
-            git status
+            git status | grep -v '^$'
         )
         echo
     fi
