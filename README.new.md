@@ -1,18 +1,47 @@
-# GitHub Tools
+# GitHub-Tools
 
-A collection of scripts and userscripts to automate GitHub maintenance and repository management.
+⚠️ Install scripts definitely broken right now ⚠️
 
-## 3. Optional: script summary table (very useful)
+A collection of scripts and userscripts for automating GitHub maintenance and repository management.
 
-For repos with many scripts, add a summary table near the top.
+## Tables of Contents
 
-## Script Summary
+| Category               | Script       | Description              |
+|------------------------|--------------|--------------------------|
+| Single Repo Management | `pull`       | Pull remote changes      |
+| Single Repo Management | `push`       | Push local changes       |
+| Single Repo Management | `status`     | View status              |
+| Bulk Repo Management   | `all-pull`   | Pull remote changes      |
+| Bulk Repo Management   | `all-push`   | Push local changes       |
+| Bulk Repo Management   | `all-status` | Current                  |
 
-| Script | Description |
-|------|------------|
-| `cleanup-logs.sh` | Deletes old log files |
-| `sync-backups.sh` | Syncs backups to remote storage |
-| `rotate-keys.sh` | Rotates API keys |
+### Single Repo Management
+
+|  Script  |     Description     |
+|----------|---------------------|
+| `pull`   | Pull remote changes |
+| `push`   | Push local changes  |
+| `status` | View status         |
+
+### Bulk Repo Management
+
+|    Script    |     Description     |
+|--------------|---------------------|
+| `all-pull`   | Pull remote changes |
+| `all-push`   | Push local changes  |
+| `all-status` | Current             |
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Installation
 
