@@ -4,16 +4,25 @@
 
 A collection of scripts and userscripts for automating GitHub maintenance and repository management.
 
-## Tables of Contents
+## Table of Contents
 
-| Category               | Script       | Description              |
-|------------------------|--------------|--------------------------|
-| Single Repo Management | `pull`       | Pull remote changes      |
-| Single Repo Management | `push`       | Push local changes       |
-| Single Repo Management | `status`     | View status              |
-| Bulk Repo Management   | `all-pull`   | Pull remote changes      |
-| Bulk Repo Management   | `all-push`   | Push local changes       |
-| Bulk Repo Management   | `all-status` | Current                  |
+| Category               |   Script       | Description              |
+|------------------------|----------------|--------------------------|
+| Single Repo Management | `pull`         | Pull remote changes      |
+| Single Repo Management | `push`         | Push local changes       |
+| Single Repo Management | `status`       | View status              |
+| Bulk Repo Management   | `all-pull`     | Pull remote changes      |
+| Bulk Repo Management   | `all-push`     | Push local changes       |
+| Bulk Repo Management   | `all-status`   | Current                  |
+| Cloning Repositories   | `clone-repo`   | Clone a repository       |
+| Cloning Repositories   | `clone-author` | Clone an authors repos   |
+| SSH Management         | `disable-ssh`  | Disable your SSH key     |
+| SSH Management         | `enable-ssh`   | Enable your SSH key      |
+| SSH Management         | `setup-ssh`    | Setup SSH                |
+
+
+
+
 
 ### Single Repo Management
 
