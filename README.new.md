@@ -6,21 +6,21 @@ A collection of scripts and userscripts for automating GitHub maintenance and re
 
 ## Table of Contents
 
-| Category               |   Script       | Description                 |
-|------------------------|----------------|-----------------------------|
-| Single Repo Management | `pull`         | Pull remote changes         |
-| Single Repo Management | `push`         | Push local changes          |
-| Single Repo Management | `status`       | View status                 |
-| Bulk Repo Management   | `all-pull`     | Pull remote changes         |
-| Bulk Repo Management   | `all-push`     | Push local changes          |
-| Bulk Repo Management   | `all-status`   | Current                     |
-| Cloning Repositories   | `clone-repo`   | Clone a repository          |
-| Cloning Repositories   | `clone-author` | Clone an authors repos      |
-| SSH Management         | `disable-ssh`  | Disable your SSH key        |
-| SSH Management         | `enable-ssh`   | Enable your SSH key         |
-| SSH Management         | `setup-ssh`    | Setup SSH                   |
-| Generic Utils          | `compare`      | Compare files from my repos |
-| Generic Utils          | `sort-file`    | Sort contents of any file   |
+| Category | Script | Description |
+| - | - | - |
+| Single Repo Management | `pull` | Pull remote changes |
+| Single Repo Management | `push` | Push local changes|
+| Single Repo Management | `status` | View status |
+| Bulk Repo Management | `all-pull` | Pull remote changes |
+| Bulk Repo Management | `all-push` | Push local changes|
+| Bulk Repo Management | `all-status` | Current |
+| Cloning Repositories | `clone-repo` | Clone a repository|
+| Cloning Repositories | `clone-author` | Clone an authors repos|
+| SSH Management | `disable-ssh`| Disable your SSH key|
+| SSH Management | `enable-ssh` | Enable your SSH key |
+| SSH Management | `setup-ssh`| Setup SSH |
+| Generic Utils| `compare`| Compare files from my repos |
+| Generic Utils| `sort-file`| Sort contents of any file |
 
 
 
@@ -50,30 +50,36 @@ Common patterns shared by the scripts (flags, env vars, conventions).
 
 ## script-name.sh
 
-**Purpose:**  
+**Purpose:**
+
 One-sentence description of what the script does.
 
 **Usage:**
+
 ```bash
 ./script-name.sh [options] <args>
 ```
 
 ## script-name.sh
 
-**Purpose:**  
+**Purpose:**
+
 One-sentence description of what the script does.
 
 **Usage:**
+
 ```bash
 ./script-name.sh [options] <args>
 ```
 
 ## script-name.sh
 
-**Purpose:**  
+**Purpose:**
+
 One-sentence description of what the script does.
 
 **Usage:**
+
 ```bash
 ./script-name.sh [options] <args>
 ```
