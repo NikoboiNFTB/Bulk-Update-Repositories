@@ -1,6 +1,6 @@
 # GitHub-Tools
 
-⚠️ Install scripts definitely broken right now ⚠️
+⚠️ Install scripts definitely broken right now. To find a script, just peep inside [`/shell/`](/shell/) and wing it. They're sorted intuitively. ⚠️
 
 A collection of scripts and userscripts for automating GitHub maintenance and repository management.
 
