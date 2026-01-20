@@ -102,7 +102,7 @@ These scripts are helpful when managing GitHub Repositories on the GitHub websit
 
 ## Disclaimer
 
-**TL;DR**: Don't worry about the install commands using my domain.
+**TL;DR**: Don't worry about the install commands using my domain. [Back to Shell Scripts](#shell-scripts).
 
 In install commands my own domain, [nikoboi.dev](https://nikoboi.dev/), will be used over the [raw.githubusercontent.com](https://raw.githubusercontent.com/) domain. This is for link shortening and clarity, as the github link is ridiculously long and has confusing paths, as you can see just below.
 
