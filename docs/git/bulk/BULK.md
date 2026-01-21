@@ -1,4 +1,4 @@
-# repository Management Scripts
+# Repository Management Scripts
 
 These scripts exist to automate repository management, en massé.
 
@@ -6,13 +6,13 @@ These scripts exist to automate repository management, en massé.
 
 These scripts should be placed in;
 
-```sh
+```text
 ~/GitHub/$AUTHOR/
 ```
 
 They will then affect;
 
-```bash
+```text
 ~/GitHub/$AUTHOR/$REPO1
 ~/GitHub/$AUTHOR/$REPO2
 ~/GitHub/$AUTHOR/$REPO3
