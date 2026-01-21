@@ -4,7 +4,13 @@ These scripts exist to automate repository management, en massé.
 
 ## Scripts
 
-These scripts should be placed in;
+The scripts should be placed in;
+
+```text
+~/GitHub/$AUTHOR/
+```
+
+The scripts should be run in;
 
 ```text
 ~/GitHub/$AUTHOR/
@@ -33,3 +39,14 @@ Neatly displays the status of all repositories.
 
 ## Installation
 
+Run in;
+
+```text
+~/GitHub/$AUTHOR/
+```
+
+```bash
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-pull
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-push
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-status
+```
