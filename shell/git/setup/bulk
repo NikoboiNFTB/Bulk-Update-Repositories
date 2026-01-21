@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -e
+
+echo
+echo "Downloading all-pull..."
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-pull
+echo "all-pull Downloaded"
+echo
+echo "Downloading all-push"
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-push
+echo "all-push Downloaded"
+echo
+echo "Downloading all-status..."
+wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-status
+echo "all-status downloaded"
+echo
+echo "All Files Downloaded."
+echo
+echo "Granting Permissions..."
+
+chmod +x all-pull
+chmod +x all-push
+chmod +x all-status
+
+echo "Permissions granted."
+echo
+echo "Files are ready to be used."
+echo

@@ -46,7 +46,5 @@ Run in;
 ```
 
 ```bash
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-pull
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-push
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-status
+bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/bulk)
 ```
