@@ -25,15 +25,15 @@ They will then affect;
 etc.
 ```
 
-### `all-pull`
+### [`all-pull`](/shell/git/bulk/all-pull)
 
 Pulls all remote changes to local repository.
 
-### `all-push`
+### [`all-push`](/shell/git/bulk/all-push)
 
 Pushes all local changes to remote repository.
 
-### `all-status`
+### [`all-status`](/shell/git/bulk/all-status)
 
 Neatly displays the status of all repositories.
 
