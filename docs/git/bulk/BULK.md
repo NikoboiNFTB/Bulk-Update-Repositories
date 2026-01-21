@@ -46,5 +46,7 @@ Run in;
 ```
 
 ```bash
-bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/bulk)
+bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/automation)
 ```
+
+>> Will download `all-pull`, `all-push`, `all-status`, `pull`, `push` and `status`

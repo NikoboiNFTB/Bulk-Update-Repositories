@@ -27,15 +27,15 @@ chmod +x enable-ssh
 
 echo "Files downloaded"
 
-read -rp "Copy the scripts to ~/ for quick access anywhere? [y/N]: " choice
+read -rp "Copy the scripts to $HOME for quick access anywhere? [y/N]: " choice
 
 case "$choice" in
     [yY])
-        echo "Copying to home directory..."
+        echo "Copying to $HOME..."
         cp -f disable-ssh enable-ssh "$HOME/"
         ;;
     *)
-        echo "Skipping copy to home directory."
+        echo "Skipping copy to $HOME."
         ;;
 esac
 

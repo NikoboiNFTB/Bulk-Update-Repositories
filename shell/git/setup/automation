@@ -35,12 +35,12 @@ chmod +x status
 
 echo "Files downloaded"
 
-read -rp "Copy the scripts to ~/ for quick access anywhere? [y/N]: " choice
+read -rp "Copy pull/push/status to $HOME for quick access anywhere? [y/N]: " choice
 
 case "$choice" in
     [yY])
-        echo "Copying to home directory..."
-        cp -f all-pull all-push "$HOME/"
+        echo "Copying to $HOME directory..."
+        cp -f pull push status "$HOME/"
         ;;
     *)
         echo "Skipping copy to home directory."
