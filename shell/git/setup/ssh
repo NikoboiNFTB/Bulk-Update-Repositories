@@ -19,25 +19,13 @@ cd "$install_dir"
 
 echo "Downloading files..."
 
-wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/disable-ssh
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/git/ssh/disable-ssh
 chmod +x disable-ssh
 
-wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/enable-ssh
+wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/git/ssh/enable-ssh
 chmod +x enable-ssh
 
 echo "Files downloaded"
-
-read -rp "Copy the scripts to $HOME for quick access anywhere? [y/N]: " choice
-
-case "$choice" in
-    [yY])
-        echo "Copying to $HOME..."
-        cp -f disable-ssh enable-ssh "$HOME/"
-        ;;
-    *)
-        echo "Skipping copy to $HOME."
-        ;;
-esac
 
 read -rp "Hide files? [y/N]: " hide_choice
 
