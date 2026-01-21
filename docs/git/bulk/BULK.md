@@ -6,13 +6,13 @@ These scripts exist to automate repository management, en massé.
 
 These scripts should be placed in;
 
-```txt
+```sh
 ~/GitHub/$AUTHOR/
 ```
 
 They will then affect;
 
-```text
+```bash
 ~/GitHub/$AUTHOR/$REPO1
 ~/GitHub/$AUTHOR/$REPO2
 ~/GitHub/$AUTHOR/$REPO3
