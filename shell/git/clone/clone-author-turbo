@@ -55,14 +55,16 @@ echo "Done!"
 
 # Hang
 
-echo
-read -p "Press Enter to exit / Type 'disable' to disable hanging: " response
-
 KEEP_OPEN=true
 
-if [ "$response" = "disable" ]; then
-    sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+if [ "$KEEP_OPEN" = true ]; then
     echo
-    echo "KEEP_OPEN set to false"
-    sleep 4
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        sleep 4
+    fi
 fi
