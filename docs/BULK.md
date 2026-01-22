@@ -1,29 +1,8 @@
 # Repository Management Scripts
 
-These scripts exist to automate repository management, en massé.
+These scripts exist to automate repository management, en massé. The goal is that you never have to touch the terminal when developing with GitHub.
 
 ## Scripts
-
-The scripts should be placed in;
-
-```text
-~/GitHub/$AUTHOR/
-```
-
-The scripts should be run in;
-
-```text
-~/GitHub/$AUTHOR/
-```
-
-They will then affect;
-
-```text
-~/GitHub/$AUTHOR/$REPO1
-~/GitHub/$AUTHOR/$REPO2
-~/GitHub/$AUTHOR/$REPO3
-etc.
-```
 
 ### [`all-pull`](/shell/git/bulk/all-pull)
 
@@ -36,6 +15,10 @@ Pushes all local changes to remote repository.
 ### [`all-status`](/shell/git/bulk/all-status)
 
 Neatly displays the status of all repositories.
+
+### [`ignore`](/shell/git/bulk/ignore) and [`ignore-wipe`](/shell/git/bulk/ignore-wipe)
+
+Use `ignore` to add files to `*/.git/info/exclude` in every repository. Allows you to run `pull`, `push` and `status` directly from the repository folder, without having to push them. `ignore-wipe` will wipe the `*/.git/info/exclude` files.
 
 ## Installation
 
