@@ -1,62 +1,49 @@
 #!/usr/bin/env bash
+
 set -e
 
-read -rp "Install directory (leave blank to use current directory): " install_dir
+# Ask user for install directory for regular files (default: current directory)
+read -rp "Enter install directory for regular files (Enter for current): " BASE_DIR
+BASE_DIR="${BASE_DIR:-$(pwd)}"
 
-install_dir="${install_dir/#\~/$HOME}"
+# Determine parent directory for clone files
+PARENT_DIR="$(dirname "$BASE_DIR")"
 
-if [ -z "$install_dir" ]; then
-    install_dir="$PWD"
-    echo "Using current directory: $install_dir"
-fi
+# Temporary clone
+TMP_DIR=$(mktemp -d)
+REPO_URL="https://github.com/NikoboiNFTB/GitHub-Tools.git"
+git clone --depth 1 "$REPO_URL" "$TMP_DIR"
 
-if [ ! -d "$install_dir" ]; then
-    echo "Directory doesn’t exist. Making it for you."
-    mkdir -p "$install_dir"
-fi
+# Function to copy everything (files and directories) from source to destination
+copy_all() {
+    local SRC="$1"
+    local DEST="$2"
+    if [ -d "$SRC" ]; then
+        for ITEM in "$SRC"/*; do
+            [ -e "$ITEM" ] || continue
+            BASENAME=$(basename "$ITEM")
+            if [ -d "$ITEM" ]; then
+                mkdir -p "$DEST/$BASENAME"
+                cp -r "$ITEM/." "$DEST/$BASENAME"
+            else
+                mkdir -p "$DEST"
+                cp "$ITEM" "$DEST/$BASENAME"
+            fi
+            echo "Copied $ITEM -> $DEST/$BASENAME"
+        done
+    else
+        echo "Warning: $SRC not found"
+    fi
+}
 
-cd "$install_dir"
+# Copy bulk, repo, and ssh files into current directory (BASE_DIR)
+copy_all "$TMP_DIR/shell/git/bulk" "$BASE_DIR"
+copy_all "$TMP_DIR/shell/git/repo" "$BASE_DIR"
 
-echo "Downloading files..."
+# Copy clone files into parent directory
+copy_all "$TMP_DIR/shell/git/clone" "$PARENT_DIR"
 
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-pull
-chmod +x all-pull
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-push
-chmod +x all-push
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/bulk/all-status
-chmod +x all-status
+# Clean up temporary clone
+rm -rf "$TMP_DIR"
 
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/repo/pull
-chmod +x pull
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/repo/push
-chmod +x push
-wget -q https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/shell/git/repo/status
-chmod +x status
-
-echo "Files downloaded"
-
-read -rp "Copy pull/push/status to $HOME for quick access anywhere? [y/N]: " choice
-
-case "$choice" in
-    [yY])
-        echo "Copying to $HOME directory..."
-        cp -f pull push status "$HOME/"
-        ;;
-    *)
-        echo "Skipping copy to home directory."
-        ;;
-esac
-
-echo "All done!"
-
-# Hang
-
-echo
-read -p "Press Enter to exit / Type 'disable' to disable hanging: " response
-
-if [ "$response" = "disable" ]; then
-    sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
-    echo
-    echo "KEEP_OPEN set to false"
-    sleep 4
-fi
+echo "Automation setup complete."

@@ -1,56 +1,37 @@
 #!/usr/bin/env bash
+
 set -e
 
-read -rp "Install directory (leave blank to use current directory): " install_dir
+# Ask user for install directory, default to current directory
+read -rp "Enter install directory (leave blank for current directory): " DEST_DIR
+DEST_DIR="${DEST_DIR:-$(pwd)}"
 
-install_dir="${install_dir/#\~/$HOME}"
+# Ask user if they want to hide the files
+read -rp "Hide SSH Scripts? (y/N): " HIDE_FILES
+HIDE_FILES="${HIDE_FILES:-N}"
 
-if [ -z "$install_dir" ]; then
-    install_dir="$PWD"
-    echo "Using current directory: $install_dir"
+# Create temporary directory
+TMP_DIR=$(mktemp -d)
+
+# Clone the repository into the temporary directory
+git clone --depth 1 https://github.com/NikoboiNFTB/GitHub-Tools.git "$TMP_DIR"
+
+# Copy all files from /shell/git/ssh/ into the install directory
+SRC_DIR="$TMP_DIR/shell/git/ssh"
+if [ -d "$SRC_DIR" ]; then
+    for FILE in "$SRC_DIR"/*; do
+        BASENAME=$(basename "$FILE")
+        TARGET="$DEST_DIR/$BASENAME"
+        # If hiding, prefix with dot
+        if [[ "$HIDE_FILES" =~ ^[Yy]$ ]]; then
+            TARGET="$DEST_DIR/.$BASENAME"
+        fi
+        cp -r "$FILE" "$TARGET"
+    done
+    echo "Files copied to $DEST_DIR"
+else
+    echo "Error: $SRC_DIR does not exist in the repository"
 fi
 
-if [ ! -d "$install_dir" ]; then
-    echo "Directory doesn’t exist. Making it for you."
-    mkdir -p "$install_dir"
-fi
-
-cd "$install_dir"
-
-echo "Downloading files..."
-
-wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/git/ssh/disable-ssh
-chmod +x disable-ssh
-
-wget -q https://raw.githubusercontent.com/NikoboiNFTB/GitHub-Tools/refs/heads/main/shell/git/ssh/enable-ssh
-chmod +x enable-ssh
-
-echo "Files downloaded"
-
-read -rp "Hide files? [y/N]: " hide_choice
-
-case "$hide_choice" in
-    [yY])
-        echo "Hiding files..."
-        for f in disable-ssh enable-ssh; do
-            [ -e "$f" ] && mv "$f" ".$f"
-        done
-        ;;
-    *)
-        echo "Leaving files visible."
-        ;;
-esac
-
-echo "All done!"
-
-# Hang
-
-echo
-read -p "Press Enter to exit / Type 'disable' to disable hanging: " response
-
-if [ "$response" = "disable" ]; then
-    sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
-    echo
-    echo "KEEP_OPEN set to false"
-    sleep 4
-fi
+# Clean up temporary directory
+rm -rf "$TMP_DIR"

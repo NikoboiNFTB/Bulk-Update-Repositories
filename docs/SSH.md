@@ -32,11 +32,7 @@ Save the script and run it anywhere:
 
 ## Installation
 
-Run in;
-
-```text
-~/GitHub/$AUTHOR/
-```
+Run anywhere you want;
 
 ```bash
 bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/ssh)
