@@ -24,7 +24,7 @@ wait
 
 KEEP_OPEN=true
 
-if [ "$KEEP_OPEN" = true ]; then
+if [ "$KEEP_OPEN" = true ] && ! [ -t 0 ]; then
     echo
     read -p "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
     if [ "$response" = "disable" ]; then
