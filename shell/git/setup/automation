@@ -48,3 +48,15 @@ case "$choice" in
 esac
 
 echo "All done!"
+
+# Hang
+
+echo
+read -p "Press Enter to exit / Type 'disable' to disable hanging: " response
+
+if [ "$response" = "disable" ]; then
+    sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+    echo
+    echo "KEEP_OPEN set to false"
+    sleep 4
+fi
