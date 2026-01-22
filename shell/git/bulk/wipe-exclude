@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+set -e
+
+# Track whether all files are empty
+all_empty=true
+
+# Loop through all repo exclude files
+for f in */.git/info/exclude; do
+  if [[ -f "$f" ]]; then
+    # Truncate the file
+    : > "$f"
+
+    # Check if the file is empty
+    if [[ -s "$f" ]]; then
+      echo "Warning: $f is not empty after wiping!"
+      all_empty=false
+    fi
+  fi
+done
+
+# Final check
+if $all_empty; then
+  echo "All exclude files emptied successfully."
+fi
+
+# Hang
+
+KEEP_OPEN=true
+
+if [ "$KEEP_OPEN" = true ]; then
+    echo
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        sleep 4
+    fi
+fi
