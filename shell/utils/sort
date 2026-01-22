@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -e
+
+files=("$@")
+
+if [ ${#files[@]} -eq 0 ]; then
+    read -rp "Enter file(s) to sort: " -a files
+fi
+
+if [ ${#files[@]} -eq 0 ]; then
+    echo "No files provided."
+    exit 1
+fi
+
+for file in "${files[@]}"; do
+    if [ ! -f "$file" ]; then
+        echo "Error: '$file' is not a file."
+        exit 1
+    fi
+
+    sort "$file" -o "$file"
+done

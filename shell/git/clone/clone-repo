@@ -2,13 +2,21 @@
 
 set -e
 
-read -rp "Target Author : " author
+author="$1"
+repo="$2"
+
+if [ -z "$author" ]; then
+    read -rp "Target Author (GitHub Username): " author
+fi
+
 [ -z "$author" ] && { echo "No username entered. Exiting."; exit 1; }
 
-read -rp "Target Repo   : " repo
-[ -z "$repo" ] && { echo "No repository name entered. Exiting."; exit 1; }
+if [ -z "$repo" ]; then
+    read -rp "Target Repo: " repo
+fi
+[ -z "$repo" ] && { echo "No repository entered. Exiting."; exit 1; }
 
-read -rp "ssh/HTTPS     : " method
+read -rp "ssh/HTTPS: " method
 method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
 
 if [[ "$method" == "ssh" ]]; then
@@ -19,11 +27,9 @@ else
     method="https"
 fi
 
-# Create author directory if it doesn't exist, then enter it
 mkdir -p "$author"
 cd "$author"
 
-# Keep this check intact, as requested
 if [ -d "$repo/.git" ]; then
     echo
     echo "Repository '$author/$repo' already exists."
