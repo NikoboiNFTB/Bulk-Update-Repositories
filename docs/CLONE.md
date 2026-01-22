@@ -57,3 +57,17 @@ Provide the GitHub username and repository name as arguments, or enter them when
 ./script.sh username repo
 
 The script will create a folder for the user and clone the repository into it. It also provides guidance on common reasons a clone might fail, including private repos or authentication issues.
+
+## Installation
+
+Run in;
+
+```text
+~/GitHub/$AUTHOR/
+```
+
+```bash
+bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/automation)
+```
+
+>> Will download most files in [`/sh/git/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh/git/).

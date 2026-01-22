@@ -1,6 +1,6 @@
 ⚠️ This repository is undergoing large changes. README.md files may not be accurate.
 
-# Repository Management Scripts
+# Bulk Repository Management
 
 These scripts exist to automate repository management, en massé. The goal is that you never have to touch the terminal when developing with GitHub.
 
