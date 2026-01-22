@@ -1,5 +1,11 @@
 # Repository Management Scripts
 
+⚠️ Install scripts definitely broken right now.
+
+⚠️ To find a script, just peep inside [`/shell/`](/shell/) and wing it.
+
+⚠️ They're sorted intuitively.
+
 These scripts exist to automate repository management, en massé. The goal is that you never have to touch the terminal when developing with GitHub.
 
 ## Scripts
@@ -32,4 +38,4 @@ Run in;
 bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/automation)
 ```
 
->> Will download `all-pull`, `all-push`, `all-status`, `pull`, `push` and `status`
+>> Will download most files in [`/sh/git/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh/git).
