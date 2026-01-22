@@ -20,6 +20,8 @@ echo "SSH disabled."
 echo
 read -p "Press Enter to exit / Type 'disable' to disable hanging: " response
 
+KEEP_OPEN=true
+
 if [ "$response" = "disable" ]; then
     sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
     echo
