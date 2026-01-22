@@ -18,6 +18,7 @@ Each entry can be clicked for a detailed description of each script.
 | Bulk Repo Management | [`all-pull`](/docs/BULK.md) | Pull remote changes |
 | Bulk Repo Management | [`all-push`](/docs/BULK.md) | Push local changes |
 | Bulk Repo Management | [`all-status`](/docs/BULK.md) | View Status of current repo |
+| Bulk Repo Management | [`ignore`](/docs/BULK.md) | Add files and folders to [`.git/info/exclude`](/.git/info/exclude) |
 | Cloning Repositories | [`clone-repo`](/docs/CLONE.md) | Clone a repository |
 | Cloning Repositories | [`clone-author`](/docs/CLONE.md) | Clone an author’s repos |
 | SSH Management | [`disable-ssh`](/docs/SSH.md) | Disable your SSH key |

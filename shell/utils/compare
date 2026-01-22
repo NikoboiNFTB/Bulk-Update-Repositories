@@ -1,0 +1,34 @@
+#!/bin/bash
+set -euo pipefail
+
+# Repo URLs and names
+REPO1_URL="https://github.com/NikoboiNFTB/nikoboinftb.github.io.git"
+REPO2_URL="https://github.com/NikoboiNFTB/GitHub-Tools.git"
+REPO1_NAME="nikoboinftb.github.io"
+REPO2_NAME="GitHub-Tools"
+
+# Create temporary directories
+TMP_DIR1=$(mktemp -d)
+TMP_DIR2=$(mktemp -d)
+
+# Ensure cleanup on exit
+cleanup() {
+    rm -rf "$TMP_DIR1" "$TMP_DIR2"
+}
+trap cleanup EXIT
+
+# Clone the repositories silently
+git clone -q "$REPO1_URL" "$TMP_DIR1"
+git clone -q "$REPO2_URL" "$TMP_DIR2"
+
+# Compare directories recursively and replace temp paths with repo names
+DIFF_OUTPUT=$(diff -qr "$TMP_DIR1/sh" "$TMP_DIR2/shell" 2>/dev/null | \
+    sed "s|$TMP_DIR1|$REPO1_NAME|g; s|$TMP_DIR2|$REPO2_NAME|g" || true)
+
+# Print clean output
+if [[ -z "$DIFF_OUTPUT" ]]; then
+    echo "✅ No differences found between the directories."
+else
+    echo "⚠️ Differences found:"
+    echo "$DIFF_OUTPUT"
+fi
