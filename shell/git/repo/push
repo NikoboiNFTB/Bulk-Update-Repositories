@@ -2,14 +2,13 @@
 
 set -e
 
-git add .
-
 read -rp "Enter commit message (Enter to use 'auto-commit'): " commit_message
 
 if [ -z "$commit_message" ]; then
     commit_message="auto-commit"
 fi
 
+git add .
 git commit -m "$commit_message"
 git push
 
