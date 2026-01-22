@@ -1,3 +1,0 @@
-Redo the whole fucking README. It's an inconsistent mess.
-
-Check out https://open-vsx.org/

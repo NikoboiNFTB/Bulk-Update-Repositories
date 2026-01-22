@@ -2,21 +2,28 @@
 
 set -e
 
-all_empty=true
+DEFAULT_EXCLUDE="# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~"
+
+all_replaced=true
 
 for f in */.git/info/exclude; do
   if [[ -f "$f" ]]; then
-    : > "$f"
+    echo "$DEFAULT_EXCLUDE" > "$f"
 
-    if [[ -s "$f" ]]; then
-      echo "Warning: $f is not empty after wiping!"
-      all_empty=false
+    if [[ ! -s "$f" ]]; then
+      echo "Warning: $f is empty after writing default content!"
+      all_replaced=false
     fi
   fi
 done
 
-if $all_empty; then
-  echo "All exclude files emptied successfully."
+if $all_replaced; then
+  echo "All exclude files replaced with default content successfully."
 fi
 
 # Hang

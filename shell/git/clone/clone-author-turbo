@@ -29,7 +29,7 @@ repos=$(curl -s "https://api.github.com/users/$author/repos?per_page=200" \
 mkdir -p "$author"
 cd "$author" || exit 1
 
-JOBS="${JOBS:-32}"
+JOBS="${JOBS:-8}"
 
 echo "Cloning using $method ($JOBS parallel jobs)..."
 

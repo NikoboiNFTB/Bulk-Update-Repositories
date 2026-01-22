@@ -26,6 +26,43 @@ Each entry can be clicked for a detailed description of each script.
 | Generic Utils | [`compare`](/docs/UTILS.md) | Compare files from my repos |
 | Generic Utils | [`sort-file`](/docs/UTILS.md) | Sort contents of any file |
 
+## File Tree
+
+This is the expected file structure for every single script I've published.
+
+```text
+.
+└── GitHub
+    ├── NikoboiNFTB
+    │   ├── DeSlop
+    │   │   └── *
+    │   ├── GitHub-Tools
+    │   │   └── *
+    │   ├── IMDb-RePo
+    │   │   └── *
+    │   ├── nikoboinftb.github.io
+    │   │   └── *
+    │   ├── TMDB-RePo
+    │   │   └── *
+    │   ├── YouTube-Tweaks
+    │   │   └── *
+    │   ├── all-pull
+    │   ├── all-push
+    │   ├── all-status
+    │   ├── compare
+    │   ├── ignore
+    │   ├── ignore-wipe
+    │   ├── pull
+    │   ├── push
+    │   └── status
+    ├── clone-author
+    ├── clone-author-turbo
+    ├── clone-repo
+    └── workflow
+
+222 directories, 1272 files
+```
+
 ## Contributing
 
 Feel free to fork this repository and submit issues or pull requests if you have any suggestions or improvements. If you encounter any bugs or have feature requests, please open an issue.
