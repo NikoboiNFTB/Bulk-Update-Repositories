@@ -32,6 +32,15 @@ echo
 echo "Found $(echo "$repos" | wc -w) repositories. Cloning/pulling all..."
 echo
 
+# Ask for clone method and set prefix
+read -p "Clone using SSH or HTTPS? (ssh/HTTPS) [ssh]: " CLONE_METHOD
+CLONE_METHOD=${CLONE_METHOD,,}  # lowercase
+if [ "$CLONE_METHOD" = "https" ]; then
+    CLONE_PREFIX="https://github.com/"
+else
+    CLONE_PREFIX="git@github.com:"
+fi
+
 # Clone
 for repo in $repos; do
     (
@@ -40,7 +49,7 @@ for repo in $repos; do
             cd "$repo" && git pull --quiet || echo "Pulling $repo failed"
         else
             echo "Cloning $repo..."
-            git clone --quiet "git@github.com:$AUTHOR/$repo.git" || echo "Cloning $repo failed"
+            git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${repo}.git" || echo "Cloning $repo failed"
         fi
     ) &
 done
