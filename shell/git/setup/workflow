@@ -11,7 +11,7 @@ fi
 # Definitions
 AUTHOR="NikoboiNFTB"
 ROOT_DIR="$HOME/GitHub"
-AUTHOR_DIR="$HOME/GitHub/$AUTHOR"
+AUTHOR_DIR="$ROOT_DIR/$AUTHOR"
 mkdir -p "$AUTHOR_DIR"
 cd "$AUTHOR_DIR"
 

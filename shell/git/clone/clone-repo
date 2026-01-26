@@ -2,62 +2,58 @@
 
 set -e
 
-author="$1"
-repo="$2"
-
-if [ -z "$author" ]; then
-    read -rp "Target Author (GitHub Username): " author
+# Ensure $HOME exists
+if [ -z "$HOME" ]; then
+    echo "HOME variable not set!"
+    exit 1
 fi
 
-[ -z "$author" ] && { echo "No username entered. Exiting."; exit 1; }
+# Parse arguments
+AUTHOR="$1"
+REPO="$2"
+CLONE_METHOD="$3"
 
-if [ -z "$repo" ]; then
-    read -rp "Target Repo: " repo
+# Prompt if not provided
+if [ -z "$AUTHOR" ]; then
+    read -rp "GitHub username to clone: " AUTHOR
 fi
-[ -z "$repo" ] && { echo "No repository entered. Exiting."; exit 1; }
 
-read -rp "ssh/HTTPS: " method
-method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
+if [ -z "$REPO" ]; then
+    read -rp "Repository name to clone: " REPO
+fi
 
-if [[ "$method" == "ssh" ]]; then
-    clone_url="git@github.com:$author/$repo.git"
-    method="ssh"
+if [ -z "$CLONE_METHOD" ]; then
+    read -rp "Clone method (ssh/HTTPS): " CLONE_METHOD
+fi
+
+CLONE_METHOD=${CLONE_METHOD,,}
+
+# Set clone prefix
+if [ "$CLONE_METHOD" = "ssh" ]; then
+    CLONE_PREFIX="git@github.com:"
+    CLONE_METHOD=SSH
 else
-    clone_url="https://github.com/$author/$repo.git"
-    method="https"
+    CLONE_PREFIX="https://github.com/"
+    CLONE_METHOD=HTTPS
 fi
 
-mkdir -p "$author"
-cd "$author"
+# Setup target directory
+ROOT_DIR="$HOME/GitHub"
+AUTHOR_DIR="$ROOT_DIR/$AUTHOR"
+mkdir -p "$AUTHOR_DIR"
+cd "$AUTHOR_DIR"
 
-if [ -d "$repo/.git" ]; then
-    echo
-    echo "Repository '$author/$repo' already exists."
-    echo
-    exit 0
+# Clone or update the repo
+if [ -d "$REPO/.git" ]; then
+    echo "Updating $REPO..."
+    cd "$REPO" && git pull --quiet || echo "Pulling $REPO failed"
+else
+    echo "Cloning $REPO..."
+    git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${REPO}.git" || echo "Cloning $REPO failed"
 fi
 
 echo
-echo "Cloning $author/$repo using $method..."
-if git clone "$clone_url" >/dev/null 2>&1; then
-    echo
-    echo "Cloned $author/$repo."
-    echo
-else
-    echo
-    echo "Clone failed."
-    echo "  Common reasons include:"
-    echo "    - The repository name or author is incorrect"
-    echo "    - The repository does not exist"
-    echo "    - The repository is private and you lack access"
-    echo "    - Authentication is not configured correctly"
-    echo
-    echo "  Notes:"
-    echo "    - 'git clone' returns the same error for private and non-existent repos"
-    echo "    - SSH cloning requires a working SSH key added to your GitHub account"
-    echo
-    exit 1
-fi
+echo "Clone/update task completed!"
 
 # Hang
 

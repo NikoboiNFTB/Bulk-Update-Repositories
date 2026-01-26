@@ -2,53 +2,79 @@
 
 set -e
 
-author="$1"
-
-if [ -z "$author" ]; then
-    read -rp "Target Author (GitHub Username): " author
-fi
-
-[ -z "$author" ] && { echo "No username entered. Exiting."; exit 1; }
-
-read -rp "ssh/HTTPS: " method
-method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
-
-if [[ "$method" == "ssh" ]]; then
-    clone_prefix="git@github.com:$author"
-    method="ssh"
-else
-    clone_prefix="https://github.com/$author"
-    method="https"
-fi
-
-echo "Fetching repo list for $author..."
-repos=$(curl -s "https://api.github.com/users/$author/repos?per_page=200" \
-        | jq -r '.[].name')
-
-if [ -z "$repos" ]; then
-    echo "No repositories found (or GitHub API said no)."
+# Ensure $HOME exists
+if [ -z "$HOME" ]; then
+    echo "HOME variable not set!"
     exit 1
 fi
 
-mkdir -p "$author"
-cd "$author" || exit 1
+# Parse arguments
+AUTHOR="$1"
+CLONE_METHOD="$2"
 
-echo "Cloning using $method..."
+# Prompt if not provided
+if [ -z "$AUTHOR" ]; then
+    read -rp "GitHub username to clone: " AUTHOR
+fi
+
+if [ -z "$CLONE_METHOD" ]; then
+    read -rp "Clone method (ssh/https): " CLONE_METHOD
+fi
+
+CLONE_METHOD=${CLONE_METHOD,,}
+
+# Set clone prefix
+if [ "$CLONE_METHOD" = "ssh" ]; then
+    CLONE_PREFIX="git@github.com:"
+    CLONE_METHOD=SSH
+else
+    CLONE_PREFIX="https://github.com/"
+    CLONE_METHOD=HTTPS
+fi
+
+# Setup target directory
+ROOT_DIR="$HOME/GitHub"
+AUTHOR_DIR="$ROOT_DIR/$AUTHOR"
+mkdir -p "$AUTHOR_DIR"
+cd "$AUTHOR_DIR"
+
+# Ensure jq is installed
+if ! command -v jq &> /dev/null; then
+    echo "Error: jq is required but not installed."
+    exit 1
+fi
+
+# Fetch repositories
+echo "Fetching list of repositories for user '$AUTHOR'..."
+repos=$(curl -s "https://api.github.com/users/$AUTHOR/repos?per_page=100" | jq -r '.[].name')
+
+if [ -z "$repos" ]; then
+    echo "No repositories found or failed to fetch from GitHub."
+    exit 1
+fi
+
+echo
+echo "Found $(echo "$repos" | wc -w) repositories."
+echo "Cloning/updating them using $CLONE_METHOD..."
+echo
+
+# Clone or update each repo
 for repo in $repos; do
-    if [ -d "$repo/.git" ]; then
-        echo "$repo already exists, skipping."
-        continue
-    fi
-
-    echo "Cloning $repo..."
-    if git clone "$clone_prefix/$repo.git" >/dev/null 2>&1; then
-        echo "Cloned $repo"
-    else
-        echo "Failed to clone $repo" >&2
-    fi
+    (
+        if [ -d "$repo/.git" ]; then
+            echo "Updating $repo..."
+            cd "$repo" && git pull --quiet || echo "Pulling $repo failed"
+        else
+            echo "Cloning $repo..."
+            git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${repo}.git" || echo "Cloning $repo failed"
+        fi
+    ) &
 done
 
-echo "Done!"
+wait
+
+echo
+echo "All clone/update tasks completed!"
 
 # Hang
 

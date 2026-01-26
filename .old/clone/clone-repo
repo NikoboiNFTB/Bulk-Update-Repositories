@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+set -e
+
+author="$1"
+repo="$2"
+
+if [ -z "$author" ]; then
+    read -rp "Target Author (GitHub Username): " author
+fi
+
+[ -z "$author" ] && { echo "No username entered. Exiting."; exit 1; }
+
+if [ -z "$repo" ]; then
+    read -rp "Target Repo: " repo
+fi
+[ -z "$repo" ] && { echo "No repository entered. Exiting."; exit 1; }
+
+read -rp "ssh/HTTPS: " method
+method=$(echo "$method" | tr '[:upper:]' '[:lower:]')
+
+if [[ "$method" == "ssh" ]]; then
+    clone_url="git@github.com:$author/$repo.git"
+    method="ssh"
+else
+    clone_url="https://github.com/$author/$repo.git"
+    method="https"
+fi
+
+mkdir -p "$author"
+cd "$author"
+
+if [ -d "$repo/.git" ]; then
+    echo
+    echo "Repository '$author/$repo' already exists."
+    echo
+    exit 0
+fi
+
+echo
+echo "Cloning $author/$repo using $method..."
+if git clone "$clone_url" >/dev/null 2>&1; then
+    echo
+    echo "Cloned $author/$repo."
+    echo
+else
+    echo
+    echo "Clone failed."
+    echo "  Common reasons include:"
+    echo "    - The repository name or author is incorrect"
+    echo "    - The repository does not exist"
+    echo "    - The repository is private and you lack access"
+    echo "    - Authentication is not configured correctly"
+    echo
+    echo "  Notes:"
+    echo "    - 'git clone' returns the same error for private and non-existent repos"
+    echo "    - SSH cloning requires a working SSH key added to your GitHub account"
+    echo
+    exit 1
+fi
+
+# Hang
+
+KEEP_OPEN=true
+
+if [ "$KEEP_OPEN" = true ]; then
+    echo
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        sleep 4
+    fi
+fi
