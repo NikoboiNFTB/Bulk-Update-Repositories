@@ -9,5 +9,5 @@ Copy my entire workflow.
 Run in `~/GitHub/` or equivalent:
 
 ```bash
-bash <(wget -qO- https://nikoboi.dev/sh/git/setup/workflow)
+bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/workflow)
 ```

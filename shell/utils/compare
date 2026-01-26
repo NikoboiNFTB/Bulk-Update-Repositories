@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# This script is practically abandoned.
+echo "This script is practically abandoned."
+
 # Repo URLs and names
 REPO1_URL="https://github.com/NikoboiNFTB/nikoboinftb.github.io.git"
 REPO2_URL="https://github.com/NikoboiNFTB/GitHub-Tools.git"

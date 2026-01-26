@@ -10,22 +10,23 @@ Each tool exists to make repetitive Git tasks a little less tedious.
 
 Each entry can be clicked for a detailed description of each script.
 
-| Category | Script | Description |
-| - | - | - |
-| Single Repo Management | [`pull`](/docs/AUTOMATION.md) | Pull remote changes |
-| Single Repo Management | [`push`](/docs/AUTOMATION.md) | Push local changes |
-| Single Repo Management | [`status`](/docs/AUTOMATION.md) | View status |
-| Bulk Repo Management | [`all-pull`](/docs/AUTOMATION.md) | Pull remote changes |
-| Bulk Repo Management | [`all-push`](/docs/AUTOMATION.md) | Push local changes |
-| Bulk Repo Management | [`all-status`](/docs/AUTOMATION.md) | View Status of current repo |
-| Bulk Repo Management | [`ignore`](/docs/AUTOMATION.md) | Add files and folders to [`.git/info/exclude`](/.git/info/exclude) |
-| Cloning Repositories | [`clone-repo`](/docs/CLONE.md) | Clone a repository |
-| Cloning Repositories | [`clone-author`](/docs/CLONE.md) | Clone an author’s repos |
-| SSH Management | [`disable-ssh`](/docs/SSH.md) | Disable your SSH key |
-| SSH Management | [`enable-ssh`](/docs/SSH.md) | Enable your SSH key |
-| Generic Utils | [`compare`](/docs/UTILS.md) | Compare files from my repos |
-| Generic Utils | [`sort-file`](/docs/UTILS.md) | Sort contents of any file |
-| Workflow | [`workflow`](/docs/WORKFLOW.md) | Copy my personal workflow |
+| Script | Description | Source | README |
+| ------ | ----------- | ------ | ------ |
+| `all-pull` | Pull remote changes | [Source](/shell/git/bulk/all-pull) | [README](/docs/AUTOMATION.md#all-pull) |
+| `all-push` | Push local changes | [Source](/shell/git/bulk/all-push) | [README](/docs/AUTOMATION.md#all-push) |
+| `all-status` | View Status of current repo | [Source](/shell/git/bulk/all-status) | [README](/docs/AUTOMATION.md#all-status) |
+| `ignore` | Add entries to [`.git/info/exclude`](/.git/info/exclude) | [Source](/shell/git/bulk/ignore) | [README](/docs/AUTOMATION.md) |
+| `ignore-reset` | Reset [`.git/info/exclude`](/.git/info/exclude) | [Source](/shell/git/bulk/ignore-reset) | [README](/docs/AUTOMATION.md) |
+| `clone-author` | Clone an author’s repos | [Source](/shell/git/clone/clone-author) | [README](/docs/CLONE.md) |
+| `clone-repo` | Clone a repository | [Source](/shell/git/clone/clone-repo) | [README](/docs/CLONE.md) |
+| `pull` | Pull remote changes | [Source](/shell/git/repo/pull) | [README](/docs/AUTOMATION.md) |
+| `push` | Push local changes | [Source](/shell/git/repo/push) | [README](/docs/AUTOMATION.md) |
+| `status` | View status | [Source](/shell/git/repo/status) | [README](/docs/AUTOMATION.md) |
+| `automation` | Setup all scripts automatically | [Source](/shell/git/setup/automation) | [README](/docs/AUTOMATION.md) |
+| `workflow` | Copy my personal workflow | [Source](/shell/git/setup/workflow) | [README](/docs/WORKFLOW.md)
+| `disable-ssh` | Disable your SSH key | [Source](/shell/git/ssh/disable-ssh) | [README](/docs/SSH.md) |
+| `enable-ssh` | Enable your SSH key | [Source](/shell/git/ssh/enable-ssh) | [README](/docs/SSH.md) |
+| `sort` | Sort contents of any file | [Source](/shell/utils/sort) | [README](/docs/UTILS.md)
 
 ## File Tree
 

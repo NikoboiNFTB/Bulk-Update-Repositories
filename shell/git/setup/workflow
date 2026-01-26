@@ -2,23 +2,20 @@
 
 set -e
 
-# --- Step 1: Hard-coded GitHub author and SSH clone ---
-author="NikoboiNFTB"
-clone_prefix="git@github.com:$author"
-
-# --- Step 2: Fetch repo list ---
-echo "Fetching repo list for $author..."
-repos=$(curl -s "https://api.github.com/users/$author/repos?per_page=100" | jq -r '.[].name')
+# Fetch repo list
+echo "Fetching repo list for NikoboiNFTB..."
+repos=$(curl -s "https://api.github.com/users/NikoboiNFTB/repos?per_page=100" | jq -r '.[].name')
 
 if [ -z "$repos" ]; then
     echo "No repositories found (or GitHub API returned none)."
     exit 1
 fi
 
-# --- Step 3: Create author directory and clone repos ---
-mkdir -p "$author"
-cd "$author" || exit 1
+# Create author directory and move to it
+mkdir -p "NikoboiNFTB"
+cd "NikoboiNFTB" || exit 1
 
+# Clone repos
 echo "Cloning using SSH..."
 for repo in $repos; do
     if [ -d "$repo/.git" ]; then
@@ -27,19 +24,19 @@ for repo in $repos; do
     fi
 
     echo "Cloning $repo..."
-    if git clone "$clone_prefix/$repo.git" >/dev/null 2>&1; then
+    if git clone "git@github.com:NikoboiNFTB/$repo.git" >/dev/null 2>&1; then
         echo "Cloned $repo"
     else
         echo "Failed to clone $repo" >&2
     fi
 done
 
-# --- Step 4: Determine install directories ---
+# Determine install directories
 read -rp "Enter install directory for GitHub-Tools files (Enter for current): " BASE_DIR
 BASE_DIR="${BASE_DIR:-$(pwd)}"
 PARENT_DIR="$(dirname "$BASE_DIR")"
 
-# --- Step 5: Clone GitHub-Tools repository directly ---
+# Clone GitHub-Tools repository directly
 TOOLS_REPO="git@github.com:NikoboiNFTB/GitHub-Tools.git"
 TOOLS_DIR="$BASE_DIR/GitHub-Tools-temp"
 
@@ -50,7 +47,7 @@ fi
 
 git clone --depth 1 "$TOOLS_REPO" "$TOOLS_DIR"
 
-# --- Step 6: Function to copy subdirectories ---
+# Copy subdirectories
 copy_all() {
     local SRC="$1"
     local DEST="$2"
@@ -72,16 +69,16 @@ copy_all() {
     fi
 }
 
-# --- Step 7: Copy directories from GitHub-Tools ---
+# Copy directories from GitHub-Tools
 copy_all "$TOOLS_DIR/shell/git/bulk" "$BASE_DIR"
 copy_all "$TOOLS_DIR/shell/git/repo" "$BASE_DIR"
 copy_all "$TOOLS_DIR/shell/git/clone" "$PARENT_DIR"
 
-# --- Step 8: Cleanup ---
+# Cleanup
 rm -rf "$TOOLS_DIR"
 echo "Automation setup complete."
 
-# --- Step 9: Optional hang ---
+# Hang
 
 KEEP_OPEN=true
 

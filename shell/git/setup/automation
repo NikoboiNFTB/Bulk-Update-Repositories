@@ -2,7 +2,7 @@
 
 set -e
 
-# Ask user for install directory for regular files (default: current directory)
+# Ask user for install directory for regular files (Enter for current)
 read -rp "Enter install directory for regular files (Enter for current): " BASE_DIR
 BASE_DIR="${BASE_DIR:-$(pwd)}"
 
