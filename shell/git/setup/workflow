@@ -10,10 +10,8 @@ fi
 
 # Definitions
 AUTHOR="NikoboiNFTB"
-# ROOT_DIR="$HOME/GitHub"
-# AUTHOR_DIR="$HOME/GitHub/$AUTHOR"
-ROOT_DIR="$HOME/GitHub/test"               # Temp
-AUTHOR_DIR="$HOME/GitHub/test/$AUTHOR"     # Temp
+ROOT_DIR="$HOME/GitHub"
+AUTHOR_DIR="$HOME/GitHub/$AUTHOR"
 mkdir -p "$AUTHOR_DIR"
 cd "$AUTHOR_DIR"
 
@@ -30,7 +28,9 @@ if [ -z "$repos" ]; then
     echo "No repositories found or failed to fetch from GitHub."
     exit 1
 fi
+echo
 echo "Found $(echo "$repos" | wc -w) repositories. Cloning/pulling all..."
+echo
 
 # Clone
 for repo in $repos; do
@@ -47,7 +47,9 @@ done
 
 wait
 
+echo
 echo "All clone/update tasks completed!"
+echo
 
 # Copy all files to correct directories
 echo "Copying files..."
@@ -71,6 +73,7 @@ chmod +x "$AUTHOR_DIR"/* "$ROOT_DIR"/*
 echo "Files copied!"
 
 # Prompt to hide SSH scripts (y/N)
+echo
 read -p "Hide SSH scripts? (y/N): " hide_ssh
 
 if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
@@ -87,8 +90,7 @@ fi
 # Reset */.git/info/exclude
 # bash $AUTHOR_DIR/ignore-reset
 
-# Add automation to */.git/info/exclude
-# Add automation entries to */.git/info/exclude
+# Add automation/ to */.git/info/exclude
 FILES=(automation automation/ automation/pull automation/push automation/status)
 added=false
 
@@ -101,13 +103,24 @@ for FILE_NAME in "${FILES[@]}"; do
     done
 done
 
-# Add automation scripts to repos
+# Add automation/ to repos
 mkdir -p automation
-cp pull push status automation/
+cp pull push status automation/ || echo "Failed to copy scripts into automation/"
+
 for d in */; do
-    [ "$d" != "automation/" ] && cp -r automation "$d" || echo "Failed to copy to $d"
+    if [ "$d" != "automation/" ]; then
+        cp -r automation "$d" || echo "Failed to copy automation to $d"
+    fi
 done
-rm -rf automation || echo "Failed to remove automation folder"
+
+rm -rf automation || echo "Failed to remove temporary automation folder"
+
+
+
+
+
+
+
 
 # Hang
 
