@@ -33,7 +33,7 @@ echo "Found $(echo "$repos" | wc -w) repositories. Cloning/pulling all..."
 echo
 
 # Ask for clone method and set prefix
-read -p "Clone using SSH or HTTPS? (ssh/HTTPS) [ssh]: " CLONE_METHOD
+read -p "Clone method (https/SSH): " CLONE_METHOD
 CLONE_METHOD=${CLONE_METHOD,,}  # lowercase
 if [ "$CLONE_METHOD" = "https" ]; then
     CLONE_PREFIX="https://github.com/"
