@@ -10,8 +10,10 @@ fi
 
 # Definitions
 AUTHOR="NikoboiNFTB"
-ROOT_DIR="$HOME/GitHub"
-AUTHOR_DIR="$HOME/GitHub/$AUTHOR"
+# ROOT_DIR="$HOME/GitHub"
+# AUTHOR_DIR="$HOME/GitHub/$AUTHOR"
+ROOT_DIR="$HOME/GitHub/test"               # Temp
+AUTHOR_DIR="$HOME/GitHub/test/$AUTHOR"     # Temp
 mkdir -p "$AUTHOR_DIR"
 cd "$AUTHOR_DIR"
 
@@ -82,19 +84,22 @@ else
     echo "SSH scripts not hidden."
 fi
 
-# Quick check
-pwd
-
 # Reset */.git/info/exclude
 # bash $AUTHOR_DIR/ignore-reset
 
 # Add automation to */.git/info/exclude
-bash "$AUTHOR_DIR/ignore" automation >/dev/null </dev/null
-bash "$AUTHOR_DIR/ignore" automation/ >/dev/null </dev/null
-bash "$AUTHOR_DIR/ignore" automation/pull >/dev/null </dev/null
-bash "$AUTHOR_DIR/ignore" automation/push >/dev/null </dev/null
-bash "$AUTHOR_DIR/ignore" automation/status >/dev/null </dev/null
-# `ignore` ends in the same hang that this script ends in. So without sending output to `/dev/null` you have to hit enter 5 times here.
+# Add automation entries to */.git/info/exclude
+FILES=(automation automation/ automation/pull automation/push automation/status)
+added=false
+
+for FILE_NAME in "${FILES[@]}"; do
+    for f in */.git/info/exclude; do
+        if ! grep -qxF "$FILE_NAME" "$f"; then
+            echo "$FILE_NAME" >> "$f"
+            added=true
+        fi
+    done
+done
 
 # Add automation scripts to repos
 mkdir -p automation
