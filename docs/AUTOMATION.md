@@ -42,7 +42,7 @@ Run the script from the parent directory containing your Git repos:
 ./all-status
 ```
 
-### [`ignore`](/shell/git/bulk/ignore) and [`ignore-default`](/shell/git/bulk/ignore-default)
+### [`ignore`](/shell/git/bulk/ignore) and [`ignore-reset`](/shell/git/bulk/ignore-reset)
 
 A pair of scripts to manage local Git ignore rules across all repositories in subdirectories.
 
@@ -116,11 +116,23 @@ Save the script to the parent directory containing your Git repos, and run them 
 
 ## Installation
 
+You can install any of the scripts into each folder by running:
+
 Run in;
 
 ```text
 ~/GitHub/$AUTHOR/
 ```
+
+Single file:
+
+```bash
+wget https://github.com/NikoboiNFTB/GitHub-Tools/tree/main/shell/*
+```
+
+>> Replace `*` with the path to the file you want.
+
+Or run the automation setup script:
 
 ```bash
 bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/automation)
