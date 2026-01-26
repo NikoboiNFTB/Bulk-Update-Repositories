@@ -28,17 +28,17 @@ if [ -z "$repos" ]; then
     echo "No repositories found or failed to fetch from GitHub."
     exit 1
 fi
-echo "Found $(echo "$repos" | wc -w) repositories. Cloning/pulling all in parallel..."
+echo "Found $(echo "$repos" | wc -w) repositories. Cloning/pulling all..."
 
 # Clone
 for repo in $repos; do
     (
         if [ -d "$repo/.git" ]; then
             echo "Updating $repo..."
-            cd "$repo" && git pull --quiet
+            cd "$repo" && git pull --quiet || echo "Pulling $repo failed"
         else
             echo "Cloning $repo..."
-            git clone --quiet "git@github.com:$AUTHOR/$repo.git"
+            git clone --quiet "git@github.com:$AUTHOR/$repo.git" || echo "Cloning $repo failed"
         fi
     ) &
 done
@@ -50,20 +50,20 @@ echo "All clone/update tasks completed!"
 # Copy all files to correct directories
 echo "Copying files..."
 
-for file in GitHub-Tools/shell/git/bulk/*; do
+for file in $AUTHOR_DIR/GitHub-Tools/shell/git/bulk/*; do
     cp "$file" "$AUTHOR_DIR/"
 done
-for file in GitHub-Tools/shell/git/clone/*; do
+for file in $AUTHOR_DIR/GitHub-Tools/shell/git/clone/*; do
     cp "$file" "$ROOT_DIR/"
 done
-for file in GitHub-Tools/shell/git/repo/*; do
+for file in $AUTHOR_DIR/GitHub-Tools/shell/git/repo/*; do
     cp "$file" "$AUTHOR_DIR/"
 done
-for file in GitHub-Tools/shell/git/ssh/*; do
+for file in $AUTHOR_DIR/GitHub-Tools/shell/git/ssh/*; do
     cp "$file" "$AUTHOR_DIR/"
 done
 
-# Ensure only copied files get executable permissions
+# Give executable permissions
 chmod +x "$AUTHOR_DIR"/* "$ROOT_DIR"/*
 
 echo "Files copied!"
@@ -86,14 +86,23 @@ fi
 pwd
 
 # Reset */.git/info/exclude
-bash ignore-reset
+# bash $AUTHOR_DIR/ignore-reset
 
 # Add automation to */.git/info/exclude
-bash ignore automation
-bash ignore automation/
-bash ignore automation/pull
-bash ignore automation/push
-bash ignore automation/status
+bash "$AUTHOR_DIR/ignore" automation >/dev/null
+bash "$AUTHOR_DIR/ignore" automation/ >/dev/null
+bash "$AUTHOR_DIR/ignore" automation/pull >/dev/null
+bash "$AUTHOR_DIR/ignore" automation/push >/dev/null
+bash "$AUTHOR_DIR/ignore" automation/status >/dev/null
+# `ignore` ends in the same hang that this script ends in. So without sending output to `/dev/null` you have to hit enter 5 times here.
+
+# Add automation scripts to repos
+mkdir -p automation
+cp pull push status automation/
+for d in */; do
+    [ "$d" != "automation/" ] && cp -r automation "$d" || echo "Failed to copy to $d"
+done
+rm -rf automation || echo "Failed to remove automation folder"
 
 # Hang
 
