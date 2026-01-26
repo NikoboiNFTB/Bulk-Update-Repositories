@@ -12,19 +12,20 @@ Each entry can be clicked for a detailed description of each script.
 
 | Category | Script | Description |
 | - | - | - |
-| Single Repo Management | [`pull`](/docs/REPO.md) | Pull remote changes |
-| Single Repo Management | [`push`](/docs/REPO.md) | Push local changes |
-| Single Repo Management | [`status`](/docs/REPO.md) | View status |
-| Bulk Repo Management | [`all-pull`](/docs/BULK.md) | Pull remote changes |
-| Bulk Repo Management | [`all-push`](/docs/BULK.md) | Push local changes |
-| Bulk Repo Management | [`all-status`](/docs/BULK.md) | View Status of current repo |
-| Bulk Repo Management | [`ignore`](/docs/BULK.md) | Add files and folders to [`.git/info/exclude`](/.git/info/exclude) |
+| Single Repo Management | [`pull`](/docs/AUTOMATION.md) | Pull remote changes |
+| Single Repo Management | [`push`](/docs/AUTOMATION.md) | Push local changes |
+| Single Repo Management | [`status`](/docs/AUTOMATION.md) | View status |
+| Bulk Repo Management | [`all-pull`](/docs/AUTOMATION.md) | Pull remote changes |
+| Bulk Repo Management | [`all-push`](/docs/AUTOMATION.md) | Push local changes |
+| Bulk Repo Management | [`all-status`](/docs/AUTOMATION.md) | View Status of current repo |
+| Bulk Repo Management | [`ignore`](/docs/AUTOMATION.md) | Add files and folders to [`.git/info/exclude`](/.git/info/exclude) |
 | Cloning Repositories | [`clone-repo`](/docs/CLONE.md) | Clone a repository |
 | Cloning Repositories | [`clone-author`](/docs/CLONE.md) | Clone an author’s repos |
 | SSH Management | [`disable-ssh`](/docs/SSH.md) | Disable your SSH key |
 | SSH Management | [`enable-ssh`](/docs/SSH.md) | Enable your SSH key |
 | Generic Utils | [`compare`](/docs/UTILS.md) | Compare files from my repos |
 | Generic Utils | [`sort-file`](/docs/UTILS.md) | Sort contents of any file |
+| Workflow | [`workflow`](/docs/WORKFLOW.md) | Copy my personal workflow |
 
 ## File Tree
 
@@ -46,6 +47,8 @@ This is the expected file structure for every single script I've published.
     │   │   └── *
     │   ├── YouTube-Tweaks
     │   │   └── *
+    │   ├── .disable-ssh
+    │   ├── .enable-ssh
     │   ├── all-pull
     │   ├── all-push
     │   ├── all-status
@@ -59,8 +62,22 @@ This is the expected file structure for every single script I've published.
     ├── clone-author-turbo
     ├── clone-repo
     └── workflow
+```
 
-222 directories, 1272 files
+## Installation
+
+You can install any of the scripts into each folder by running:
+
+```bash
+wget https://github.com/NikoboiNFTB/GitHub-Tools/tree/main/shell/*
+```
+
+>> Replace `*` with the path to the file you want.
+
+Or run the automation setup script:
+
+```bash
+bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/automation)
 ```
 
 ## Contributing

@@ -8,8 +8,7 @@ clone_prefix="git@github.com:$author"
 
 # --- Step 2: Fetch repo list ---
 echo "Fetching repo list for $author..."
-repos=$(curl -s "https://api.github.com/users/$author/repos?per_page=200" \
-        | jq -r '.[].name')
+repos=$(curl -s "https://api.github.com/users/$author/repos?per_page=100" | jq -r '.[].name')
 
 if [ -z "$repos" ]; then
     echo "No repositories found (or GitHub API returned none)."

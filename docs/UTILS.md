@@ -28,6 +28,14 @@ Save the script and run it anywhere:
 ./sort <file>
 ```
 
+or
+
+```bash
+bash sort <file>
+```
+
+>> This is a general use version of the sort file from [NikoboiNFTB/DeSlop/block/sort](https://github.com/NikoboiNFTB/DeSlop/blob/main/block/sort)
+
 ## Installation
 
 Run in the folder you want the script in;
