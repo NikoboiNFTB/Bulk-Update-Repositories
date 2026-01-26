@@ -4,10 +4,8 @@ set -e
 
 # Definitions
 AUTHOR="NikoboiNFTB"
-# ROOT_DIR="$HOME/GitHub"
-# AUTHOR_DIR="$HOME/GitHub/$AUTHOR"
-ROOT_DIR="$HOME/GitHub/test"            # Temporary
-AUTHOR_DIR="$HOME/GitHub/test/$AUTHOR"  # Temporary
+ROOT_DIR="$HOME/GitHub"
+AUTHOR_DIR="$HOME/GitHub/$AUTHOR"
 mkdir -p "$AUTHOR_DIR"
 cd "$AUTHOR_DIR"
 
