@@ -2,30 +2,42 @@
 
 set -e
 
-mkdir -p "$HOME/GitHub/NikoboiNFTB"
-cd "$HOME/GitHub/NikoboiNFTB"
+# make and cd directory
+AUTHOR="NikoboiNFTB"
+# TARGET_DIR="$HOME/GitHub/$AUTHOR"
+TARGET_DIR="$HOME/GitHub/test/$AUTHOR"
+mkdir -p "$TARGET_DIR"
+cd "$TARGET_DIR"
 
-# Fetch repo list
-echo "Fetching repo list for NikoboiNFTB..."
-repos=$(curl -s "https://api.github.com/users/NikoboiNFTB/repos?per_page=100" | jq -r '.[].name')
-
-if [ -z "$repos" ]; then
-    echo "No repositories found."
+# Ensure jq is installed
+if ! command -v jq &> /dev/null; then
+    echo "Error: jq is required but not installed."
     exit 1
 fi
 
-# Clone or update repos
-echo "Processing repositories..."
+
+# Get repo names
+echo "Fetching list of repositories for user '$AUTHOR'..."
+repos=$(curl -s "https://api.github.com/users/$AUTHOR/repos?per_page=100" | jq -r '.[].name')
+if [ -z "$repos" ]; then
+    echo "No repositories found or failed to fetch from GitHub."
+    exit 1
+fi
+echo "Found $(echo "$repos" | wc -w) repositories. Cloning/pulling all in parallel..."
+
+# Clone
 for repo in $repos; do
-    if [ -d "$repo/.git" ]; then
-        echo "$repo already exists, pulling updates..."
-        git -C "$repo" pull --quiet || echo "Failed to pull $repo" >&2
-    else
-        echo "Cloning $repo..."
-        if git clone "git@github.com:NikoboiNFTB/$repo.git" >/dev/null 2>&1; then
-            echo "Cloned $repo"
+    (
+        if [ -d "$repo/.git" ]; then
+            echo "Updating $repo..."
+            cd "$repo" && git pull --quiet
         else
-            echo "Failed to clone $repo" >&2
+            echo "Cloning $repo..."
+            git clone --quiet "git@github.com:$AUTHOR/$repo.git"
         fi
-    fi
+    ) &
 done
+
+wait
+
+echo "All cloning/pulling tasks completed!"
