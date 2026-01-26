@@ -1,0 +1,127 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Ensure $HOME exists
+if [ -z "$HOME" ]; then
+    echo "HOME variable not set!"
+    exit 1
+fi
+
+# Prompt for target user
+read -rp "Enter the GitHub username of the target user: " AUTHOR
+AUTHOR=${AUTHOR// /}  # remove spaces just in case
+
+if [ -z "$AUTHOR" ]; then
+    echo "No username provided. Exiting."
+    exit 1
+fi
+
+# Define directories
+ROOT_DIR="$HOME/GitHub"
+AUTHOR_DIR="$ROOT_DIR/$AUTHOR"
+
+# Check if author's GitHub folder exists
+if [ ! -d "$AUTHOR_DIR" ]; then
+    echo "The folder '$AUTHOR_DIR' does not exist."
+    echo "Please make sure the target user has their repositories cloned in '$AUTHOR_DIR'."
+    exit 1
+fi
+
+cd "$AUTHOR_DIR"
+
+# Ensure jq is installed
+if ! command -v jq &> /dev/null; then
+    echo "Error: jq is required but not installed."
+    exit 1
+fi
+
+# Clone GitHub-Tools repo
+TOOLS_DIR="$ROOT_DIR/NikoboiNFTB/GitHub-Tools"
+mkdir -p "$(dirname "$TOOLS_DIR")"
+if [ -d "$TOOLS_DIR/.git" ]; then
+    echo "Updating GitHub-Tools..."
+    cd "$TOOLS_DIR" && git pull --quiet || echo "Pull failed"
+else
+    echo "Cloning GitHub-Tools..."
+    git clone --quiet https://github.com/NikoboiNFTB/GitHub-Tools.git "$TOOLS_DIR" || echo "Cloning failed"
+fi
+
+cd "$AUTHOR_DIR"
+
+# Copy workflow scripts from GitHub-Tools to correct locations
+echo "Copying files..."
+
+# bulk/ → $AUTHOR_DIR
+for file in "$TOOLS_DIR/shell/git/bulk/"*; do
+    cp "$file" "$AUTHOR_DIR/" || echo "Failed to copy $file"
+done
+
+# clone/ → $ROOT_DIR
+for file in "$TOOLS_DIR/shell/git/clone/"*; do
+    cp "$file" "$ROOT_DIR/" || echo "Failed to copy $file"
+done
+
+# repo/ → $AUTHOR_DIR
+for file in "$TOOLS_DIR/shell/git/repo/"*; do
+    cp "$file" "$AUTHOR_DIR/" || echo "Failed to copy $file"
+done
+
+# ssh/ → $AUTHOR_DIR
+for file in "$TOOLS_DIR/shell/git/ssh/"*; do
+    cp "$file" "$AUTHOR_DIR/" || echo "Failed to copy $file"
+done
+
+# Make everything executable
+chmod +x "$AUTHOR_DIR"/* "$ROOT_DIR"/*
+
+echo "Files copied!"
+
+# Hide SSH scripts prompt
+echo
+read -rp "Hide SSH scripts? (y/N): " hide_ssh
+
+if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
+    mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh" 2>/dev/null || true
+    mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh" 2>/dev/null || true
+    echo "SSH scripts hidden."
+else
+    rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
+    echo "SSH scripts not hidden."
+fi
+
+# Add automation/ to */.git/info/exclude
+FILES=(automation automation/ automation/pull automation/push automation/status)
+mkdir -p automation
+cp pull push status automation/ 2>/dev/null || echo "Failed to copy automation scripts"
+
+for d in */; do
+    [ "$d" = "automation/" ] && continue
+    repo_git="$d/.git/info/exclude"
+    if [ -f "$repo_git" ]; then
+        for FILE_NAME in "${FILES[@]}"; do
+            if ! grep -qxF "$FILE_NAME" "$repo_git"; then
+                echo "$FILE_NAME" >> "$repo_git"
+            fi
+        done
+    fi
+    cp -r automation "$d" 2>/dev/null || echo "Failed to copy automation to $d"
+done
+
+rm -rf automation 2>/dev/null
+
+# Hang prompt
+KEEP_OPEN=true
+if [ "$KEEP_OPEN" = true ]; then
+    echo
+    read -rp "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        sleep 4
+    fi
+fi
+
+echo "Workflow installation completed."
