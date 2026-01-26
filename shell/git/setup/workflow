@@ -2,19 +2,20 @@
 
 set -e
 
-# make and cd directory
+# Definitions
 AUTHOR="NikoboiNFTB"
-# TARGET_DIR="$HOME/GitHub/$AUTHOR"
-TARGET_DIR="$HOME/GitHub/test/$AUTHOR"
-mkdir -p "$TARGET_DIR"
-cd "$TARGET_DIR"
+# ROOT_DIR="$HOME/GitHub"
+# AUTHOR_DIR="$HOME/GitHub/$AUTHOR"
+ROOT_DIR="$HOME/GitHub/test"            # Temporary
+AUTHOR_DIR="$HOME/GitHub/test/$AUTHOR"  # Temporary
+mkdir -p "$AUTHOR_DIR"
+cd "$AUTHOR_DIR"
 
 # Ensure jq is installed
 if ! command -v jq &> /dev/null; then
     echo "Error: jq is required but not installed."
     exit 1
 fi
-
 
 # Get repo names
 echo "Fetching list of repositories for user '$AUTHOR'..."
@@ -40,4 +41,16 @@ done
 
 wait
 
-echo "All cloning/pulling tasks completed!"
+echo "All clone/update tasks completed!"
+
+# Copy all files to correct directories
+echo "Copying files..."
+
+for file in GitHub-Tools/shell/git/bulk/*; do cp "$file" $AUTHOR_DIR/; done
+for file in GitHub-Tools/shell/git/clone/*; do cp "$file" $ROOT_DIR/; done
+for file in GitHub-Tools/shell/git/repo/*; do cp "$file" $AUTHOR_DIR/; done
+for file in GitHub-Tools/shell/git/ssh/*; do cp "$file" $AUTHOR_DIR/; done
+
+chmod +x *
+
+echo "Files copied!"
