@@ -89,11 +89,11 @@ pwd
 # bash $AUTHOR_DIR/ignore-reset
 
 # Add automation to */.git/info/exclude
-bash "$AUTHOR_DIR/ignore" automation >/dev/null
-bash "$AUTHOR_DIR/ignore" automation/ >/dev/null
-bash "$AUTHOR_DIR/ignore" automation/pull >/dev/null
-bash "$AUTHOR_DIR/ignore" automation/push >/dev/null
-bash "$AUTHOR_DIR/ignore" automation/status >/dev/null
+bash "$AUTHOR_DIR/ignore" automation >/dev/null </dev/null
+bash "$AUTHOR_DIR/ignore" automation/ >/dev/null </dev/null
+bash "$AUTHOR_DIR/ignore" automation/pull >/dev/null </dev/null
+bash "$AUTHOR_DIR/ignore" automation/push >/dev/null </dev/null
+bash "$AUTHOR_DIR/ignore" automation/status >/dev/null </dev/null
 # `ignore` ends in the same hang that this script ends in. So without sending output to `/dev/null` you have to hit enter 5 times here.
 
 # Add automation scripts to repos
