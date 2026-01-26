@@ -10,8 +10,8 @@ fi
 
 # Definitions
 AUTHOR="NikoboiNFTB"
-ROOT_DIR="$HOME/test2/GitHub"
-AUTHOR_DIR="$HOME/test2/GitHub/$AUTHOR"
+ROOT_DIR="$HOME/GitHub"
+AUTHOR_DIR="$HOME/GitHub/$AUTHOR"
 mkdir -p "$AUTHOR_DIR"
 cd "$AUTHOR_DIR"
 
