@@ -46,11 +46,31 @@ echo "All clone/update tasks completed!"
 # Copy all files to correct directories
 echo "Copying files..."
 
-for file in GitHub-Tools/shell/git/bulk/*; do cp "$file" $AUTHOR_DIR/; done
-for file in GitHub-Tools/shell/git/clone/*; do cp "$file" $ROOT_DIR/; done
-for file in GitHub-Tools/shell/git/repo/*; do cp "$file" $AUTHOR_DIR/; done
-for file in GitHub-Tools/shell/git/ssh/*; do cp "$file" $AUTHOR_DIR/; done
+for file in GitHub-Tools/shell/git/bulk/*; do
+    cp "$file" "$AUTHOR_DIR/"
+done
+for file in GitHub-Tools/shell/git/clone/*; do
+    cp "$file" "$ROOT_DIR/"
+done
+for file in GitHub-Tools/shell/git/repo/*; do
+    cp "$file" "$AUTHOR_DIR/"
+done
+for file in GitHub-Tools/shell/git/ssh/*; do
+    cp "$file" "$AUTHOR_DIR/"
+done
 
-chmod +x *
+# Ensure only copied files get executable permissions
+chmod +x "$AUTHOR_DIR"/* "$ROOT_DIR"/*
 
 echo "Files copied!"
+
+# Prompt to hide SSH scripts (y/N)
+read -p "Hide SSH scripts? (y/N): " hide_ssh
+
+if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
+    mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh"
+    mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh"
+    echo "SSH scripts hidden."
+else
+    echo "SSH scripts not hidden."
+fi
