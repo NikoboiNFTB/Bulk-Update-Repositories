@@ -8,9 +8,11 @@ current_dir=$(basename "$PWD")
 # Determine what to add based on folder
 if [ "$current_dir" = "automation" ]; then
     echo "Detected 'automation/' folder. Adding parent repo files..."
+    echo
     git add ..
 else
     echo "Adding current folder files..."
+    echo
     git add .
 fi
 
