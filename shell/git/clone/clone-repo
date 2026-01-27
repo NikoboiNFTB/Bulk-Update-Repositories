@@ -15,11 +15,11 @@ CLONE_METHOD="$3"
 
 # Prompt if not provided
 if [ -z "$AUTHOR" ]; then
-    read -rp "GitHub username to clone: " AUTHOR
+    read -rp "Author to clone (GitHub username): " AUTHOR
 fi
 
 if [ -z "$REPO" ]; then
-    read -rp "Repository name to clone: " REPO
+    read -rp "Repository to clone (Repository name): " REPO
 fi
 
 if [ -z "$CLONE_METHOD" ]; then

@@ -14,11 +14,11 @@ CLONE_METHOD="$2"
 
 # Prompt if not provided
 if [ -z "$AUTHOR" ]; then
-    read -rp "GitHub username to clone: " AUTHOR
+    read -rp "Author to clone (GitHub username): " AUTHOR
 fi
 
 if [ -z "$CLONE_METHOD" ]; then
-    read -rp "Clone method (ssh/https): " CLONE_METHOD
+    read -rp "Clone method (ssh/HTTPS): " CLONE_METHOD
 fi
 
 CLONE_METHOD=${CLONE_METHOD,,}
