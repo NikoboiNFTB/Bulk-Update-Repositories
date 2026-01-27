@@ -129,7 +129,9 @@ fi
 
 # Add /automation/ to each repo's .git/info/exclude
 FILES=(/automation/ /automation/pull /automation/push /automation/status)
-added=false
+
+all_success=true
+failed_repos=()
 
 for repo in */; do
     [ -d "$repo/.git" ] || continue
@@ -137,17 +139,32 @@ for repo in */; do
 
     if [ ! -f "$EXCLUDE_FILE" ]; then
         echo "git exclude doesn't exist for $repo, creating it"
-        mkdir -p "$repo/.git/info"
-        touch "$EXCLUDE_FILE"
+        if ! mkdir -p "$repo/.git/info" || ! touch "$EXCLUDE_FILE"; then
+            all_success=false
+            failed_repos+=("$repo")
+            continue
+        fi
     fi
 
     for FILE_NAME in "${FILES[@]}"; do
         if ! grep -qxF "$FILE_NAME" "$EXCLUDE_FILE"; then
-            echo "$FILE_NAME" >> "$EXCLUDE_FILE"
-            added=true
+            if ! echo "$FILE_NAME" >> "$EXCLUDE_FILE"; then
+                all_success=false
+                failed_repos+=("$repo")
+                break
+            fi
         fi
     done
 done
+
+if $all_success; then
+    echo "All .git/info/exclude files updated successfully."
+else
+    echo "Failed to update .git/info/exclude in the following repositories:"
+    for repo in "${failed_repos[@]}"; do
+        echo "  - $repo"
+    done
+fi
 
 # Add automation/ to repos
 for d in */; do
