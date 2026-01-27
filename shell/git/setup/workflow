@@ -132,6 +132,7 @@ FILES=(/automation/ /automation/pull /automation/push /automation/status)
 added=false
 
 for repo in */; do
+    [ -d "$repo/.git" ] || continue
     EXCLUDE_FILE="$repo/.git/info/exclude"
 
     if [ ! -f "$EXCLUDE_FILE" ]; then
