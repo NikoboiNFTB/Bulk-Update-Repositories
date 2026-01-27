@@ -103,6 +103,8 @@ else
     echo "SSH scripts not hidden."
 fi
 
+echo
+
 # Reset */.git/info/exclude (inline, no hang)
 DEFAULT_EXCLUDE="# git ls-files --others --exclude-from=.git/info/exclude
 # Lines that start with '#' are comments.
@@ -115,7 +117,7 @@ all_replaced=true
 
 for f in */.git/info/exclude; do
     if [[ -f "$f" ]]; then
-        echo "$DEFAULT_EXCLUDE" > "$f"
+        # echo "$DEFAULT_EXCLUDE" > "$f"
         if [[ ! -s "$f" ]]; then
             echo "Warning: $f is empty after writing default content!"
             all_replaced=false
@@ -124,7 +126,7 @@ for f in */.git/info/exclude; do
 done
 
 if $all_replaced; then
-    echo "All exclude files replaced with default content successfully."
+    echo "All .git/info/exclude files reset successfully."
 fi
 
 # Add /automation/ to each repo's .git/info/exclude
