@@ -76,7 +76,7 @@ for file in $AUTHOR_DIR/GitHub-Tools/shell/git/clone/*; do
     cp "$file" "$ROOT_DIR/"
 done
 for file in $AUTHOR_DIR/GitHub-Tools/shell/git/repo/*; do
-    cp "$file" "$AUTHOR_DIR/"
+    cp "$file" "$AUTHOR_DIR/automation/"
 done
 for file in $AUTHOR_DIR/GitHub-Tools/shell/git/ssh/*; do
     cp "$file" "$AUTHOR_DIR/"
