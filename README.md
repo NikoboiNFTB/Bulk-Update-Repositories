@@ -33,36 +33,55 @@ Each entry can be clicked for a detailed description of each script.
 This is the expected file structure for every single script I've published.
 
 ```text
-.
+$HOME
 └── GitHub
     ├── NikoboiNFTB
     │   ├── DeSlop
+    │   │   ├── automation/
+    │   │   │   ├── pull
+    │   │   │   ├── push
+    │   │   │   └── status
     │   │   └── *
     │   ├── GitHub-Tools
+    │   │   ├── automation/
+    │   │   │   ├── pull
+    │   │   │   ├── push
+    │   │   │   └── status
     │   │   └── *
     │   ├── IMDb-RePo
+    │   │   ├── automation/
+    │   │   │   ├── pull
+    │   │   │   ├── push
+    │   │   │   └── status
     │   │   └── *
     │   ├── nikoboinftb.github.io
+    │   │   ├── automation/
+    │   │   │   ├── pull
+    │   │   │   ├── push
+    │   │   │   └── status
     │   │   └── *
     │   ├── TMDB-RePo
+    │   │   ├── automation/
+    │   │   │   ├── pull
+    │   │   │   ├── push
+    │   │   │   └── status
     │   │   └── *
     │   ├── YouTube-Tweaks
+    │   │   ├── automation/
+    │   │   │   ├── pull
+    │   │   │   ├── push
+    │   │   │   └── status
     │   │   └── *
-    │   ├── .disable-ssh
-    │   ├── .enable-ssh
     │   ├── all-pull
     │   ├── all-push
     │   ├── all-status
     │   ├── compare
+    │   ├── disable-ssh
+    │   ├── enable-ssh
     │   ├── ignore
-    │   ├── ignore-wipe
-    │   ├── pull
-    │   ├── push
-    │   └── status
+    │   └── ignore-reset
     ├── clone-author
-    ├── clone-author-turbo
-    ├── clone-repo
-    └── workflow
+    └── clone-repo
 ```
 
 ## Installation

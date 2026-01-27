@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
+
 set -e
+
+# Ensure $HOME exists
+if [ -z "$HOME" ]; then
+    echo "HOME variable not set!"
+    exit 1
+fi
 
 SSH_DIR="$HOME/.ssh"
 BACKUP_DIR="$HOME/.ssh.bak"

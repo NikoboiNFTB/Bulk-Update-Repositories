@@ -24,7 +24,7 @@ AUTHOR_DIR="$ROOT_DIR/$AUTHOR"
 # Check if author's GitHub folder exists
 if [ ! -d "$AUTHOR_DIR" ]; then
     echo "The folder '$AUTHOR_DIR' does not exist."
-    echo "Please make sure the target user has their repositories cloned in '$AUTHOR_DIR'."
+    echo "Please make sure your repositories are cloned in '$AUTHOR_DIR'."
     exit 1
 fi
 

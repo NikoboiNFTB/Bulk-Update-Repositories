@@ -1,14 +1,16 @@
-⚠️ This repository is undergoing large changes. README.md files may not be accurate.
-
 # Cloning Scripts
 
-Note: If you get this:
+Scripts for cloning repositories.
+
+## Note
+
+If you get this:
 
 ```text
 Username for 'https://github.com': 
 ```
 
-The repo is private or doesn't exist. Don't bother with it, Git no longer even supports login like that via CLI.
+The repo is private or doesn't exist. Don't bother with it, GitHub no longer even supports login like that via CLI.
 
 ## Scripts
 
@@ -21,30 +23,14 @@ Clones all public repositories for a specified GitHub user into a single folder.
 Provide a GitHub username as an argument or enter it when prompted:
 
 ```bash
+bash clone-author NikoboiNFTB SSH
+```
+
+```bash
 ./clone-author NikoboiNFTB
 ```
 
-You will then choose `SSH` or `HTTPS` for cloning (if you don't know the difference, pick HTTPS, or just hit Enter). The script creates a folder named after the user and clones all repositories into it.
-
-### `clone-author-turbo`
-
-A faster version of `clone-author` that clones all repositories for a user in parallel. 
-
-#### Usage
-
-Use just like `clone-author`:
-
-```bash
-./clone-author-turbo NikoboiNFTB
-```
-
-The script defaults to 8 parallel cloning jobs, but you can change JOBS value to change amount of background jobs:
-
-```bash
-JOBS=32 bash clone-author-turbo NikoboiNFTB
-```
-
->> Will run 32 at a time.
+Will clone your selected repositories into `$HOME/GitHub/$AUTHOR`
 
 ### `clone-repo`
 
@@ -54,20 +40,30 @@ Clones a specific GitHub repository from a given user into a folder named after 
 
 Provide the GitHub username and repository name as arguments, or enter them when prompted:
 
-./script.sh username repo
+```bash
+bash clone-repo NikoboiNFTB GitHub-Tools HTTPS
+```
 
-The script will create a folder for the user and clone the repository into it. It also provides guidance on common reasons a clone might fail, including private repos or authentication issues.
+```bash
+./clone-repo
+```
+
+Will clone your selected repository into `$HOME/GitHub/$AUTHOR/$REPO`
 
 ## Installation
 
-Run in;
+You can install any one of the scripts into any folder by running:
 
-```text
-~/GitHub/$AUTHOR/
+```bash
+wget https://github.com/NikoboiNFTB/GitHub-Tools/tree/main/shell/*
 ```
+
+>> Fill in the path to the script
+
+Or run the automation setup script. Run anywhere (the script self-corrects using `$HOME`, `mkdir -p` and `cd`):
 
 ```bash
 bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/automation)
 ```
 
->> Will download most files in [`/sh/git/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh/git/).
+>> Will setup my entire automation workflow [`/sh/git/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh/git/). See [file tree](README.md#file-tree) for details.

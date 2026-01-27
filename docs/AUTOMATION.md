@@ -1,5 +1,3 @@
-⚠️ This repository is undergoing large changes. README.md files may not be accurate.
-
 # Bulk Repository Management
 
 These scripts exist to automate repository management, en massé. The goal is that you never have to touch the terminal when developing with GitHub.
@@ -116,26 +114,18 @@ Save the script to the parent directory containing your Git repos, and run them 
 
 ## Installation
 
-You can install any of the scripts into each folder by running:
-
-Run in;
-
-```text
-~/GitHub/$AUTHOR/
-```
-
-Single file:
+You can install any one of the scripts into any folder by running:
 
 ```bash
 wget https://github.com/NikoboiNFTB/GitHub-Tools/tree/main/shell/*
 ```
 
->> Replace `*` with the path to the file you want.
+>> Fill in the path to the script
 
-Or run the automation setup script:
+Or run the automation setup script. Run anywhere (the script self-corrects using `$HOME`, `mkdir -p` and `cd`):
 
 ```bash
 bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/automation)
 ```
 
->> Will download and setup most files in [`/sh/git/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh/git/).
+>> Will setup my entire automation workflow [`/sh/git/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh/git/). See [file tree](README.md#file-tree) for details.

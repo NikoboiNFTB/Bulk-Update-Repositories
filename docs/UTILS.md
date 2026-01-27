@@ -1,5 +1,3 @@
-⚠️ This repository is undergoing large changes. README.md files may not be accurate.
-
 # Utility
 
 Miscellanious utility scripts.
@@ -25,13 +23,13 @@ Sort any file alphabetically.
 Save the script and run it anywhere:
 
 ```bash
-./sort <file>
+bash sort <file>
 ```
 
-or
+You can also add it to some place like `$HOME`, so you can run it from anywhere:
 
 ```bash
-bash sort <file>
+user@pc:~/this/is/a/path/to/a/folder$ ~/sort <file>
 ```
 
 >> This is a general use version of the sort file from [NikoboiNFTB/DeSlop/block/sort](https://github.com/NikoboiNFTB/DeSlop/blob/main/block/sort)
