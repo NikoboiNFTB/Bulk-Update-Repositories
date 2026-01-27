@@ -62,9 +62,11 @@ for file in "$TOOLS_DIR/shell/git/clone/"*; do
     cp "$file" "$ROOT_DIR/" || echo "Failed to copy $file"
 done
 
+mkdir -p "$AUTHOR_DIR/automation"
+
 # repo/ → $AUTHOR_DIR
 for file in "$TOOLS_DIR/shell/git/repo/"*; do
-    cp "$file" "$AUTHOR_DIR/" || echo "Failed to copy $file"
+    cp "$file" "$AUTHOR_DIR/automation/" || echo "Failed to copy $file"
 done
 
 # ssh/ → $AUTHOR_DIR
@@ -91,9 +93,7 @@ else
 fi
 
 # Add automation/ to */.git/info/exclude
-FILES=(automation automation/ automation/pull automation/push automation/status)
-mkdir -p automation
-cp pull push status automation/ 2>/dev/null || echo "Failed to copy automation scripts"
+FILES=(/automation/ /automation/pull /automation/push /automation/status)
 
 for d in */; do
     [ "$d" = "automation/" ] && continue
