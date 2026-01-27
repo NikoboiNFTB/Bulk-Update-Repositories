@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Ensure $HOME exists
+if [ -z "$HOME" ]; then
+    echo "HOME variable not set!"
+    exit 1
+fi
+
+SSH_DIR="$HOME/.ssh"
+KEY_FILE="$SSH_DIR/id_ed25519"
+PUB_KEY_FILE="$KEY_FILE.pub"
+
+echo "Setting up Git..."
+
+# Prerequisite checks
+for cmd in git ssh ssh-keygen ssh-add; do
+    if ! command -v "$cmd" &> /dev/null; then
+        echo "Error: $cmd is required but not installed."
+        echo "On Debian-based systems, run:"
+        echo "  sudo apt update && sudo apt install $cmd"
+        echo
+        echo "For other systems, you'll need to find out how to install $cmd"
+        exit 1
+    fi
+done
+
+# Ensure .ssh directory exists
+mkdir -p "$SSH_DIR"
+chmod 700 "$SSH_DIR"
+
+# Prompt for SSH key comment (optional)
+read -rp "Enter a comment for the SSH key (optional, press ENTER to skip): " KEY_COMMENT
+
+# Generate SSH key if missing
+if [ ! -f "$KEY_FILE" ]; then
+    echo "No SSH key found. Generating id_ed25519..."
+    ssh-keygen -t ed25519 -f "$KEY_FILE" -N "" -C "$KEY_COMMENT"
+else
+    echo "SSH key already exists: $KEY_FILE"
+fi
+
+# Set correct permissions (compatible with my enable/disable scripts)
+chmod 600 "$KEY_FILE"
+chmod 644 "$PUB_KEY_FILE"
+
+# Start ssh-agent if needed
+if [ -z "$SSH_AUTH_SOCK" ]; then
+    echo "Starting ssh-agent..."
+    eval "$(ssh-agent -s)"
+fi
+
+# Add key to agent
+ssh-add "$KEY_FILE" || echo "Warning: ssh-agent may not be running"
+
+# Final check to see if the key is found
+if [[ ! -f "$PUB_KEY_FILE" ]]; then
+    echo "❌ Public key file not found at $PUB_KEY_FILE"
+    exit 1
+fi
+
+# Print public key
+echo
+echo "==================== SSH PUBLIC KEY ===================="
+echo
+cat "$PUB_KEY_FILE"
+echo
+echo "========================================================"
+echo
+
+# Prompt to add key to GitHub
+echo "Copy the SSH public key above and add it to your GitHub account."
+echo "  Enter the following link in a logged-in browser:"
+echo "    https://github.com/settings/ssh/new"
+echo
+echo "In the browser:"
+echo "  Add any Title"
+echo "  Leave 'Key Type' as 'Authentication Key'"
+echo "  Paste the key above into the 'Key' text area"
+echo
+echo "You are now done, but there is still a test to test your SSH connection."
+echo "  Hit Ctrl + C to stop"
+read -rp "Press ENTER once the key has been added to GitHub..."
+
+# Test
+echo
+echo "Note: you may see a prompt to confirm GitHub's host fingerprint"
+echo "  type 'yes' if asked."
+echo
+echo "Testing GitHub SSH connection..."
+ssh -T git@github.com || true
+
+echo
+echo "✅ Git + SSH setup complete."
+
+echo
+echo "You can now run my other scripts, to fully setup your PC for local git development:"
+echo "  bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/automation)"
+echo "Entirely optional"
+
+# Hang
+
+KEEP_OPEN=true
+
+if [ "$KEEP_OPEN" = true ]; then
+    echo
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        sleep 4
+    fi
+fi
