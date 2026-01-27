@@ -104,16 +104,24 @@ else
 fi
 
 # Reset */.git/info/exclude
-# bash $AUTHOR_DIR/ignore-reset
+bash $AUTHOR_DIR/ignore-reset
 
-# Add automation/ to */.git/info/exclude
-FILES=(automation automation/ automation/pull automation/push automation/status)
+# Add /automation/ to each repo's .git/info/exclude
+FILES=(/automation/ /automation/pull /automation/push /automation/status)
 added=false
 
-for FILE_NAME in "${FILES[@]}"; do
-    for f in */.git/info/exclude; do
-        if ! grep -qxF "$FILE_NAME" "$f"; then
-            echo "$FILE_NAME" >> "$f"
+for repo in */; do
+    EXCLUDE_FILE="$repo/.git/info/exclude"
+
+    if [ ! -f "$EXCLUDE_FILE" ]; then
+        echo "git exclude doesn't exist for $repo, creating it"
+        mkdir -p "$repo/.git/info"
+        touch "$EXCLUDE_FILE"
+    fi
+
+    for FILE_NAME in "${FILES[@]}"; do
+        if ! grep -qxF "$FILE_NAME" "$EXCLUDE_FILE"; then
+            echo "$FILE_NAME" >> "$EXCLUDE_FILE"
             added=true
         fi
     done
