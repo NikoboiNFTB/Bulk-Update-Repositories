@@ -75,6 +75,7 @@ done
 for file in $AUTHOR_DIR/GitHub-Tools/shell/git/clone/*; do
     cp "$file" "$ROOT_DIR/"
 done
+mkdir -p automation
 for file in $AUTHOR_DIR/GitHub-Tools/shell/git/repo/*; do
     cp "$file" "$AUTHOR_DIR/automation/"
 done
@@ -83,7 +84,7 @@ for file in $AUTHOR_DIR/GitHub-Tools/shell/git/ssh/*; do
 done
 
 # Give executable permissions
-chmod +x "$AUTHOR_DIR"/* "$ROOT_DIR"/*
+chmod +x "$ROOT_DIR"/* "$AUTHOR_DIR"/* "$AUTHOR_DIR"/automation/*
 
 echo "Files copied!"
 
@@ -119,9 +120,6 @@ for FILE_NAME in "${FILES[@]}"; do
 done
 
 # Add automation/ to repos
-mkdir -p automation
-cp pull push status automation/ || echo "Failed to copy scripts into automation/"
-
 for d in */; do
     if [ "$d" != "automation/" ]; then
         cp -r automation "$d" || echo "Failed to copy automation to $d"
@@ -129,13 +127,6 @@ for d in */; do
 done
 
 rm -rf automation || echo "Failed to remove temporary automation folder"
-
-
-
-
-
-
-
 
 # Hang
 
