@@ -88,21 +88,6 @@ chmod +x "$ROOT_DIR"/* "$AUTHOR_DIR"/* "$AUTHOR_DIR"/automation/*
 
 echo "Files copied!"
 
-# Prompt to hide SSH scripts (y/N)
-echo
-read -p "Hide SSH scripts? (y/N): " hide_ssh
-
-if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
-    # Hide the SSH scripts
-    mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh"
-    mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh"
-    echo "SSH scripts hidden."
-else
-    # Remove hidden scripts if they exist
-    rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
-    echo "SSH scripts not hidden."
-fi
-
 echo
 
 # Add /automation/ to each repo's .git/info/exclude
@@ -152,6 +137,21 @@ for d in */; do
 done
 
 rm -rf automation || echo "Failed to remove temporary automation folder"
+
+# Prompt to hide SSH scripts (y/N)
+echo
+read -p "Hide SSH scripts? (y/N): " hide_ssh
+
+if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
+    # Hide the SSH scripts
+    mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh"
+    mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh"
+    echo "SSH scripts hidden."
+else
+    # Remove hidden scripts if they exist
+    rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
+    echo "SSH scripts not hidden."
+fi
 
 # Hang
 

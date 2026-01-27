@@ -12,6 +12,8 @@ fi
 read -rp "Enter the GitHub username of the target user: " AUTHOR
 AUTHOR=${AUTHOR// /}  # remove spaces just in case
 
+echo
+
 if [ -z "$AUTHOR" ]; then
     echo "No username provided. Exiting."
     exit 1
@@ -24,7 +26,7 @@ AUTHOR_DIR="$ROOT_DIR/$AUTHOR"
 # Check if author's GitHub folder exists
 if [ ! -d "$AUTHOR_DIR" ]; then
     echo "The folder '$AUTHOR_DIR' does not exist."
-    echo "Please make sure your repositories are cloned in '$AUTHOR_DIR'."
+    echo "Please make sure the repositories for '$AUTHOR' are cloned in '$AUTHOR_DIR'."
     exit 1
 fi
 
@@ -46,6 +48,8 @@ else
     echo "Cloning GitHub-Tools..."
     git clone --quiet https://github.com/NikoboiNFTB/GitHub-Tools.git "$TOOLS_DIR" || echo "Cloning failed"
 fi
+
+echo
 
 cd "$AUTHOR_DIR"
 
@@ -79,19 +83,6 @@ chmod +x "$AUTHOR_DIR"/* "$ROOT_DIR"/*
 
 echo "Files copied!"
 
-# Hide SSH scripts prompt
-echo
-read -rp "Hide SSH scripts? (y/N): " hide_ssh
-
-if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
-    mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh" 2>/dev/null || true
-    mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh" 2>/dev/null || true
-    echo "SSH scripts hidden."
-else
-    rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
-    echo "SSH scripts not hidden."
-fi
-
 # Add automation/ to */.git/info/exclude
 FILES=(/automation/ /automation/pull /automation/push /automation/status)
 
@@ -109,6 +100,19 @@ for d in */; do
 done
 
 rm -rf automation 2>/dev/null
+
+# Hide SSH scripts prompt
+echo
+read -rp "Hide SSH scripts? (y/N): " hide_ssh
+
+if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
+    mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh" 2>/dev/null || true
+    mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh" 2>/dev/null || true
+    echo "SSH scripts hidden."
+else
+    rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
+    echo "SSH scripts not hidden."
+fi
 
 # Hang prompt
 KEEP_OPEN=true
