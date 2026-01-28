@@ -48,10 +48,10 @@ cd "$AUTHOR_DIR"
 
 # Clone or update the repo
 if [ -d "$REPO/.git" ]; then
-    echo "Updating $REPO..."
+    echo "Updating $REPO using $CLONE_METHOD..."
     cd "$REPO" && git pull --quiet || echo "Pulling $REPO failed"
 else
-    echo "Cloning $REPO..."
+    echo "Cloning $REPO using $CLONE_METHOD..."
     git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${REPO}.git" || echo "Cloning $REPO failed"
 fi
 
