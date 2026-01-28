@@ -1,5 +1,3 @@
-⚠️ This repository is undergoing large changes. README.md files may not be accurate.
-
 # GitHub-Tools
 
 A collection of scripts and userscripts for automating GitHub maintenance and repository management.
