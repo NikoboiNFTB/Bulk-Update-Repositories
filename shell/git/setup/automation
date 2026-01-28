@@ -8,8 +8,13 @@ if [ -z "$HOME" ]; then
     exit 1
 fi
 
-# Prompt for target user
-read -rp "Enter the GitHub username of the target user: " AUTHOR
+# Get username from first argument or prompt
+AUTHOR="$1"
+
+if [ -z "$AUTHOR" ]; then
+    read -rp "Enter the GitHub username of the target user: " AUTHOR
+fi
+
 AUTHOR=${AUTHOR// /}  # remove spaces just in case
 
 echo
