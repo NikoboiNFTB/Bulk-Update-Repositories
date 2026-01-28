@@ -12,38 +12,21 @@ Each entry can be clicked for a detailed description of each script.
 
 | Script | Description | README |
 | ------ | ----------- | ------ |
-| [`ignore`](/shell/git/bulk/ignore) | Append entries to `.git/info/exclude` | [AUTOMATION.md](/docs/AUTOMATION.md#ignore-and-ignore-reset) |
-| [`ignore-reset`](/shell/git/bulk/ignore-reset) | Reset `.git/info/exclude` | [AUTOMATION.md](/docs/AUTOMATION.md#ignore-and-ignore-reset) |
-| [`clone-author`](/shell/git/clone/clone-author) | Clone all repos of any author | [CLONE.md](/docs/CLONE.md#clone-author) |
-| [`clone-repo`](/shell/git/clone/clone-repo) | Clone any specific repo | [CLONE.md](/docs/CLONE.md#clone-repo) |
-| [`pull`](/shell/git/repo/pull) | Pull remote changes in one repo | [AUTOMATION.md](/docs/AUTOMATION.md#pull) |
-| [`push`](/shell/git/repo/push) | Push local changes in one repo | [AUTOMATION.md](/docs/AUTOMATION.md#push) |
-| [`status`](/shell/git/repo/status) | View status in one repo | [AUTOMATION.md](/docs/AUTOMATION.md#status) |
-| [`automation`](/shell/git/setup/automation) | Setup all scripts correctly, automatically | [AUTOMATION.md](/docs/AUTOMATION.md#installation) |
-| [`workflow`](/shell/git/setup/workflow) | Copy my entire personal workflow | [WORKFLOW.md](/docs/WORKFLOW.md#workflow) |
-| [`disable-ssh`](/shell/git/ssh/disable-ssh) | Disable your SSH key | [SSH.md](/docs/SSH.md#disable-ssh) |
-| [`enable-ssh`](/shell/git/ssh/enable-ssh) | Enable your SSH key | [SSH.md](/docs/SSH.md#enable-ssh) |
-| [`sort`](/shell/utils/sort) | Sort contents of any file | [UTILS.md](/docs/UTILS.md#sort) |
-
-Comparison
-
-| Script | Description | README |
-| ------ | ----------- | ------ |
 | [`all-pull`](/shell/git/bulk/all-pull) | Pull remote changes | [AUTOMATION.md](/docs/AUTOMATION.md#all-pull) |
 | [`all-push`](/shell/git/bulk/all-push) | Push local changes | [AUTOMATION.md](/docs/AUTOMATION.md#all-push) |
 | [`all-status`](/shell/git/bulk/all-status) | View Status of current repo | [AUTOMATION.md](/docs/AUTOMATION.md#all-status) |
-| [`automation`](/shell/git/setup/automation) | Setup all scripts automatically | [AUTOMATION.md](/docs/AUTOMATION.md#installation) |
-| [`ignore`](/shell/git/bulk/ignore) | Add entries to [`.git/info/exclude`](/.git/info/exclude) | [AUTOMATION.md](/docs/AUTOMATION.md#ignore-and-ignore-reset) |
-| [`ignore-reset`](/shell/git/bulk/ignore-reset) | Reset [`.git/info/exclude`](/.git/info/exclude) | [AUTOMATION.md](/docs/AUTOMATION.md#ignore-and-ignore-reset) |
-| [`pull`](/shell/git/repo/pull) | Pull remote changes | [AUTOMATION.md](/docs/AUTOMATION.md#pull) |
-| [`push`](/shell/git/repo/push) | Push local changes | [AUTOMATION.md](/docs/AUTOMATION.md#push) |
-| [`status`](/shell/git/repo/status) | View status | [AUTOMATION.md](/docs/AUTOMATION.md#status) |
-| [`clone-author`](/shell/git/clone/clone-author) | Clone an author’s repos | [CLONE.md](/docs/CLONE.md#clone-author) |
-| [`clone-repo`](/shell/git/clone/clone-repo) | Clone a repository | [CLONE.md](/docs/CLONE.md#clone-repo) |
+| [`automation`](/shell/git/setup/automation) | Setup all scripts correctly, automatically | [AUTOMATION.md](/docs/AUTOMATION.md#installation) |
+| [`ignore`](/shell/git/bulk/ignore) | Append entries to `.git/info/exclude` | [AUTOMATION.md](/docs/AUTOMATION.md#ignore-and-ignore-reset) |
+| [`ignore-reset`](/shell/git/bulk/ignore-reset) | Reset `.git/info/exclude` | [AUTOMATION.md](/docs/AUTOMATION.md#ignore-and-ignore-reset) |
+| [`pull`](/shell/git/repo/pull) | Pull remote changes in one repo | [AUTOMATION.md](/docs/AUTOMATION.md#pull) |
+| [`push`](/shell/git/repo/push) | Push local changes in one repo | [AUTOMATION.md](/docs/AUTOMATION.md#push) |
+| [`status`](/shell/git/repo/status) | View status in one repo | [AUTOMATION.md](/docs/AUTOMATION.md#status) |
+| [`clone-author`](/shell/git/clone/clone-author) | Clone all repos of any author | [CLONE.md](/docs/CLONE.md#clone-author) |
+| [`clone-repo`](/shell/git/clone/clone-repo) | Clone any specific repo | [CLONE.md](/docs/CLONE.md#clone-repo) |
 | [`disable-ssh`](/shell/git/ssh/disable-ssh) | Disable your SSH key | [SSH.md](/docs/SSH.md#disable-ssh) |
 | [`enable-ssh`](/shell/git/ssh/enable-ssh) | Enable your SSH key | [SSH.md](/docs/SSH.md#enable-ssh) |
 | [`sort`](/shell/utils/sort) | Sort contents of any file | [UTILS.md](/docs/UTILS.md#sort) |
-| [`workflow`](/shell/git/setup/workflow) | Copy my personal workflow | [WORKFLOW.md](/docs/WORKFLOW.md#workflow) |
+| [`workflow`](/shell/git/setup/workflow) | Copy my entire personal workflow | [WORKFLOW.md](/docs/WORKFLOW.md#workflow) |
 
 ## File Tree
 
