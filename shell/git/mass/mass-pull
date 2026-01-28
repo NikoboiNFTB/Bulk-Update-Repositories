@@ -2,4 +2,36 @@
 
 set -e
 
-# For pulling all repos in all authors at once.
+for d in */; do
+    if [ -d "$d/.git" ]; then
+        echo "Pulling $d"
+        (
+            cd "$d"
+            if git pull >/dev/null 2>&1; then
+                echo "Successfully pulled $d"
+            else
+                echo "Failed to pull $d"
+            fi
+        ) &
+    fi
+done
+
+echo
+
+wait
+
+# Hang
+
+KEEP_OPEN=true
+
+if [ "$KEEP_OPEN" = true ]; then
+    echo
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        sleep 4
+    fi
+fi
