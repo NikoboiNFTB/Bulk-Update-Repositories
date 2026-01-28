@@ -86,6 +86,10 @@ for file in "$AUTHOR_DIR/GitHub-Tools/shell/git/ssh/"*; do
     cp "$file" "$AUTHOR_DIR/"
     chmod +x "$AUTHOR_DIR/$(basename "$file")"
 done
+for file in "$AUTHOR_DIR/GitHub-Tools/shell/git/mass/"*; do
+    cp "$file" "$ROOT_DIR/"
+    chmod +x "$ROOT_DIR/$(basename "$file")"
+done
 
 echo "Files copied!"
 

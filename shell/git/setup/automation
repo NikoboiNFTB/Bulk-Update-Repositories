@@ -88,6 +88,12 @@ for file in "$TOOLS_DIR/shell/git/ssh/"*; do
     chmod +x "$AUTHOR_DIR/$(basename "$file")"
 done
 
+# mass/ → $ROOT_DIR
+for file in "$TOOLS_DIR/shell/git/mass/"*; do
+    cp "$file" "$ROOT_DIR/" || echo "Failed to copy $file"
+    chmod +x "$ROOT_DIR/$(basename "$file")"
+done
+
 echo "Files copied!"
 
 # Add automation/ to */.git/info/exclude
