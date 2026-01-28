@@ -2,18 +2,21 @@
 
 set -e
 
-for d in */; do
-    if [ -d "$d/.git" ]; then
-        echo "Pulling $d"
-        (
-            cd "$d"
-            if git pull >/dev/null 2>&1; then
-                echo "Successfully pulled $d"
-            else
-                echo "Failed to pull $d"
-            fi
-        ) &
-    fi
+for author in */; do
+    [ -d "$author" ] || continue
+    for repo in "$author"*/; do
+        if [ -d "$repo/.git" ]; then
+            echo "Pulling $repo"
+            (
+                cd "$repo"
+                if git pull >/dev/null 2>&1; then
+                    echo "Successfully pulled $repo"
+                else
+                    echo "Failed to pull $repo"
+                fi
+            ) &
+        fi
+    done
 done
 
 echo
