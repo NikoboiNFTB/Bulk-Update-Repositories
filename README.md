@@ -80,7 +80,8 @@ $HOME
     │   ├── ignore
     │   └── ignore-reset
     ├── clone-author
-    └── clone-repo
+    ├── clone-repo
+    └── mass-pull
 ```
 
 ## Installation
