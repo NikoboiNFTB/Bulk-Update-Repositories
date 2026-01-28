@@ -61,12 +61,19 @@ KEEP_OPEN=true
 
 if [ "$KEEP_OPEN" = true ]; then
     echo
-    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging: " response
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging (local only): " response
     if [ "$response" = "disable" ]; then
-        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$0"
+        SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$SCRIPT_PATH"
         echo
         echo "KEEP_OPEN set to false"
         echo "Change 'KEEP_OPEN=true' to enable"
-        sleep 4
+        echo
+        for i in {5..1}; do
+            echo -n "Exiting in $i..."
+            sleep 1
+            echo -ne "\r"
+        done
+        echo "Exiting now.        "
     fi
 fi
