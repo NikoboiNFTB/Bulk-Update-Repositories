@@ -1,6 +1,6 @@
 # Bulk Repository Management
 
-These scripts exist to automate repository management, en massé. The goal is that you never have to touch the terminal when developing with GitHub.
+These scripts exist to automate repository management, en massé. The goal is that you never have to touch the terminal when developing with Git.
 
 ## Scripts
 
@@ -69,48 +69,6 @@ Run the script from the parent directory containing your Git repos:
 ```bash
 ./ignore-default
 ```
-
-### [`pull`](/shell/git/repo/pull)
-
-Pulls the latest changes for the current Git repository.
-
-#### Usage
-
-Save the script to the parent directory containing your Git repos, and run them from the repository folder:
-
-```bash
-../pull
-```
-
->> `..` means parent directory
-
-### [`push`](/shell/git/repo/push)
-
-Stage, commit, and push changes for the current repository. Supports custom commit message.
-
-#### Usage
-
-Save the script to the parent directory containing your Git repos, and run them from the repository folder:
-
-```bash
-../push
-```
-
->> `..` means parent directory
-
-### [`status`](/shell/git/repo/status)
-
-Displays the current `git status` for all repositories in subdirectories, showing staged and unstaged changes for each.
-
-#### Usage
-
-Save the script to the parent directory containing your Git repos, and run them from the repository folder:
-
-```bash
-../status
-```
-
->> `..` means parent directory
 
 ## Installation
 
