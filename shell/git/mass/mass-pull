@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e
+
+# For pulling all repos in all authors at once.
