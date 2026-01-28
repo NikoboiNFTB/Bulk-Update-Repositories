@@ -12,17 +12,18 @@ Each entry can be clicked for a detailed description of each script.
 
 | Script | Description | README |
 | ------ | ----------- | ------ |
-| [`all-pull`](/shell/git/bulk/all-pull) | Pull remote changes | [BULK.md](/docs/BULK.md#all-pull) |
-| [`all-push`](/shell/git/bulk/all-push) | Push local changes | [BULK.md](/docs/BULK.md#all-push) |
-| [`all-status`](/shell/git/bulk/all-status) | View Status of current repo | [BULK.md](/docs/BULK.md#all-status) |
-| [`automation`](/shell/git/setup/automation) | Setup all scripts correctly, automatically | [AUTOMATION.md](/docs/BULK.md#installation) |
+| [`all-pull`](/shell/git/bulk/all-pull) | Pull remote changes for all repos | [BULK.md](/docs/BULK.md#all-pull) |
+| [`all-push`](/shell/git/bulk/all-push) | Push local changes for all repos | [BULK.md](/docs/BULK.md#all-push) |
+| [`all-status`](/shell/git/bulk/all-status) | View Status of all repos | [BULK.md](/docs/BULK.md#all-status) |
+| [`automation`](/shell/git/setup/automation) | Setup all scripts correctly, automatically | [BULK.md](/docs/BULK.md#installation) |
 | [`ignore`](/shell/git/bulk/ignore) | Append entries to `.git/info/exclude` | [BULK.md](/docs/BULK.md#ignore-and-ignore-reset) |
 | [`ignore-reset`](/shell/git/bulk/ignore-reset) | Reset `.git/info/exclude` | [BULK.md](/docs/BULK.md#ignore-and-ignore-reset) |
+| [`mass-pull`](/shell/git/mass/mass-pull) | Pull remote changes for all authors | [BULK.md](/docs/BULK.md#mass-pull) |
+| [`clone-author`](/shell/git/clone/clone-author) | Clone all repos of any author, SSH/HTTPS compatible | [CLONE.md](/docs/CLONE.md#clone-author) |
+| [`clone-repo`](/shell/git/clone/clone-repo) | Clone any specific repo, SSH/HTTPS compatible | [CLONE.md](/docs/CLONE.md#clone-repo) |
 | [`pull`](/shell/git/repo/pull) | Pull remote changes in one repo | [REPO.md](/docs/REPO.md#pull) |
 | [`push`](/shell/git/repo/push) | Push local changes in one repo | [REPO.md](/docs/REPO.md#push) |
 | [`status`](/shell/git/repo/status) | View status in one repo | [REPO.md](/docs/REPO.md#status) |
-| [`clone-author`](/shell/git/clone/clone-author) | Clone all repos of any author | [CLONE.md](/docs/CLONE.md#clone-author) |
-| [`clone-repo`](/shell/git/clone/clone-repo) | Clone any specific repo | [CLONE.md](/docs/CLONE.md#clone-repo) |
 | [`disable-ssh`](/shell/git/ssh/disable-ssh) | Disable your SSH key | [SSH.md](/docs/SSH.md#disable-ssh) |
 | [`enable-ssh`](/shell/git/ssh/enable-ssh) | Enable your SSH key | [SSH.md](/docs/SSH.md#enable-ssh) |
 | [`sort`](/shell/utils/sort) | Sort contents of any file | [UTILS.md](/docs/UTILS.md#sort) |
