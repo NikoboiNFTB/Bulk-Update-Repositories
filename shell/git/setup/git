@@ -13,6 +13,7 @@ KEY_FILE="$SSH_DIR/id_ed25519"
 PUB_KEY_FILE="$KEY_FILE.pub"
 
 echo "Setting up Git..."
+echo
 
 # Prerequisite checks
 for cmd in git ssh ssh-keygen ssh-add; do
@@ -32,6 +33,7 @@ chmod 700 "$SSH_DIR"
 
 # Prompt for SSH key comment (optional)
 read -rp "Enter a comment for the SSH key (optional, press ENTER to skip): " KEY_COMMENT
+echo
 
 # Generate SSH key if missing
 if [ ! -f "$KEY_FILE" ]; then
@@ -62,25 +64,28 @@ fi
 
 # Print public key
 echo
-echo "==================== SSH PUBLIC KEY ===================="
+echo "================================ SSH PUBLIC KEY ================================"
 echo
 cat "$PUB_KEY_FILE"
 echo
-echo "========================================================"
+echo "================================================================================"
 echo
 
 # Prompt to add key to GitHub
-echo "Copy the SSH public key above and add it to your GitHub account."
-echo "  Enter the following link in a logged-in browser:"
-echo "    https://github.com/settings/ssh/new"
+echo "1. Triple-click the key above to copy the entire thing."
 echo
-echo "In the browser:"
-echo "  Add any Title"
-echo "  Leave 'Key Type' as 'Authentication Key'"
-echo "  Paste the key above into the 'Key' text area"
+echo "2. Copy the SSH key above and add it to your GitHub account."
+echo "     Enter the following link in a logged-in browser:"
+echo "       https://github.com/settings/ssh/new"
 echo
-echo "You are now done, but there is still a test to test your SSH connection."
-echo "  Hit Ctrl + C to stop"
+echo "3. In the browser:"
+echo "     Add any Title"
+echo "     Leave 'Key Type' as 'Authentication Key'"
+echo "     Paste the key above into the 'Key' text area"
+echo
+echo "4. You are now done, but there is still a test to test your SSH connection."
+echo "     Hit Ctrl + C to stop"
+echo
 read -rp "Press ENTER once the key has been added to GitHub..."
 
 # Test
@@ -89,15 +94,18 @@ echo "Note: you may see a prompt to confirm GitHub's host fingerprint"
 echo "  type 'yes' if asked."
 echo
 echo "Testing GitHub SSH connection..."
+echo
+echo "==== SSH TEST RESULT ===="
+echo
 ssh -T git@github.com || true
-
+echo
+echo "==== SSH TEST RESULT ===="
 echo
 echo "✅ Git + SSH setup complete."
-
 echo
 echo "You can now run my other scripts, to fully setup your PC for local git development:"
 echo "  bash <(wget -qO- https://nikoboinftb.github.io/shell/git/setup/automation)"
-echo "Entirely optional"
+echo "    (Entirely optional)"
 
 # Hang
 
