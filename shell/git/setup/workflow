@@ -69,22 +69,23 @@ echo
 # Copy all files to correct directories
 echo "Copying files..."
 
-for file in $AUTHOR_DIR/GitHub-Tools/shell/git/bulk/*; do
-    cp "$file" "$AUTHOR_DIR/"
-done
-for file in $AUTHOR_DIR/GitHub-Tools/shell/git/clone/*; do
-    cp "$file" "$ROOT_DIR/"
-done
 mkdir -p automation
-for file in $AUTHOR_DIR/GitHub-Tools/shell/git/repo/*; do
+for file in "$AUTHOR_DIR/GitHub-Tools/shell/git/repo/"*; do
     cp "$file" "$AUTHOR_DIR/automation/"
+    chmod +x "$AUTHOR_DIR/automation/$(basename "$file")"
 done
-for file in $AUTHOR_DIR/GitHub-Tools/shell/git/ssh/*; do
+for file in "$AUTHOR_DIR/GitHub-Tools/shell/git/bulk/"*; do
     cp "$file" "$AUTHOR_DIR/"
+    chmod +x "$AUTHOR_DIR/$(basename "$file")"
 done
-
-# Give executable permissions
-chmod +x "$ROOT_DIR"/* "$AUTHOR_DIR"/* "$AUTHOR_DIR"/automation/*
+for file in "$AUTHOR_DIR/GitHub-Tools/shell/git/clone/"*; do
+    cp "$file" "$ROOT_DIR/"
+    chmod +x "$ROOT_DIR/$(basename "$file")"
+done
+for file in "$AUTHOR_DIR/GitHub-Tools/shell/git/ssh/"*; do
+    cp "$file" "$AUTHOR_DIR/"
+    chmod +x "$AUTHOR_DIR/$(basename "$file")"
+done
 
 echo "Files copied!"
 
