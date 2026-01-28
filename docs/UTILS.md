@@ -11,7 +11,7 @@ Compares the files in [this repository](https://github.com/NikoboiNFTB/GitHub-To
 #### Usage
 
 ```bash
-bash <(wget -qO- https://nikoboinftb.github.io/sh/utils/compare)
+bash <(wget -qO- https://nikoboinftb.github.io/shell/utils/compare)
 ```
 
 ### [`sort`](/shell/utils/sort)
@@ -39,5 +39,5 @@ user@pc:~/this/is/a/path/to/a/folder$ ~/sort <file>
 Run in the folder you want the script in;
 
 ```bash
-wget https://nikoboinftb.github.io/sh/utils/sort
+wget https://nikoboinftb.github.io/shell/utils/sort
 ```

@@ -7,5 +7,5 @@ Copy my entire workflow.
 Run anywhere (the script self-corrects using `$HOME`, `mkdir -p` and `cd`):
 
 ```bash
-bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/workflow)
+bash <(wget -qO- https://nikoboinftb.github.io/shell/git/setup/workflow)
 ```

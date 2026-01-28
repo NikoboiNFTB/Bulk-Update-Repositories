@@ -89,7 +89,7 @@ $HOME
 You can install any one of the scripts into any folder by running:
 
 ```bash
-wget https://nikoboinftb.github.io/sh/*
+wget https://nikoboinftb.github.io/shell/*
 ```
 
 >> Fill in the path to the script
@@ -97,12 +97,12 @@ wget https://nikoboinftb.github.io/sh/*
 Or run the automation setup script. Run anywhere (the script self-corrects using `$HOME`, `mkdir -p` and `cd`):
 
 ```bash
-bash <(wget -qO- https://nikoboinftb.github.io/sh/git/setup/automation)
+bash <(wget -qO- https://nikoboinftb.github.io/shell/git/setup/automation)
 ```
 
 The `automation` setup script also works as an update script.
 
->> Will setup my entire automation workflow [`/sh/git/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/sh/git/). See [File Tree](README.md#file-tree) for details.
+>> Will setup my entire automation workflow [`/shell/git/`](https://github.com/NikoboiNFTB/nikoboinftb.github.io/tree/main/shell/git/). See [File Tree](README.md#file-tree) for details.
 
 ## Contributing
 
