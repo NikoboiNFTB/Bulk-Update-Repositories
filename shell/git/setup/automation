@@ -46,6 +46,7 @@ fi
 # Clone GitHub-Tools repo
 TOOLS_DIR="$ROOT_DIR/NikoboiNFTB/GitHub-Tools"
 mkdir -p "$(dirname "$TOOLS_DIR")"
+
 if [ -d "$TOOLS_DIR/.git" ]; then
     echo "Updating GitHub-Tools..."
     cd "$TOOLS_DIR" && git pull --quiet || echo "Pull failed"
@@ -61,30 +62,31 @@ cd "$AUTHOR_DIR"
 # Copy workflow scripts from GitHub-Tools to correct locations
 echo "Copying files..."
 
-# bulk/ → $AUTHOR_DIR
-for file in "$TOOLS_DIR/shell/git/bulk/"*; do
-    cp "$file" "$AUTHOR_DIR/" || echo "Failed to copy $file"
-done
-
-# clone/ → $ROOT_DIR
-for file in "$TOOLS_DIR/shell/git/clone/"*; do
-    cp "$file" "$ROOT_DIR/" || echo "Failed to copy $file"
-done
-
 mkdir -p "$AUTHOR_DIR/automation"
 
 # repo/ → $AUTHOR_DIR
 for file in "$TOOLS_DIR/shell/git/repo/"*; do
     cp "$file" "$AUTHOR_DIR/automation/" || echo "Failed to copy $file"
+    chmod +x "$AUTHOR_DIR/automation/$(basename "$file")"
+done
+
+# bulk/ → $AUTHOR_DIR
+for file in "$TOOLS_DIR/shell/git/bulk/"*; do
+    cp "$file" "$AUTHOR_DIR/" || echo "Failed to copy $file"
+    chmod +x "$AUTHOR_DIR/$(basename "$file")"
+done
+
+# clone/ → $ROOT_DIR
+for file in "$TOOLS_DIR/shell/git/clone/"*; do
+    cp "$file" "$ROOT_DIR/" || echo "Failed to copy $file"
+    chmod +x "$ROOT_DIR/$(basename "$file")"
 done
 
 # ssh/ → $AUTHOR_DIR
 for file in "$TOOLS_DIR/shell/git/ssh/"*; do
     cp "$file" "$AUTHOR_DIR/" || echo "Failed to copy $file"
+    chmod +x "$AUTHOR_DIR/$(basename "$file")"
 done
-
-# Make everything executable
-chmod +x "$AUTHOR_DIR"/* "$ROOT_DIR"/*
 
 echo "Files copied!"
 
