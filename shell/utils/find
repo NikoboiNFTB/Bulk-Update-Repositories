@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# UNTESTED DO NOT RUN
+
+set -e
+
+# --- usage helper ---
+usage() {
+  echo 'Usage:'
+  echo '  find.sh "include1" ["include2" ...] [-i|--ignore "exclude1" "exclude2" ...]'
+  exit 1
+}
+
+# --- argument parsing ---
+INCLUDES=()
+EXCLUDES=()
+
+MODE="include"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -i|--ignore)
+      MODE="exclude"
+      shift
+      ;;
+    -*)
+      echo "Unknown option: $1"
+      usage
+      ;;
+    *)
+      if [[ "$MODE" == "include" ]]; then
+        INCLUDES+=("$1")
+      else
+        EXCLUDES+=("$1")
+      fi
+      shift
+      ;;
+  esac
+done
+
+[[ ${#INCLUDES[@]} -eq 0 ]] && usage
+
+# --- build grep pipeline ---
+CMD="grep -R -I"
+
+for inc in "${INCLUDES[@]}"; do
+  CMD+=" -e \"$inc\""
+done
+
+CMD+=" ."
+
+for exc in "${EXCLUDES[@]}"; do
+  CMD+=" | grep -v \"$exc\""
+done
+
+# --- run it ---
+eval "$CMD"
