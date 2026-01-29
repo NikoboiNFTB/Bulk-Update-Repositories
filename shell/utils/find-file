@@ -1,0 +1,78 @@
+#!/usr/bin/env bash
+
+set -e
+
+# This is used for the Hang at the end, for disabling it.
+SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
+
+# Arrays to hold targets and ignored names
+targets=()
+ignore=()
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -i|--ignore)
+            shift
+            while [[ $# -gt 0 && ! "$1" =~ ^- ]]; do
+                ignore+=("$1")
+                shift
+            done
+            ;;
+        *)
+            targets+=("$1")
+            shift
+            ;;
+    esac
+done
+
+# If no targets provided, prompt interactively
+if [[ ${#targets[@]} -eq 0 ]]; then
+    read -rp "Files to search for (space-separated): " -a targets
+    read -rp "Directories to ignore (space-separated, optional): " -a ignore
+fi
+
+# Build find command
+cmd=(find .)
+
+# Add name patterns for targets
+if [[ ${#targets[@]} -gt 0 ]]; then
+    target_expr=()
+    for t in "${targets[@]}"; do
+        target_expr+=(-name "$t" -o)
+    done
+    # Remove last -o
+    unset 'target_expr[${#target_expr[@]}-1]'
+    cmd+=('(' "${target_expr[@]}" ')')
+fi
+
+# Run find and filter ignored names with grep if provided
+if [[ ${#ignore[@]} -gt 0 ]]; then
+    ignore_pattern=$(printf "|%s" "${ignore[@]}")
+    ignore_pattern=${ignore_pattern:1}  # remove leading |
+    "${cmd[@]}" | grep -Ev "$ignore_pattern"
+else
+    "${cmd[@]}"
+fi
+
+# Hang
+
+KEEP_OPEN=true
+
+if [ "$KEEP_OPEN" = true ]; then
+    echo
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging (local only): " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$SCRIPT_PATH"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        echo
+        for i in {5..1}; do
+            echo -n "Exiting in $i..."
+            sleep 1
+            echo -ne "\r"
+        done
+        echo "Exiting now.        "
+    fi
+fi
