@@ -50,9 +50,9 @@ fi
 if [[ ${#ignore[@]} -gt 0 ]]; then
     ignore_pattern=$(printf "|%s" "${ignore[@]}")
     ignore_pattern=${ignore_pattern:1}  # remove leading |
-    "${cmd[@]}" | grep -Ev "$ignore_pattern"
+    "${cmd[@]}" 2>/dev/null | grep -Ev "$ignore_pattern"
 else
-    "${cmd[@]}"
+    "${cmd[@]}" 2>/dev/null
 fi
 
 # Hang
