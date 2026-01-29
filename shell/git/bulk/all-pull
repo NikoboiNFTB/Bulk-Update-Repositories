@@ -9,11 +9,20 @@ for d in */; do
     if [ -d "$d/.git" ]; then
         echo "Pulling $d"
         (
-            cd "$d"
-            if git pull >/dev/null 2>&1; then
-                echo "Successfully pulled $d"
+            cd "$d" || exit 1
+
+            output=$(git pull 2>&1)
+            status=$?
+
+            if [ "$status" -eq 0 ]; then
+                if printf '%s\n' "$output" | grep -q "^Already up to date\."; then
+                    echo "Already up to date: $d"
+                else
+                    echo "Successfully pulled $d"
+                fi
             else
                 echo "Failed to pull $d"
+                printf '%s\n' "$output"
             fi
         ) &
     fi

@@ -11,11 +11,18 @@ for author in */; do
         if [ -d "$repo/.git" ]; then
             echo "Pulling $repo"
             (
-                cd "$repo"
-                if git pull >/dev/null 2>&1; then
-                    echo "Successfully pulled $repo"
+                cd "$repo" || exit 1
+                output=$(git pull 2>&1)
+                status=$?
+                if [ "$status" -eq 0 ]; then
+                    if printf '%s\n' "$output" | grep -q "^Already up to date\."; then
+                        echo "Already up to date: $repo"
+                    else
+                        echo "Successfully pulled $repo"
+                    fi
                 else
                     echo "Failed to pull $repo"
+                    printf '%s\n' "$output"
                 fi
             ) &
         fi
