@@ -15,13 +15,20 @@ for d in */; do
     if [ -d "$d/.git" ]; then
         echo "Pushing $d"
         (
-            cd "$d"
+            cd "$d" || exit
             git add . >/dev/null 2>&1
-            git commit -m "$commit_message" >/dev/null 2>&1 || true
-            if git push >/dev/null 2>&1; then
-                echo "Successfully pushed $d"
+            if git diff --quiet && git diff --cached --quiet; then
+                echo "Nothing to commit: $d"
+                exit 0
+            fi
+            if git commit -m "$commit_message" >/dev/null 2>&1; then
+                if git push >/dev/null 2>&1; then
+                    echo "Successfully pushed $d"
+                else
+                    echo "Failed to push $d"
+                fi
             else
-                echo "Failed to push $d"
+                echo "Failed to commit $d"
             fi
         ) &
     fi
