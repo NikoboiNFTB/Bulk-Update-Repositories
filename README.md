@@ -8,6 +8,8 @@ Each tool exists to make repetitive Git tasks a little less tedious.
 
 Each entry can be clicked for a detailed description of each script.
 
+### Shell
+
 | Script | Description | README |
 | ------ | ----------- | ------ |
 | [`all-pull`](/shell/git/bulk/all-pull) | Pull remote changes for all repos | [BULK.md](/docs/BULK.md#all-pull) |
@@ -26,6 +28,14 @@ Each entry can be clicked for a detailed description of each script.
 | [`enable-ssh`](/shell/git/ssh/enable-ssh) | Enable your SSH key | [SSH.md](/docs/SSH.md#enable-ssh) |
 | [`sort`](/shell/utils/sort) | Sort contents of any file | [UTILS.md](/docs/UTILS.md#sort) |
 | [`workflow`](/shell/git/setup/workflow) | Copy my entire personal workflow | [WORKFLOW.md](/docs/WORKFLOW.md#workflow) |
+
+### Userscript
+
+| Script | Description | README |
+| ------ | ----------- | ------ |
+| [`auto-reload`](/userscript/auto-reload.user.js) | Automatically reloads your GitHub repo if it's pending deployment. | [USER.JS.md](/docs/USER.JS.md#auto-reload) | [install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/auto-reload.user.js) |
+| [`delete-full-auto.user.js`](/userscript/delete-full-auto.user.js) | Automatically fills in all repo deletion steps. | [USER.JS.md](/docs/USER.JS.md#full-auto) | [install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/delete-full-auto.user.js) |
+| [`delete-semi-auto.user.js`](/userscript/delete-semi-auto.user.js) | Automatically fills in the text repo deletion step. | [USER.JS.md](/docs/USER.JS.md#semi-auto) | [install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/delete-full-auto.user.js) |
 
 ## File Tree
 
