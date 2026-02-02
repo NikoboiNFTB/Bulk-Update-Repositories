@@ -2,9 +2,72 @@
 
 set -euo pipefail
 
-echo "== GitHub Repo Creator (local + gh, SSH) =="
+# Definitions
+SSH_DIR="$HOME/.ssh"
+KEY_FILE="$SSH_DIR/id_ed25519"
+PUB_KEY_FILE="$KEY_FILE.pub"
 
-# ---- Prompts ----
+# Helpers
+die() {
+  echo "❌ $1" >&2
+  exit 1
+}
+
+info() {
+  echo "ℹ️  $1"
+}
+
+ok() {
+  echo "✅ $1"
+}
+
+# Preflight checks
+info "Running preflight checks..."
+
+command -v git >/dev/null || die "git not found. Install git first."
+ok "git found"
+
+command -v gh >/dev/null || die "gh not found. Install GitHub CLI first."
+ok "gh found"
+
+# gh auth
+if ! gh auth status >/dev/null 2>&1; then
+  die "gh is not authenticated. Run: gh auth login"
+fi
+ok "gh authenticated"
+
+# SSH key files
+[[ -f "$KEY_FILE" ]] || die "SSH private key not found at $KEY_FILE"
+[[ -f "$PUB_KEY_FILE" ]] || die "SSH public key not found at $PUB_KEY_FILE"
+ok "SSH key files exist"
+
+# SSH agent
+if [[ -z "${SSH_AUTH_SOCK:-}" ]]; then
+  die "SSH agent not running. Start one with: eval \"\$(ssh-agent -s)\""
+fi
+ok "SSH agent running"
+
+# Key loaded in agent
+if ! ssh-add -l | grep -q "$(ssh-keygen -lf "$KEY_FILE" | awk '{print $2}')"; then
+  die "SSH key not loaded into agent. Run: ssh-add $KEY_FILE"
+fi
+ok "SSH key loaded into agent"
+
+# GitHub SSH connectivity
+SSH_TEST_OUTPUT="$(ssh -T git@github.com 2>&1 || true)"
+
+if echo "$SSH_TEST_OUTPUT" | grep -Eq "successfully authenticated|You've successfully authenticated|Hi "; then
+  ok "GitHub SSH authentication works"
+else
+  echo "$SSH_TEST_OUTPUT"
+  die "SSH authentication to GitHub failed. Ensure your public key is added to GitHub."
+fi
+
+echo
+info "All checks passed!"
+echo
+
+# Prompts
 read -rp "GitHub username / org (AUTHOR): " AUTHOR
 read -rp "Repository name (REPO): " REPO
 read -rp "Description (optional): " DESCRIPTION
@@ -15,27 +78,22 @@ if [[ "${PRIVATE_INPUT,,}" == "y" ]]; then
   PRIVATE_FLAG="--private"
 fi
 
-# ---- Paths ----
+# Paths
 BASE_DIR="$HOME/GitHub/$AUTHOR"
 REPO_DIR="$BASE_DIR/$REPO"
 
-# ---- Checks ----
-command -v git >/dev/null || { echo "git not found"; exit 1; }
-command -v gh >/dev/null || { echo "gh not found"; exit 1; }
-
 if [[ -d "$REPO_DIR" ]]; then
-  echo "❌ Directory already exists: $REPO_DIR"
-  exit 1
+  die "Target directory already exists: $REPO_DIR"
 fi
 
-# ---- Create local repo ----
-echo "📁 Creating directory: $REPO_DIR"
+# Create local repo
+info "Creating local repository at $REPO_DIR"
+
 mkdir -p "$REPO_DIR"
 cd "$REPO_DIR"
 
-git init
+git init -b main
 
-# ---- Initial content ----
 cat > README.md <<EOF
 # $REPO
 
@@ -45,8 +103,9 @@ EOF
 git add README.md
 git commit -m "Initial commit"
 
-# ---- Create GitHub repo + push ----
-echo "🚀 Creating GitHub repository via gh..."
+ok "Local git repository initialized"
+
+info "Creating GitHub repository and pushing via SSH..."
 
 gh repo create "$AUTHOR/$REPO" \
   $PRIVATE_FLAG \
@@ -55,10 +114,8 @@ gh repo create "$AUTHOR/$REPO" \
   --remote=origin \
   --push
 
-# ---- Ensure main branch ----
-git branch -M main
-git push -u origin main
-
-echo "✅ Done!"
+# Done
+echo
+ok "Repository created successfully!"
 echo "📍 Local path: $REPO_DIR"
 echo "🔗 Remote: git@github.com:$AUTHOR/$REPO.git"
