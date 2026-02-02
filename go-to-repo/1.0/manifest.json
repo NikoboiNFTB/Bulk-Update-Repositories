@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Go to Repo",
+    "description": "Open highlighted owner/repo text directly on GitHub.",
+    "version": "1.0",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "permissions": [
+        "contextMenus",
+        "tabs"
+    ],
+    "icons": {
+        "256": "icons/github.svg"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "go-to-repo@nikoboi.dev",
+            "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+            }
+        }
+    }
+}
