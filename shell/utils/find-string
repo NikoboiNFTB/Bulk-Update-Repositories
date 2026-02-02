@@ -2,7 +2,7 @@
 
 set -e
 
-# Variables to hold search string, targets, and ignored names
+# Variables to hold search string, targets, and ignored paths
 search_string=""
 targets=()
 ignore=()
@@ -33,26 +33,26 @@ if [[ -z "$search_string" ]]; then
     read -rp "Text to search for: " search_string
 fi
 
-# Prompt for targets if none provided
+# Default targets to . if none provided
 if [[ ${#targets[@]} -eq 0 ]]; then
-    read -rp "Files or directories to search (space-separated, default .): " -a targets
-    if [[ ${#targets[@]} -eq 0 ]]; then
-        targets=(".")
-    fi
+    targets=(".")
 fi
 
 # Build find command
 cmd=(find "${targets[@]}")
 
-# Exclude ignored paths if provided
+# Exclude ignored directories/files
 if [[ ${#ignore[@]} -gt 0 ]]; then
+    prune_expr=()
     for ign in "${ignore[@]}"; do
-        cmd+=(-path "$ign" -prune -o)
+        # Ignore any directory/file that matches the name anywhere
+        prune_expr+=(-name "$ign" -prune -o)
     done
-    cmd+=(-type f -print)
-else
-    cmd+=(-type f)
+    cmd+=("${prune_expr[@]}")
 fi
+
+# Always search files
+cmd+=(-type f -print)
 
 # Execute find and search content
 "${cmd[@]}" 2>/dev/null | xargs grep -Hn -- "$search_string" 2>/dev/null
