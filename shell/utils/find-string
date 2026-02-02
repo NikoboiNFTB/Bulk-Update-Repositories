@@ -31,6 +31,12 @@ done
 # Prompt interactively if search string is missing
 if [[ -z "$search_string" ]]; then
     read -rp "Text to search for: " search_string
+    # Remove surrounding quotes if present
+    if [[ "$search_string" =~ ^\"(.*)\"$ ]]; then
+        search_string="${BASH_REMATCH[1]}"
+    elif [[ "$search_string" =~ ^\'(.*)\'$ ]]; then
+        search_string="${BASH_REMATCH[1]}"
+    fi
 fi
 
 # Default targets to . if none provided
@@ -45,7 +51,7 @@ cmd=(find "${targets[@]}")
 if [[ ${#ignore[@]} -gt 0 ]]; then
     prune_expr=()
     for ign in "${ignore[@]}"; do
-        # Ignore any directory/file that matches the name anywhere
+        # Ignore any directory or file matching this name
         prune_expr+=(-name "$ign" -prune -o)
     done
     cmd+=("${prune_expr[@]}")
