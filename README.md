@@ -31,8 +31,8 @@ Each entry can be clicked for a detailed description of each script.
 
 ### Userscript
 
-| Script | Description | README |
-| ------ | ----------- | ------ |
+| Script | Description | README | Install |
+| ------ | ----------- | ------ | ------- |
 | [`auto-reload`](/userscript/auto-reload.user.js) | Automatically reloads your GitHub repo if it's pending deployment. | [USER.JS.md](/docs/USER.JS.md#auto-reload) | [install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/auto-reload.user.js) |
 | [`delete-full-auto.user.js`](/userscript/delete-full-auto.user.js) | Automatically fills in all repo deletion steps. | [USER.JS.md](/docs/USER.JS.md#full-auto) | [install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/delete-full-auto.user.js) |
 | [`delete-semi-auto.user.js`](/userscript/delete-semi-auto.user.js) | Automatically fills in the text repo deletion step. | [USER.JS.md](/docs/USER.JS.md#semi-auto) | [install](https://github.com/NikoboiNFTB/GitHub-Tools/raw/refs/heads/main/userscript/delete-full-auto.user.js) |
