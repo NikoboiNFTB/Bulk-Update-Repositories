@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "== GitHub Repo Creator (local + gh, SSH) =="
+
+# ---- Prompts ----
+read -rp "GitHub username / org (AUTHOR): " AUTHOR
+read -rp "Repository name (REPO): " REPO
+read -rp "Description (optional): " DESCRIPTION
+read -rp "Private repo? (y/N): " PRIVATE_INPUT
+
+PRIVATE_FLAG="--public"
+if [[ "${PRIVATE_INPUT,,}" == "y" ]]; then
+  PRIVATE_FLAG="--private"
+fi
+
+# ---- Paths ----
+BASE_DIR="$HOME/GitHub/$AUTHOR"
+REPO_DIR="$BASE_DIR/$REPO"
+
+# ---- Checks ----
+command -v git >/dev/null || { echo "git not found"; exit 1; }
+command -v gh >/dev/null || { echo "gh not found"; exit 1; }
+
+if [[ -d "$REPO_DIR" ]]; then
+  echo "❌ Directory already exists: $REPO_DIR"
+  exit 1
+fi
+
+# ---- Create local repo ----
+echo "📁 Creating directory: $REPO_DIR"
+mkdir -p "$REPO_DIR"
+cd "$REPO_DIR"
+
+git init
+
+# ---- Initial content ----
+cat > README.md <<EOF
+# $REPO
+
+$DESCRIPTION
+EOF
+
+git add README.md
+git commit -m "Initial commit"
+
+# ---- Create GitHub repo + push ----
+echo "🚀 Creating GitHub repository via gh..."
+
+gh repo create "$AUTHOR/$REPO" \
+  $PRIVATE_FLAG \
+  ${DESCRIPTION:+--description "$DESCRIPTION"} \
+  --source=. \
+  --remote=origin \
+  --push
+
+# ---- Ensure main branch ----
+git branch -M main
+git push -u origin main
+
+echo "✅ Done!"
+echo "📍 Local path: $REPO_DIR"
+echo "🔗 Remote: git@github.com:$AUTHOR/$REPO.git"
