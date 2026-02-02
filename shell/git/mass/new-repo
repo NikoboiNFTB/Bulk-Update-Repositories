@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# This is used for the Hang at the end, for disabling it.
+SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
+
 # Definitions
 SSH_DIR="$HOME/.ssh"
 KEY_FILE="$SSH_DIR/id_ed25519"
@@ -23,6 +26,11 @@ ok() {
 
 # Preflight checks
 info "Running preflight checks..."
+
+# Ensure $HOME exists
+if [ -z "$HOME" ]; then
+    die "HOME variable not set."
+fi
 
 command -v git >/dev/null || die "git not found. Install git first."
 ok "git found"
@@ -119,3 +127,25 @@ echo
 ok "Repository created successfully!"
 echo "📍 Local path: $REPO_DIR"
 echo "🔗 Remote: git@github.com:$AUTHOR/$REPO.git"
+
+# Hang
+
+KEEP_OPEN=true
+
+if [ "$KEEP_OPEN" = true ]; then
+    echo
+    read -p "Press 'Enter' to exit / Type 'disable' to disable hanging (local only): " response
+    if [ "$response" = "disable" ]; then
+        sed -i 's/^KEEP_OPEN=true/KEEP_OPEN=false/' "$SCRIPT_PATH"
+        echo
+        echo "KEEP_OPEN set to false"
+        echo "Change 'KEEP_OPEN=true' to enable"
+        echo
+        for i in {5..1}; do
+            echo -n "Exiting in $i..."
+            sleep 1
+            echo -ne "\r"
+        done
+        echo "Exiting now.        "
+    fi
+fi
