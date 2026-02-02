@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Variables to hold search string, targets, and ignored names
+search_string=""
+targets=()
+ignore=()
+
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -i|--ignore)
+            shift
+            while [[ $# -gt 0 && ! "$1" =~ ^- ]]; do
+                ignore+=("$1")
+                shift
+            done
+            ;;
+        *)
+            if [[ -z "$search_string" ]]; then
+                search_string="$1"
+            else
+                targets+=("$1")
+            fi
+            shift
+            ;;
+    esac
+done
+
+# Prompt interactively if search string is missing
+if [[ -z "$search_string" ]]; then
+    read -rp "Text to search for: " search_string
+fi
+
+# Prompt for targets if none provided
+if [[ ${#targets[@]} -eq 0 ]]; then
+    read -rp "Files or directories to search (space-separated, default .): " -a targets
+    if [[ ${#targets[@]} -eq 0 ]]; then
+        targets=(".")
+    fi
+fi
+
+# Build find command
+cmd=(find "${targets[@]}")
+
+# Exclude ignored paths if provided
+if [[ ${#ignore[@]} -gt 0 ]]; then
+    for ign in "${ignore[@]}"; do
+        cmd+=(-path "$ign" -prune -o)
+    done
+    cmd+=(-type f -print)
+else
+    cmd+=(-type f)
+fi
+
+# Execute find and search content
+"${cmd[@]}" 2>/dev/null | xargs grep -Hn -- "$search_string" 2>/dev/null
