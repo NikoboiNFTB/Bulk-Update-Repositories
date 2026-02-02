@@ -7,7 +7,7 @@ search_string=""
 targets=()
 ignore=()
 
-# Parse arguments
+# --- Parse command-line arguments ---
 while [[ $# -gt 0 ]]; do
     case "$1" in
         -i|--ignore)
@@ -28,7 +28,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Prompt interactively if search string is missing
+# --- Prompt for search string if missing ---
 if [[ -z "$search_string" ]]; then
     read -rp "Text to search for: " search_string
     # Remove surrounding quotes if present
@@ -39,19 +39,36 @@ if [[ -z "$search_string" ]]; then
     fi
 fi
 
-# Default targets to . if none provided
+# --- Default targets to . if none provided ---
 if [[ ${#targets[@]} -eq 0 ]]; then
     targets=(".")
 fi
 
-# Build find command
+# --- Prompt for ignore paths if none provided via CLI ---
+if [[ ${#ignore[@]} -eq 0 ]]; then
+    read -rp "Files/directories to ignore (space-separated, optional): " ignore_input
+    # Split input into array
+    if [[ -n "$ignore_input" ]]; then
+        # Handle quoted paths: remove surrounding quotes
+        for item in $ignore_input; do
+            if [[ "$item" =~ ^\"(.*)\"$ ]]; then
+                ignore+=("${BASH_REMATCH[1]}")
+            elif [[ "$item" =~ ^\'(.*)\'$ ]]; then
+                ignore+=("${BASH_REMATCH[1]}")
+            else
+                ignore+=("$item")
+            fi
+        done
+    fi
+fi
+
+# --- Build find command ---
 cmd=(find "${targets[@]}")
 
 # Exclude ignored directories/files
 if [[ ${#ignore[@]} -gt 0 ]]; then
     prune_expr=()
     for ign in "${ignore[@]}"; do
-        # Ignore any directory or file matching this name
         prune_expr+=(-name "$ign" -prune -o)
     done
     cmd+=("${prune_expr[@]}")
@@ -60,5 +77,5 @@ fi
 # Always search files
 cmd+=(-type f -print)
 
-# Execute find and search content
+# --- Execute find and search content ---
 "${cmd[@]}" 2>/dev/null | xargs grep -Hn -- "$search_string" 2>/dev/null
