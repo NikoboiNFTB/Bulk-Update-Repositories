@@ -18,17 +18,17 @@ for d in */; do
             cd "$d" || exit
             git add . >/dev/null 2>&1
             if git diff --quiet && git diff --cached --quiet; then
-                echo "Nothing to commit: $d"
+                echo "✅ Nothing to commit: $d"
                 exit 0
             fi
             if git commit -m "$commit_message" >/dev/null 2>&1; then
                 if git push >/dev/null 2>&1; then
-                    echo "Successfully pushed $d"
+                    echo "✅ Successfully pushed $d"
                 else
-                    echo "Failed to push $d"
+                    echo "❌ Failed to push $d"
                 fi
             else
-                echo "Failed to commit $d"
+                echo "❌ Failed to commit $d"
             fi
         ) &
     fi

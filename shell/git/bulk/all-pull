@@ -16,12 +16,12 @@ for d in */; do
 
             if [ "$status" -eq 0 ]; then
                 if printf '%s\n' "$output" | grep -q "^Already up to date\."; then
-                    echo "Already up to date: $d"
+                    echo "✅ Already up to date: $d"
                 else
-                    echo "Successfully pulled $d"
+                    echo "✅ Successfully pulled $d"
                 fi
             else
-                echo "Failed to pull $d"
+                echo "❌ Failed to pull $d"
                 printf '%s\n' "$output"
             fi
         ) &

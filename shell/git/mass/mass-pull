@@ -16,12 +16,12 @@ for author in */; do
                 status=$?
                 if [ "$status" -eq 0 ]; then
                     if printf '%s\n' "$output" | grep -q "^Already up to date\."; then
-                        echo "Already up to date: $repo"
+                        echo "✅ Already up to date: $repo"
                     else
-                        echo "Successfully pulled $repo"
+                        echo "✅ Successfully pulled $repo"
                     fi
                 else
-                    echo "Failed to pull $repo"
+                    echo "❌ Failed to pull $repo"
                     printf '%s\n' "$output"
                 fi
             ) &
