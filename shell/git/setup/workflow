@@ -146,6 +146,12 @@ done
 
 rm -rf automation || echo "Failed to remove temporary automation folder"
 
+# Ensure all automation scripts in each repo are executable
+for d in */automation/; do
+    [ -d "$d" ] || continue
+    find "$d" -type f -exec chmod +x {} \;
+done
+
 # Prompt to hide SSH scripts (y/N)
 echo
 read -p "Hide SSH scripts? (y/N): " hide_ssh
