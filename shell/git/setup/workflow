@@ -31,6 +31,7 @@ if [ -z "$repos" ]; then
     echo "No repositories found or failed to fetch from GitHub."
     exit 1
 fi
+
 echo
 echo "Found $(echo "$repos" | wc -w) repositories."
 echo
