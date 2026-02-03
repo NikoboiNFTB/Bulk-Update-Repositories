@@ -13,7 +13,7 @@ ok() { echo "✅ $1"; }
 info "Running preflight checks..."
 
 # Check required commands
-for cmd in gh; do
+for cmd in gh ssh; do
     command -v "$cmd" >/dev/null || die "$cmd is required but not installed."
     ok "$cmd found"
 done

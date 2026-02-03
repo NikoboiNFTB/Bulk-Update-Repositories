@@ -11,18 +11,9 @@ KEY_FILE="$SSH_DIR/id_ed25519"
 PUB_KEY_FILE="$KEY_FILE.pub"
 
 # Helpers
-die() {
-  echo "❌ $1" >&2
-  exit 1
-}
-
-info() {
-  echo "ℹ️  $1"
-}
-
-ok() {
-  echo "✅ $1"
-}
+die() { echo "❌ $1" >&2; exit 1; }
+info() { echo "ℹ️  $1"; }
+ok() { echo "✅ $1"; }
 
 # Preflight checks
 info "Running preflight checks..."
