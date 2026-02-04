@@ -63,17 +63,48 @@ echo "Found $(echo "$repos" | wc -w) repositories."
 echo "Cloning/updating them using $CLONE_METHOD..."
 echo
 
-# Clone or update each repo
+# Determine update or clone
+to_update=()
+to_clone=()
+
 for repo in $repos; do
+    if [ -d "$repo/.git" ]; then
+        to_update+=("$repo")
+    else
+        to_clone+=("$repo")
+    fi
+done
+
+# Announcements
+for repo in "${to_update[@]}"; do
+    echo "ℹ️  Updating $repo"
+done
+
+for repo in "${to_clone[@]}"; do
+    echo "ℹ️  Cloning $repo"
+done
+
+echo
+
+# Execute
+for repo in "${to_update[@]}"; do
     (
-        if [ -d "$repo/.git" ]; then
-            echo "ℹ️  Updating $repo..."
-            cd "$repo" && git pull --quiet || echo "Pulling $repo failed"
+        cd "$repo" || exit 1
+
+        if git pull --quiet; then
             echo "✅ Successfully updated $repo"
         else
-            echo "ℹ️  Cloning $repo..."
-            git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${repo}.git" || echo "Cloning $repo failed"
+            echo "❌ Failed to update $repo"
+        fi
+    ) &
+done
+
+for repo in "${to_clone[@]}"; do
+    (
+        if git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${repo}.git"; then
             echo "✅ Successfully cloned $repo"
+        else
+            echo "❌ Failed to clone $repo"
         fi
     ) &
 done
