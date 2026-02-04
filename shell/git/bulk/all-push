@@ -13,7 +13,7 @@ fi
 
 for d in */; do
     if [ -d "$d/.git" ]; then
-        echo "Pushing $d"
+        echo "ℹ️  Pushing $d"
         (
             cd "$d" || exit
             git add . >/dev/null 2>&1

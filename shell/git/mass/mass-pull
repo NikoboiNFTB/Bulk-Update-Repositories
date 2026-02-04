@@ -9,7 +9,7 @@ for author in */; do
     [ -d "$author" ] || continue
     for repo in "$author"*/; do
         if [ -d "$repo/.git" ]; then
-            echo "Pulling $repo"
+            echo "ℹ️  Pulling $repo"
             (
                 cd "$repo" || exit 1
                 output=$(git pull 2>&1)
