@@ -63,7 +63,7 @@ else
 fi
 
 echo
-info "All checks passed!"
+ok "All checks passed!"
 echo
 
 # Prompts
