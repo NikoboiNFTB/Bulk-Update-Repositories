@@ -11,16 +11,14 @@ current_dir=$(basename "$PWD")
 # Determine what to add based on folder
 if [ "$current_dir" = "automation" ]; then
     echo "Detected 'automation/' folder. Adding parent repo files..."
-    echo
     git add ..
 else
     echo "Adding current folder files..."
-    echo
     git add .
 fi
 
 # Ask for commit message, use default if empty.
-default_msg="auto-commit"
+default_msg="Update"
 
 read -rp "Enter commit message (Enter to use '$default_msg'): " commit_msg
 

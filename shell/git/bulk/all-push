@@ -6,7 +6,7 @@ set -e
 SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
 
 # Ask for commit message, use default if empty.
-default_msg="auto-commit"
+default_msg="Update"
 
 read -rp "Enter commit message (Enter to use '$default_msg'): " commit_msg
 
