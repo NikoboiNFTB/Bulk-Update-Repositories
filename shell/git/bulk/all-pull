@@ -5,6 +5,8 @@ set -e
 # This is used for the Hang at the end, for disabling it.
 SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
 
+echo
+
 repos=()
 
 for d in */; do
