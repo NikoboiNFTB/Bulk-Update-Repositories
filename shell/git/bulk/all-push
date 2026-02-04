@@ -14,9 +14,7 @@ if [ -z "$commit_msg" ]; then
     commit_msg="$default_msg"
 fi
 
-# Commit and push
-git commit -m "$commit_msg"
-git push
+echo
 
 repos=()
 
