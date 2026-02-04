@@ -153,22 +153,20 @@ for d in */automation/; do
     find "$d" -type f -exec chmod +x {} \;
 done
 
-# Prompt to hide SSH scripts (y/N)
+# Hide SSH scripts prompt
 echo
-read -p "Hide SSH scripts? (y/N): " hide_ssh
+read -rp "Hide SSH scripts? (Y/n): " hide_ssh
 
-if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
-    # Hide the SSH scripts
-    mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh"
-    mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh"
+if [[ "$hide_ssh" =~ ^[nN]$ ]]; then
+    rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
+    echo "✅ SSH scripts not hidden."
+else
+    mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh" 2>/dev/null || true
+    mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh" 2>/dev/null || true
     echo "✅ SSH scripts hidden."
     echo "ℹ️  They can be found at:"
     echo "    $AUTHOR_DIR/.disable-ssh"
     echo "    $AUTHOR_DIR/.enable-ssh"
-else
-    # Remove hidden scripts if they exist
-    rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
-    echo "✅ SSH scripts not hidden."
 fi
 
 # Hang
