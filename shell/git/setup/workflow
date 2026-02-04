@@ -47,19 +47,27 @@ else
     CLONE_METHOD=SSH
 fi
 
+# Info
 echo
 echo "ℹ️  Cloning/Updating all using $CLONE_METHOD..."
 echo
+for repo in $repos; do
+    if [ -d "$repo/.git" ]; then
+        echo "ℹ️  Updating $repo..."
+    else
+        echo "ℹ️  Cloning $repo..."
+    fi
+done
 
-# Clone/Update
+echo
+
+# Update/Clone
 for repo in $repos; do
     (
         if [ -d "$repo/.git" ]; then
-            echo "ℹ️  Updating $repo..."
             cd "$repo" && git pull --quiet || echo "❌ Pulling $repo failed"
             echo "✅ Successfully updated $repo"
         else
-            echo "ℹ️  Cloning $repo..."
             git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${repo}.git" || echo "❌ Cloning $repo failed"
             echo "✅ Successfully cloned $repo"
         fi
