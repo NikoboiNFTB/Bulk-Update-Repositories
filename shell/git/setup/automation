@@ -125,6 +125,9 @@ if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
     mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh" 2>/dev/null || true
     mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh" 2>/dev/null || true
     echo "✅ SSH scripts hidden."
+    echo "ℹ️  They can be found at:"
+    echo "    $AUTHOR_DIR/.disable-ssh"
+    echo "    $AUTHOR_DIR/.enable-ssh"
 else
     rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
     echo "✅ SSH scripts not hidden."
