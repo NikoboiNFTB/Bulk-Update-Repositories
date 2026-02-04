@@ -9,13 +9,14 @@ echo
 
 repos=()
 
+# Add repos
 for d in */; do
     if [ -d "$d/.git" ]; then
         repos+=("$d")
     fi
 done
 
-# Pull message
+# Print that they're being pulled.
 for d in "${repos[@]}"; do
     echo "ℹ️  Pulling $d"
 done

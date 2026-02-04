@@ -5,31 +5,49 @@ set -e
 # This is used for the Hang at the end, for disabling it.
 SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
 
+echo
+
+repos=()
+
+# Add repos
 for author in */; do
     [ -d "$author" ] || continue
     for repo in "$author"*/; do
         if [ -d "$repo/.git" ]; then
-            echo "ℹ️  Pulling $repo"
-            (
-                cd "$repo" || exit 1
-                output=$(git pull 2>&1)
-                status=$?
-                if [ "$status" -eq 0 ]; then
-                    if printf '%s\n' "$output" | grep -q "^Already up to date\."; then
-                        echo "✅ Already up to date: $repo"
-                    else
-                        echo "✅ Successfully pulled $repo"
-                    fi
-                else
-                    echo "❌ Failed to pull $repo"
-                    printf '%s\n' "$output"
-                fi
-            ) &
+            repos+=("$repo")
         fi
     done
 done
 
+# Print that they're being pulled.
+for repo in "${repos[@]}"; do
+    echo "ℹ️  Pulling $repo"
+done
+
 echo
+
+# Pull
+for repo in "${repos[@]}"; do
+    (
+        cd "$repo" || exit 1
+
+        set +e
+        output=$(git pull 2>&1)
+        status=$?
+        set -e
+
+        if [ "$status" -eq 0 ]; then
+            if printf '%s\n' "$output" | grep -q "^Already up to date\."; then
+                echo "✅ Already up to date: $repo"
+            else
+                echo "✅ Successfully pulled $repo"
+            fi
+        else
+            echo "❌ Failed to pull $repo"
+            printf '%s\n' "$output"
+        fi
+    ) &
+done
 
 wait
 

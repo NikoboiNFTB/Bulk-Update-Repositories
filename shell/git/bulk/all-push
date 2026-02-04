@@ -15,7 +15,7 @@ echo
 
 repos=()
 
-# Add all repos to repos
+# Add repos
 for d in */; do
     if [ -d "$d/.git" ]; then
         repos+=("$d")
