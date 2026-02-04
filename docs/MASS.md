@@ -20,11 +20,17 @@ Run the script from the parent directory containing your Git author folders:
 
 Automate the whole process of creating a repository locally and on GitHub.
 
-Requires `git` and `gh`.
+Requires `git`, `gh` and `ssh`.
 
 #### Usage
 
-Just run the `new-repo` script.
+Just run the `new-repo` script:
+
+```bash
+bash new-repo
+```
+
+The script will guide you through the process.
 
 ## Installation
 

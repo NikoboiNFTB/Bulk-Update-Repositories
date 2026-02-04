@@ -70,18 +70,6 @@ Run the script from the parent directory containing your Git repos:
 ./ignore-default
 ```
 
-### [`mass-pull`](/shell/git/mass/mass-pull)
-
-Automatically pull **all repos** in **all authors** in your `~/GitHub/` folder.
-
-#### Usage
-
-Run the script from the parent directory containing your Git author folders:
-
-```bash
-./all-push
-```
-
 ## Installation
 
 You can install any one of the scripts into any folder by running:
