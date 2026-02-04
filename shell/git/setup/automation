@@ -7,7 +7,7 @@ SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
 
 # Ensure $HOME exists
 if [ -z "$HOME" ]; then
-    echo "HOME variable not set!"
+    echo "❌ HOME variable not set!"
     exit 1
 fi
 
@@ -23,7 +23,7 @@ AUTHOR=${AUTHOR// /}  # remove spaces just in case
 echo
 
 if [ -z "$AUTHOR" ]; then
-    echo "No username provided. Exiting."
+    echo "❌ No username provided. Exiting."
     exit 1
 fi
 
@@ -33,8 +33,8 @@ AUTHOR_DIR="$ROOT_DIR/$AUTHOR"
 
 # Check if author's GitHub folder exists
 if [ ! -d "$AUTHOR_DIR" ]; then
-    echo "The folder '$AUTHOR_DIR' does not exist."
-    echo "Please make sure the repositories for '$AUTHOR' are cloned in '$AUTHOR_DIR'."
+    echo "❌ The folder '$AUTHOR_DIR' does not exist."
+    echo "ℹ️  Repos for '$AUTHOR' must be in '$AUTHOR_DIR'"
     exit 1
 fi
 
@@ -42,7 +42,7 @@ cd "$AUTHOR_DIR"
 
 # Ensure jq is installed
 if ! command -v jq &> /dev/null; then
-    echo "Error: jq is required but not installed."
+    echo "❌ Error: jq is required but not installed."
     exit 1
 fi
 
@@ -51,11 +51,11 @@ TOOLS_DIR="$ROOT_DIR/NikoboiNFTB/GitHub-Tools"
 mkdir -p "$(dirname "$TOOLS_DIR")"
 
 if [ -d "$TOOLS_DIR/.git" ]; then
-    echo "Updating GitHub-Tools..."
-    cd "$TOOLS_DIR" && git pull --quiet || echo "Pull failed"
+    echo "ℹ️  Updating GitHub-Tools..."
+    cd "$TOOLS_DIR" && git pull --quiet || echo "❌ Pull failed"
 else
-    echo "Cloning GitHub-Tools..."
-    git clone --quiet https://github.com/NikoboiNFTB/GitHub-Tools.git "$TOOLS_DIR" || echo "Cloning failed"
+    echo "ℹ️  Cloning GitHub-Tools..."
+    git clone --quiet https://github.com/NikoboiNFTB/GitHub-Tools.git "$TOOLS_DIR" || echo "❌ Cloning failed"
 fi
 
 echo
@@ -63,41 +63,41 @@ echo
 cd "$AUTHOR_DIR"
 
 # Copy workflow scripts from GitHub-Tools to correct locations
-echo "Copying files..."
+echo "ℹ️  Copying files..."
 
 mkdir -p "$AUTHOR_DIR/automation"
 
 # repo/ → $AUTHOR_DIR
 for file in "$TOOLS_DIR/shell/git/repo/"*; do
-    cp "$file" "$AUTHOR_DIR/automation/" || echo "Failed to copy $file"
+    cp "$file" "$AUTHOR_DIR/automation/" || echo "❌ Failed to copy $file"
     chmod +x "$AUTHOR_DIR/automation/$(basename "$file")"
 done
 
 # bulk/ → $AUTHOR_DIR
 for file in "$TOOLS_DIR/shell/git/bulk/"*; do
-    cp "$file" "$AUTHOR_DIR/" || echo "Failed to copy $file"
+    cp "$file" "$AUTHOR_DIR/" || echo "❌ Failed to copy $file"
     chmod +x "$AUTHOR_DIR/$(basename "$file")"
 done
 
 # clone/ → $ROOT_DIR
 for file in "$TOOLS_DIR/shell/git/clone/"*; do
-    cp "$file" "$ROOT_DIR/" || echo "Failed to copy $file"
+    cp "$file" "$ROOT_DIR/" || echo "❌ Failed to copy $file"
     chmod +x "$ROOT_DIR/$(basename "$file")"
 done
 
 # ssh/ → $AUTHOR_DIR
 for file in "$TOOLS_DIR/shell/git/ssh/"*; do
-    cp "$file" "$AUTHOR_DIR/" || echo "Failed to copy $file"
+    cp "$file" "$AUTHOR_DIR/" || echo "❌ Failed to copy $file"
     chmod +x "$AUTHOR_DIR/$(basename "$file")"
 done
 
 # mass/ → $ROOT_DIR
 for file in "$TOOLS_DIR/shell/git/mass/"*; do
-    cp "$file" "$ROOT_DIR/" || echo "Failed to copy $file"
+    cp "$file" "$ROOT_DIR/" || echo "❌ Failed to copy $file"
     chmod +x "$ROOT_DIR/$(basename "$file")"
 done
 
-echo "Files copied!"
+echo "✅ Files copied!"
 
 # Add automation/ to */.git/info/exclude
 FILES=(/automation/ /automation/pull /automation/push /automation/status)
@@ -112,7 +112,7 @@ for d in */; do
             fi
         done
     fi
-    cp -r automation "$d" 2>/dev/null || echo "Failed to copy automation to $d"
+    cp -r automation "$d" 2>/dev/null || echo "❌ Failed to copy automation to $d"
 done
 
 rm -rf automation 2>/dev/null
@@ -124,10 +124,10 @@ read -rp "Hide SSH scripts? (y/N): " hide_ssh
 if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
     mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh" 2>/dev/null || true
     mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh" 2>/dev/null || true
-    echo "SSH scripts hidden."
+    echo "ℹ️  SSH scripts hidden."
 else
     rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
-    echo "SSH scripts not hidden."
+    echo "ℹ️  SSH scripts not hidden."
 fi
 
 # Hang
