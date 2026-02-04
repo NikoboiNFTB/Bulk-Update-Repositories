@@ -29,6 +29,8 @@ if [ -z "$CLONE_METHOD" ]; then
     read -rp "Clone method (ssh/HTTPS): " CLONE_METHOD
 fi
 
+echo
+
 CLONE_METHOD=${CLONE_METHOD,,}
 
 # Set clone prefix
@@ -48,15 +50,15 @@ cd "$AUTHOR_DIR"
 
 # Clone or update the repo
 if [ -d "$REPO/.git" ]; then
-    echo "Updating $REPO using $CLONE_METHOD..."
+    echo "ℹ️  Updating $REPO using $CLONE_METHOD..."
     cd "$REPO" && git pull --quiet || echo "Pulling $REPO failed"
 else
-    echo "Cloning $REPO using $CLONE_METHOD..."
+    echo "ℹ️  Cloning $REPO using $CLONE_METHOD..."
     git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${REPO}.git" || echo "Cloning $REPO failed"
 fi
 
 echo
-echo "Clone/update task completed!"
+echo "✅ Clone/update task completed!"
 
 # Hang
 
