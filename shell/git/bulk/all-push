@@ -11,6 +11,8 @@ if [ -z "$commit_message" ]; then
     commit_message="auto-commit"
 fi
 
+echo
+
 repos=()
 
 # Add all repos to repos
