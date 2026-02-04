@@ -7,7 +7,7 @@ SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
 
 # Ensure $HOME exists
 if [ -z "$HOME" ]; then
-    echo "HOME variable not set!";
+    echo "❌ HOME variable not set!";
     exit 1;
 fi
 
@@ -20,20 +20,20 @@ cd "$AUTHOR_DIR"
 
 # Ensure jq is installed
 if ! command -v jq &> /dev/null; then
-    echo "Error: jq is required but not installed."
+    echo "❌ Error: jq is required but not installed."
     exit 1
 fi
 
 # Get repo names
-echo "Fetching list of repositories for user '$AUTHOR'..."
+echo "ℹ️  Fetching list of repositories for user '$AUTHOR'..."
 repos=$(curl -s "https://api.github.com/users/$AUTHOR/repos?per_page=100" | jq -r '.[].name')
 if [ -z "$repos" ]; then
-    echo "No repositories found or failed to fetch from GitHub."
+    echo "❌ No repositories found or failed to fetch from GitHub."
     exit 1
 fi
 
 echo
-echo "Found $(echo "$repos" | wc -w) repositories."
+echo "ℹ️  Found $(echo "$repos" | wc -w) repositories."
 echo
 
 # Ask for clone method and set prefix
@@ -48,18 +48,18 @@ else
 fi
 
 echo
-echo "Cloning/Updating all using $CLONE_METHOD..."
+echo "ℹ️  Cloning/Updating all using $CLONE_METHOD..."
 echo
 
 # Clone/Update
 for repo in $repos; do
     (
         if [ -d "$repo/.git" ]; then
-            echo "Updating $repo..."
-            cd "$repo" && git pull --quiet || echo "Pulling $repo failed"
+            echo "ℹ️  Updating $repo..."
+            cd "$repo" && git pull --quiet || echo "❌ Pulling $repo failed"
         else
-            echo "Cloning $repo..."
-            git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${repo}.git" || echo "Cloning $repo failed"
+            echo "ℹ️  Cloning $repo..."
+            git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${repo}.git" || echo "❌ Cloning $repo failed"
         fi
     ) &
 done
@@ -67,11 +67,11 @@ done
 wait
 
 echo
-echo "All clone/update tasks completed!"
+echo "✅ All clone/update tasks completed!"
 echo
 
 # Copy all files to correct directories
-echo "Copying files..."
+echo "ℹ️  Copying files..."
 
 mkdir -p automation
 for file in "$AUTHOR_DIR/GitHub-Tools/shell/git/repo/"*; do
@@ -95,7 +95,7 @@ for file in "$AUTHOR_DIR/GitHub-Tools/shell/git/mass/"*; do
     chmod +x "$ROOT_DIR/$(basename "$file")"
 done
 
-echo "Files copied!"
+echo "✅ Files copied!"
 
 echo
 
@@ -110,7 +110,7 @@ for repo in */; do
     EXCLUDE_FILE="$repo/.git/info/exclude"
 
     if [ ! -f "$EXCLUDE_FILE" ]; then
-        echo "git exclude doesn't exist for $repo, creating it"
+        echo "ℹ️  git exclude doesn't exist for $repo, creating it"
         if ! mkdir -p "$repo/.git/info" || ! touch "$EXCLUDE_FILE"; then
             all_success=false
             failed_repos+=("$repo")
@@ -130,9 +130,9 @@ for repo in */; do
 done
 
 if $all_success; then
-    echo "All .git/info/exclude files updated successfully."
+    echo "✅ All .git/info/exclude files updated successfully."
 else
-    echo "Failed to update .git/info/exclude in the following repositories:"
+    echo "❌ Failed to update .git/info/exclude in the following repositories:"
     for repo in "${failed_repos[@]}"; do
         echo "  - $repo"
     done
@@ -141,11 +141,11 @@ fi
 # Add automation/ to repos
 for d in */; do
     if [ "$d" != "automation/" ]; then
-        cp -r automation "$d" || echo "Failed to copy automation to $d"
+        cp -r automation "$d" || echo "❌ Failed to copy automation to $d"
     fi
 done
 
-rm -rf automation || echo "Failed to remove temporary automation folder"
+rm -rf automation || echo "❌ Failed to remove temporary automation folder"
 
 # Ensure all automation scripts in each repo are executable
 for d in */automation/; do
@@ -161,11 +161,11 @@ if [[ "$hide_ssh" =~ ^[yY]$ ]]; then
     # Hide the SSH scripts
     mv "$AUTHOR_DIR/disable-ssh" "$AUTHOR_DIR/.disable-ssh"
     mv "$AUTHOR_DIR/enable-ssh" "$AUTHOR_DIR/.enable-ssh"
-    echo "SSH scripts hidden."
+    echo "ℹ️  SSH scripts hidden."
 else
     # Remove hidden scripts if they exist
     rm -f "$AUTHOR_DIR/.disable-ssh" "$AUTHOR_DIR/.enable-ssh"
-    echo "SSH scripts not hidden."
+    echo "ℹ️  SSH scripts not hidden."
 fi
 
 # Hang
