@@ -11,30 +11,42 @@ if [ -z "$commit_message" ]; then
     commit_message="auto-commit"
 fi
 
+repos=()
+
+# Add all repos to repos
 for d in */; do
     if [ -d "$d/.git" ]; then
-        echo "ℹ️  Pushing $d"
-        (
-            cd "$d" || exit
-            git add . >/dev/null 2>&1
-            if git diff --quiet && git diff --cached --quiet; then
-                echo "✅ Nothing to commit: $d"
-                exit 0
-            fi
-            if git commit -m "$commit_message" >/dev/null 2>&1; then
-                if git push >/dev/null 2>&1; then
-                    echo "✅ Successfully pushed $d"
-                else
-                    echo "❌ Failed to push $d"
-                fi
-            else
-                echo "❌ Failed to commit $d"
-            fi
-        ) &
+        repos+=("$d")
     fi
 done
 
+# Print that they're being pushed.
+for d in "${repos[@]}"; do
+    echo "ℹ️  Pushing $d"
+done
+
 echo
+
+# Push them.
+for d in "${repos[@]}"; do
+    (
+        cd "$d" || exit
+        git add . >/dev/null 2>&1
+        if git diff --quiet && git diff --cached --quiet; then
+            echo "✅ Nothing to commit: $d"
+            exit 0
+        fi
+        if git commit -m "$commit_message" >/dev/null 2>&1; then
+            if git push >/dev/null 2>&1; then
+                echo "✅ Successfully pushed $d"
+            else
+                echo "❌ Failed to push $d"
+            fi
+        else
+            echo "❌ Failed to commit $d"
+        fi
+    ) &
+done
 
 wait
 
