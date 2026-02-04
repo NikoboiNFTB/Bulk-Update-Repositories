@@ -7,12 +7,14 @@ SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
 
 for d in */; do
     if [ -d "$d/.git" ]; then
-        echo "Pulling $d"
+        echo "ℹ️  Pulling $d"
         (
             cd "$d" || exit 1
 
+            set +e
             output=$(git pull 2>&1)
             status=$?
+            set -e
 
             if [ "$status" -eq 0 ]; then
                 if printf '%s\n' "$output" | grep -q "^Already up to date\."; then
@@ -22,7 +24,6 @@ for d in */; do
                 fi
             else
                 echo "❌ Failed to pull $d"
-                printf '%s\n' "$output"
             fi
         ) &
     fi
