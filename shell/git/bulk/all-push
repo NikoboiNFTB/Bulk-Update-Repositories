@@ -5,11 +5,18 @@ set -e
 # This is used for the Hang at the end, for disabling it.
 SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
 
-# Ask for commit message upfront
-read -rp "Enter commit message (Enter to use 'auto-commit'): " commit_message
-if [ -z "$commit_message" ]; then
-    commit_message="auto-commit"
+# Ask for commit message, use default if empty.
+default_msg="auto-commit"
+
+read -rp "Enter commit message (Enter to use '$default_msg'): " commit_msg
+
+if [ -z "$commit_msg" ]; then
+    commit_msg="$default_msg"
 fi
+
+# Commit and push
+git commit -m "$commit_msg"
+git push
 
 repos=()
 
@@ -36,7 +43,7 @@ for d in "${repos[@]}"; do
             echo "✅ Nothing to commit: $d"
             exit 0
         fi
-        if git commit -m "$commit_message" >/dev/null 2>&1; then
+        if git commit -m "$commit_msg" >/dev/null 2>&1; then
             if git push >/dev/null 2>&1; then
                 echo "✅ Successfully pushed $d"
             else

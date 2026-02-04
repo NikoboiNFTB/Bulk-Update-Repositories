@@ -19,14 +19,17 @@ else
     git add .
 fi
 
-# Ask for commit message
-read -rp "Enter commit message (Enter to use 'auto-commit'): " commit_message
-if [ -z "$commit_message" ]; then
-    commit_message="auto-commit"
+# Ask for commit message, use default if empty.
+default_msg="auto-commit"
+
+read -rp "Enter commit message (Enter to use '$default_msg'): " commit_msg
+
+if [ -z "$commit_msg" ]; then
+    commit_msg="$default_msg"
 fi
 
 # Commit and push
-git commit -m "$commit_message"
+git commit -m "$commit_msg"
 git push
 
 # Hang
