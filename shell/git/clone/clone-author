@@ -69,9 +69,11 @@ for repo in $repos; do
         if [ -d "$repo/.git" ]; then
             echo "ℹ️  Updating $repo..."
             cd "$repo" && git pull --quiet || echo "Pulling $repo failed"
+            echo "✅ Successfully updated $repo"
         else
             echo "ℹ️  Cloning $repo..."
             git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${repo}.git" || echo "Cloning $repo failed"
+            echo "✅ Successfully cloned $repo"
         fi
     ) &
 done
