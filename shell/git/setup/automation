@@ -52,10 +52,10 @@ mkdir -p "$(dirname "$TOOLS_DIR")"
 
 if [ -d "$TOOLS_DIR/.git" ]; then
     echo "ℹ️  Updating GitHub-Tools..."
-    cd "$TOOLS_DIR" && git pull --quiet || echo "❌ Pull failed"
+    cd "$TOOLS_DIR" && git pull --quiet || echo "❌ Pulling GitHub-Tools failed"
 else
     echo "ℹ️  Cloning GitHub-Tools..."
-    git clone --quiet https://github.com/NikoboiNFTB/GitHub-Tools.git "$TOOLS_DIR" || echo "❌ Cloning failed"
+    git clone --quiet https://github.com/NikoboiNFTB/GitHub-Tools.git "$TOOLS_DIR" || echo "❌ Cloning GitHub-Tools failed"
 fi
 
 echo
