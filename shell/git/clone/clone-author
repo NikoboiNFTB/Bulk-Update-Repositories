@@ -47,8 +47,10 @@ if ! command -v jq &> /dev/null; then
     exit 1
 fi
 
+echo
+
 # Fetch repositories
-echo "Fetching list of repositories for user '$AUTHOR'..."
+echo "ℹ️  Fetching list of repositories for user '$AUTHOR'..."
 repos=$(curl -s "https://api.github.com/users/$AUTHOR/repos?per_page=100" | jq -r '.[].name')
 
 if [ -z "$repos" ]; then
@@ -65,10 +67,10 @@ echo
 for repo in $repos; do
     (
         if [ -d "$repo/.git" ]; then
-            echo "Updating $repo..."
+            echo "ℹ️  Updating $repo..."
             cd "$repo" && git pull --quiet || echo "Pulling $repo failed"
         else
-            echo "Cloning $repo..."
+            echo "ℹ️  Cloning $repo..."
             git clone --quiet "${CLONE_PREFIX}${AUTHOR}/${repo}.git" || echo "Cloning $repo failed"
         fi
     ) &
@@ -77,7 +79,7 @@ done
 wait
 
 echo
-echo "All clone/update tasks completed!"
+echo "✅ All clone/update tasks completed!"
 
 # Hang
 
